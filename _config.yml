@@ -37,6 +37,13 @@ sass:
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-feed
+
+# jekyll-feed: only include blog posts in the RSS feed (not KB pages).
+feed:
+  collections:
+    posts:
+      path: "/feed.xml"
 
 # Knowledge-base pages all use the doc layout with a sidebar.
 defaults:
