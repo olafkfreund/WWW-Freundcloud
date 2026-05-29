@@ -78,6 +78,20 @@ description: >-
 </section>
 
 <section class="section">
+  <h2>Latest writing</h2>
+  <p class="section-lede">Working out loud — the newest from the <a href="{{ '/blog/' | relative_url }}">blog</a>.</p>
+  <ul class="post-list">
+    {% for post in site.posts limit:3 %}
+    <li class="post-list-item">
+      <a class="post-list-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <time class="post-list-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %b %Y" }}</time>
+      {% if post.excerpt %}<p class="post-list-excerpt">{{ post.excerpt | strip_html | truncatewords: 28 }}</p>{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="section">
   <h2>What I'm into</h2>
   <p class="section-lede">
     Internal developer platforms and golden paths · multi-cloud Kubernetes ·
