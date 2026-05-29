@@ -5,10 +5,6 @@
     - title: "Welcome!"
     - title: "Quick Start Guide"
       url: "/kb/pages/quick-starts/index.html"
-    - title: "About Me"
-      url: "/kb/pages/about-me.html"
-    - title: "CV"
-      url: "/kb/pages/cv.html"
     - title: "Contribute"
 - title: "🎯 Project Showcase"
   children:

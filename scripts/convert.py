@@ -43,6 +43,13 @@ EXCLUDE_FILES = {
     "GITBOOK-BEST-PRACTICES.md", "404.md", "about-me.md", "cv.md",
 }
 
+# Specific wiki-relative paths to skip — the site has bespoke, humanized
+# /about/ and /cv/ pages, so the GitBook originals are not migrated.
+EXCLUDE_RELPATHS = {
+    "pages/about-me.md",
+    "pages/cv.md",
+}
+
 HINT_STYLE_MAP = {
     "info": "info", "tip": "success", "success": "success",
     "warning": "warning", "danger": "danger", "note": "info",
@@ -347,6 +354,9 @@ def emit_toc(sections, valid_targets: set[str]) -> str:
              "# Do not edit by hand; re-run the converter instead."]
 
     def node_lines(node, indent):
+        # Drop excluded leaf pages (bespoke /about/ and /cv/) from the nav.
+        if node.get("link") in EXCLUDE_RELPATHS and not node.get("children"):
+            return
         pad = "  " * indent
         title = yaml_escape(node["title"])
         link = node.get("link")
@@ -406,6 +416,8 @@ def main():
                 continue
             rel = os.path.relpath(os.path.join(root, fn), wiki).replace(os.sep, "/")
             if "/" not in rel and fn in EXCLUDE_FILES:
+                continue
+            if rel in EXCLUDE_RELPATHS:
                 continue
             md_files.append(rel)
     known = set(md_files)

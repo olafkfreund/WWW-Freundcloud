@@ -9,6 +9,11 @@ description: Olaf Krasicki-Freund — DevOps and platform engineering leader, 30
   <div class="container prose">
     <h1 class="mt-0">About me</h1>
 
+    <img class="about-portrait"
+         src="{{ '/assets/img/about/olaf.jpg' | relative_url }}"
+         alt="Olaf Krasicki-Freund"
+         width="180" height="180">
+
     <p>I've been doing this for thirty years, which means I started before "DevOps"
     was a word and watched the whole thing arrive — bare metal, then virtual
     machines, then the cloud, then the realisation that none of it matters if
@@ -60,6 +65,38 @@ description: Olaf Krasicki-Freund — DevOps and platform engineering leader, 30
     blueprints the organisation standardised on. At R3 I ran a multinational
     DevSecOps team on their distributed-ledger products and put real SRE practice
     in place — SLOs, error budgets, the lot.</p>
+
+    <h2>Open source &amp; side projects</h2>
+
+    <p>A lot of how I learn a tool is by building something real with it and
+    putting it on GitHub. Most of these started as "I wonder if…" on a weekend
+    and turned into things I actually use.</p>
+
+    <p><strong>AI &amp; LLM tooling.</strong>
+    <a href="https://github.com/olafkfreund/ollama-skill-cv-rag" rel="noopener">ollama-skill-cv-rag</a>
+    does CV and skill analysis with retrieval-augmented generation on top of
+    Ollama; <a href="https://github.com/olafkfreund/SOW-generator" rel="noopener">SOW-generator</a>
+    drafts statements of work for consulting engagements with an LLM; and
+    <a href="https://github.com/olafkfreund/nix-ai-help" rel="noopener">nix-ai-help</a>
+    is a NixOS environment for running and poking at open-source models.</p>
+
+    <p><strong>NixOS &amp; cloud infrastructure.</strong> A cluster of experiments in
+    reproducible local cloud:
+    <a href="https://github.com/olaffreund/nix-local-cloud" rel="noopener">nix-local-cloud</a>,
+    <a href="https://github.com/olaffreund/k8s-local-clouds" rel="noopener">k8s-local-clouds</a>,
+    <a href="https://github.com/olaffreund/ks3-nixos-vms" rel="noopener">ks3-nixos-vms</a>
+    (lightweight k3s on NixOS VMs), and
+    <a href="https://github.com/olaffreund/nix-llm-vms" rel="noopener">nix-llm-vms</a>
+    for running models on throwaway machines.</p>
+
+    <p><strong>Developer tools.</strong>
+    <a href="https://github.com/olaffreund/Commit-tracking-mcp" rel="noopener">Commit-tracking-mcp</a>
+    is an MCP server for analysing git history, and
+    <a href="https://github.com/olaffreund/tinky-llm-buddy" rel="noopener">tinky-llm-buddy</a>
+    is a small AI dev assistant. There's also
+    <a href="https://github.com/olafkfreund/SkillAi" rel="noopener">SkillAi</a> and the
+    Kosli/ServiceNow MCP servers — those get the full write-up over on
+    <a href="{{ '/work/' | relative_url }}">Work</a>.</p>
 
     <h2>Away from the keyboard</h2>
 

@@ -5,7 +5,7 @@ render_with_liquid: false
 description: ">-"
 ---
 
-Featured projects with full architecture write-ups, screenshots, and the engineering decisions behind each one. For a short list of open-source proof-of-concept repos, see [About Me → Recent Projects](../about-me.html#recent-projects).
+Featured projects with full architecture write-ups, screenshots, and the engineering decisions behind each one. For a short list of open-source proof-of-concept repos, see [About Me → Recent Projects](../about-me.md#recent-projects).
 
 ## Featured
 

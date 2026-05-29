@@ -232,6 +232,21 @@ a:hover { text-decoration: underline; }
   margin: 0 0 1rem;
 }
 
+/* About-page portrait — floated beside the intro, stacks on mobile. */
+.about-portrait {
+  float: right;
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  margin: 0 0 1rem 1.5rem;
+  box-shadow: var(--shadow-md);
+}
+@media (max-width: 560px) {
+  .about-portrait { float: none; display: block; margin: 0 0 1.5rem; }
+}
+
 /* ---------- Cards ---------- */
 .card-grid {
   display: grid;
