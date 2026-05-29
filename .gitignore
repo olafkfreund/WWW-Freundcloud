@@ -1,11 +1,20 @@
+# Jekyll build output & caches
 _site/
 .jekyll-cache/
 .jekyll-metadata
 .sass-cache/
-Gemfile.lock
-node_modules/
+
+# Pagefind index (generated at build time)
 pagefind/
+
+# Ruby / Bundler
 vendor/
 .bundle/
+Gemfile.lock
 *.gem
+
+# Node
+node_modules/
+
+# OS
 .DS_Store
