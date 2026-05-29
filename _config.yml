@@ -1,0 +1,62 @@
+title: Olaf Krasicki-Freund
+tagline: DevOps & Platform Engineering
+description: >-
+  DevOps and Platform Engineering leader — GitHub Enterprise migration,
+  internal developer platforms, multi-cloud, and a sizeable cloud-engineering
+  knowledge base.
+author: Olaf Krasicki-Freund
+
+# Published as GitHub Project Pages.
+url: "https://olafkfreund.github.io"
+baseurl: "/WWW-Freundcloud"
+
+# Links surfaced in the top nav / footer.
+github_username: olafkfreund
+linkedin_url: "https://www.linkedin.com/in/olaffreund/"
+email: olaf@freundcloud.com
+
+# Privacy-friendly analytics. Set `code` to your GoatCounter site code to
+# activate (e.g. "freundcloud"); left blank it emits nothing.
+analytics:
+  goatcounter:
+    code: ""
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  toc_levels: 2..3
+
+permalink: pretty
+sass:
+  style: compressed
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Knowledge-base pages all use the doc layout with a sidebar.
+defaults:
+  - scope:
+      path: "kb"
+    values:
+      layout: doc
+      # Migrated technical docs contain {{ }} / {% %} (Helm, Go templates,
+      # shell) that must NOT be parsed by Liquid. The converter already
+      # expanded the GitBook blocks we want, so render content verbatim.
+      render_with_liquid: false
+  - scope:
+      path: ""
+    values:
+      layout: landing
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - scripts
+  - vendor
+  - .github
+  - docs/plans
+  - "*.gem"

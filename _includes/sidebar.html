@@ -1,0 +1,44 @@
+{%- comment -%}
+  Renders the knowledge-base navigation from _data/toc.yml.
+  Structure:
+    - title: Section Name
+      children:
+        - title: Page
+          url: /kb/path/
+          children: [ ... ]
+{%- endcomment -%}
+<aside class="sidebar" aria-label="Knowledge base navigation">
+  {%- for section in site.data.toc -%}
+  <div class="sidebar-section">
+    <div class="sidebar-title">{{ section.title }}</div>
+    {%- if section.children -%}
+    <ul>
+      {%- for item in section.children -%}
+      <li>
+        {%- if item.url -%}
+        <a class="depth-1" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+        {%- else -%}
+        <span class="sidebar-subtitle">{{ item.title }}</span>
+        {%- endif -%}
+        {%- if item.children -%}
+        <ul>
+          {%- for sub in item.children -%}
+          <li><a class="depth-2" href="{{ sub.url | relative_url }}">{{ sub.title }}</a>
+            {%- if sub.children -%}
+            <ul>
+              {%- for leaf in sub.children -%}
+              <li><a class="depth-3" href="{{ leaf.url | relative_url }}">{{ leaf.title }}</a></li>
+              {%- endfor -%}
+            </ul>
+            {%- endif -%}
+          </li>
+          {%- endfor -%}
+        </ul>
+        {%- endif -%}
+      </li>
+      {%- endfor -%}
+    </ul>
+    {%- endif -%}
+  </div>
+  {%- endfor -%}
+</aside>

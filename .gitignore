@@ -1,0 +1,11 @@
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+Gemfile.lock
+node_modules/
+pagefind/
+vendor/
+.bundle/
+*.gem
+.DS_Store

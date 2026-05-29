@@ -1,0 +1,65 @@
+# GitBook -> Jekyll conversion report
+
+wiki:   /mnt/data/Source/wiki
+output: /home/olafkfreund/Source/GitHub/www-freundcloud/kb
+
+## Counts
+  pages: 722
+  block_files: 63
+  assets: 44
+  links_rewritten: 310
+  images_rewritten: 41
+  readme_collisions: 0
+
+## Audit findings (51)
+BROKEN LINK in pages/testing/e2e-testing/e2e-testing-methods.md: -> pages/testing/e2e-testing/e2e-testing-methods.md
+BROKEN LINK in pages/testing/e2e-testing/README.md: -> pages/testing/e2e-testing/README.md
+BROKEN LINK in pages/containers/kubernetes/README.md: -> ../../should-learn/kubernetes/troubleshooting/README.md
+BROKEN LINK in pages/devops/observability/metrics.md: -> ../../should-learn/open-telemetry.md
+BROKEN LINK in pages/devops/observability/metrics.md: -> ../../should-learn/kubernetes/monitoring.md
+BROKEN LINK in pages/devops/observability/dashboard.md: -> ../../should-learn/kubernetes/troubleshooting/README.md
+BROKEN LINK in pages/devops/observability/tracing.md: -> ../../should-learn/open-telemetry.md
+BROKEN LINK in pages/devops/observability/README.md: -> ../../should-learn/kubernetes/troubleshooting/README.md
+LEFTOVER LIQUID in pages/devops/tools-to-install/kubernetes/klone.md: ['{% embed url="https://gist.github.com/vishal-sarg/93ce03ba30f57101b5d46e1e31ab6bec#file-klone-blog-md" fullWidth="true" %}']
+BROKEN LINK in pages/devops/governance/README.md: -> ../../../reference/tool-comparison.md
+BROKEN LINK in pages/devops/documentation/examples/real-world-examples.md: -> ./docs/runbook.md
+BROKEN LINK in pages/devops/source-control/gitlab/README.md: -> ../git-workflows.md
+BROKEN LINK in pages/devops/source-control/gitlab/README.md: -> ../../ci-cd/README.md
+BROKEN LINK in pages/devops/source-control/gitlab/README.md: -> ../../containers/README.md
+BROKEN LINK in pages/devops/source-control/gitlab/README.md: -> ../../iac/README.md
+BROKEN LINK in pages/llm/copilot/README.md: -> agent-mode.md
+BROKEN LINK in pages/llm/copilot/README.md: -> infrastructure-deployment.md
+BROKEN LINK in pages/llm/copilot/README.md: -> editor-integration.md
+BROKEN LINK in pages/llm/copilot/README.md: -> custom-instructions.md
+BROKEN LINK in pages/llm/copilot/README.md: -> project-roles.md
+BROKEN LINK in pages/reference/tool-decision-guides.md: -> pages/reference/tool-comparison.md
+BROKEN LINK in pages/terraform/README.md: -> ../iac/README.md
+BROKEN LINK in pages/terraform/README.md: -> ../../group-1/bicep/README.md
+BROKEN LINK in pages/terraform/terraform-with-github-actions.md: -> pages/terraform/terraform-with-github-actions.md
+BROKEN LINK in pages/terraform/cicd/azure-pipelines.md: -> pages/terraform/cicd/azure-pipelines.md
+BROKEN LINK in pages/terraform/cicd/github-actions.md: -> pages/terraform/terraform-with-github-actions.md
+BROKEN LINK in pages/terraform/cicd/gitlab-ci.md: -> pages/terraform/cicd/gitlab-ci.md
+BROKEN LINK in pages/terraform/tips/conditional-expressions.md: -> pages/terraform/tips/conditional-expressions.md
+BROKEN LINK in pages/terraform/tips/terraform-for_each.md: -> pages/terraform/tips/terraform-for_each.md
+BROKEN LINK in pages/terraform/gcp/gpc_auth_terraform.md: -> pages/terraform/gcp/gpc_auth_terraform.md
+BROKEN LINK in pages/terraform/aws/aws_auth_terraform.md: -> pages/terraform/aws/aws_auth_terraform.md
+BROKEN LINK in pages/terraform/authenticate-terraform-to-azure/specify-service-principal-credentials-in-a-terraform-provider-block.md: -> pages/terraform/authenticate-terraform-to-azure/specify-service-principal-credentials-in-a-terraform-provider-block.md
+BROKEN LINK in pages/terraform/authenticate-terraform-to-azure/specify-service-principal-credentials-in-environment-variables.md: -> pages/terraform/authenticate-terraform-to-azure/specify-service-principal-credentials-in-environment-variables.md
+BROKEN LINK in pages/public-clouds/README.md: -> azure/azure-landing-zone/README.md
+BROKEN LINK in pages/public-clouds/azure/README.md: -> azure-landing-zone/README.md
+BROKEN LINK in pages/public-clouds/gcp/services/README.md: -> cloud-spanner.md
+BROKEN LINK in pages/public-clouds/gcp/services/README.md: -> firestore.md
+BROKEN LINK in pages/public-clouds/aws/README.md: -> ../../../terraform/aws-scenarios.md
+BROKEN LINK in pages/public-clouds/aws/README.md: -> ../../../need-to-know/cloud-compliance/README.md
+BROKEN LINK in pages/public-clouds/aws/README.md: -> ../../../sre/senarios/aws-vm-monitoring-api.md
+BROKEN LINK in pages/public-clouds/aws/services/README.md: -> ec2.md
+BROKEN LINK in pages/public-clouds/aws/services/README.md: -> lambda.md
+BROKEN LINK in pages/public-clouds/aws/services/README.md: -> ebs.md
+BROKEN LINK in pages/public-clouds/aws/services/README.md: -> rds.md
+BROKEN LINK in pages/public-clouds/aws/services/README.md: -> dynamodb.md
+BROKEN LINK in pages/public-clouds/aws/services/README.md: -> vpc.md
+BROKEN LINK in pages/public-clouds/aws/services/README.md: -> cloudfront.md
+LEFTOVER LIQUID in pages/should-learn/kubernetes/README.md: ['{% include "/_snippets/kubernetes-prerequisites.md" %}']
+BROKEN LINK in pages/should-learn/linux/commands/ssh/how-to-use-ssh-config.md: -> pages/should-learn/linux/commands/ssh/how-to-use-ssh-config.md
+BROKEN LINK in pages/should-learn/linux/os/how-to-avoid-multiple-sudo-commands-in-one-liners/bash-shortcuts-every-linux-user-needs-to-know.md: -> pages/should-learn/linux/os/how-to-avoid-multiple-sudo-commands-in-one-liners/bash-shortcuts-every-linux-user-needs-to-know.md
+BROKEN LINK in pages/should-learn/linux/os/how-to-avoid-multiple-sudo-commands-in-one-liners/README.md: -> pages/should-learn/linux/os/how-to-avoid-multiple-sudo-commands-in-one-liners/README.md

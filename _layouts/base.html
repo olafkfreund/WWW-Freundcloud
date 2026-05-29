@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  {% include head.html %}
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  {% include topnav.html %}
+
+  <main id="main">
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+  {% include search-modal.html %}
+
+  <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/nav.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/tabs.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/search.js' | relative_url }}"></script>
+  {% include analytics.html %}
+</body>
+</html>
