@@ -9,9 +9,10 @@ description: Curriculum vitae — Olaf Krasicki-Freund, DevOps & Platform Engine
   <div class="container prose">
     <h1 class="mt-0">Curriculum vitae</h1>
     <p>
-      <a class="btn btn-primary" href="{{ '/assets/cv/Olaf-Krasicki-Freund-CV-2026.pdf' | relative_url }}" download>Download PDF</a>
-      <a class="btn btn-secondary" href="{{ site.linkedin_url }}" rel="noopener">LinkedIn</a>
+      <a class="btn btn-primary" href="{{ site.linkedin_url }}" rel="noopener">LinkedIn</a>
+      <a class="btn btn-secondary" href="mailto:{{ site.email }}">Email me</a>
     </p>
+    <p class="text-muted">Prefer a PDF or a full reference list? <a href="mailto:{{ site.email }}">Drop me a line</a> and I'll send one over.</p>
     <p class="text-muted">London, UK · Outside IR35 · Financial services &amp; public sector ·
     <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
 
