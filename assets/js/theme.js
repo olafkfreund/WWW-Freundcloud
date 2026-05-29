@@ -8,13 +8,9 @@
     else root.removeAttribute("data-theme");
   }
 
-  // Initial: stored pref, else system. (Dark is the default with no attribute.)
+  // Terminal dark is the brand default; only an explicit choice flips to light.
   const stored = localStorage.getItem(KEY);
-  if (stored) {
-    apply(stored);
-  } else if (window.matchMedia("(prefers-color-scheme: light)").matches) {
-    apply("light");
-  }
+  if (stored) apply(stored);
 
   window.toggleTheme = function () {
     const isLight = root.getAttribute("data-theme") === "light";

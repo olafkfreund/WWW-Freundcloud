@@ -1,23 +1,24 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#0d1117">
+<meta name="theme-color" content="#000000">
 
 <title>{% if page.title %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }} — {{ site.tagline }}{% endif %}</title>
 
 {% seo %}
 
 <link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 
 <script>
   // Expose baseurl to client scripts (search/pagefind paths).
   window.FC_BASEURL = "{{ site.baseurl }}";
-  // Apply stored theme before paint to avoid a flash.
+  // Terminal dark is the brand default; only an explicit choice flips to light.
   (function () {
     try {
-      var t = localStorage.getItem("fc-theme");
-      if (t === "light") document.documentElement.setAttribute("data-theme", "light");
-      else if (!t && window.matchMedia("(prefers-color-scheme: light)").matches)
+      if (localStorage.getItem("fc-theme") === "light")
         document.documentElement.setAttribute("data-theme", "light");
     } catch (e) {}
   })();
