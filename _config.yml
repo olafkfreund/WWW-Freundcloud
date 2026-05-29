@@ -6,9 +6,9 @@ description: >-
   knowledge base.
 author: Olaf Krasicki-Freund
 
-# Published as GitHub Project Pages.
-url: "https://olafkfreund.github.io"
-baseurl: "/WWW-Freundcloud"
+# Published on a custom domain (www.freundcloud.com), served from the root.
+url: "https://www.freundcloud.com"
+baseurl: ""
 
 # Links surfaced in the top nav / footer.
 github_username: olafkfreund

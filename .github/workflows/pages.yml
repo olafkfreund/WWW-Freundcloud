@@ -27,12 +27,9 @@ jobs:
           ruby-version: "3.4"
           bundler-cache: true
 
-      - name: Configure Pages
-        id: pages
-        uses: actions/configure-pages@v5
-
       - name: Build site with Jekyll
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        # baseurl/url come from _config.yml (custom domain → served at root).
+        run: bundle exec jekyll build
         env:
           JEKYLL_ENV: production
 
