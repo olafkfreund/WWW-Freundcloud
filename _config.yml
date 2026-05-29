@@ -28,7 +28,9 @@ kramdown:
   syntax_highlighter: rouge
   toc_levels: 2..3
 
-permalink: pretty
+# Default permalinks: pages mirror their source path with .html — this matches
+# the .html URLs the converter writes into KB links and _data/toc.yml. The
+# me-first pages opt into pretty URLs via per-page `permalink` front matter.
 sass:
   style: compressed
 

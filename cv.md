@@ -1,6 +1,7 @@
 ---
 layout: landing
 title: CV
+permalink: /cv/
 description: Curriculum vitae — Olaf Krasicki-Freund, DevOps & Platform Engineering leader.
 ---
 

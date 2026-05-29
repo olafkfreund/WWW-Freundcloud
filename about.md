@@ -1,6 +1,7 @@
 ---
 layout: landing
 title: About
+permalink: /about/
 description: Olaf Krasicki-Freund — DevOps and platform engineering leader, 30 years in.
 ---
 

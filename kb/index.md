@@ -1,6 +1,7 @@
 ---
 layout: doc
 title: Knowledge Base
+permalink: /kb/
 description: >-
   A cloud-engineering knowledge base — DevOps, SRE, Kubernetes, IaC, multi-cloud,
   DevSecOps, and NixOS — migrated from my GitBook.

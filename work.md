@@ -1,6 +1,7 @@
 ---
 layout: landing
 title: Work
+permalink: /work/
 description: Projects and platforms Olaf Krasicki-Freund has designed and built.
 ---
 
