@@ -10,8 +10,10 @@ pagefind/
 # Ruby / Bundler
 vendor/
 .bundle/
-Gemfile.lock
 *.gem
+# NOTE: Gemfile.lock IS committed — it pins sass-embedded to a version that
+# still inlines legacy @import. A fresh CI resolve picks dart-sass >=2.0 which
+# passes @import through as plain CSS, shipping an unstyled site.
 
 # Node
 node_modules/
