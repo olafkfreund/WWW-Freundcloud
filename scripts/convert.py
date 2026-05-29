@@ -308,7 +308,9 @@ def rewrite_links(body: str, src_rel: str, out_rel: str,
 
 
 def yaml_escape(s: str) -> str:
-    return s.replace('"', '\\"')
+    # Backslash first, then quotes — titles carry markdown-escaped brackets
+    # like \[BEGINNER\] which are invalid escapes in a double-quoted scalar.
+    return s.replace("\\", "\\\\").replace('"', '\\"')
 
 
 # --------------------------------------------------------------------------- #

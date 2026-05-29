@@ -1,6 +1,6 @@
 ---
 layout: doc
-title: "\~Customer Project\~ Case Study"
+title: "\\~Customer Project\\~ Case Study"
 render_with_liquid: false
 ---
 
