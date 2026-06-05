@@ -36,7 +36,7 @@ forget. Plus the four things that fought back hardest.
 ## The shape
 
 ```text
-                          https://p510.tail833f7.ts.net/backstage
+                              https://<tailnet-host>/backstage
                                          ▲
                                          │  Tailscale Serve
                                          │  (HTTPS terminates here)
@@ -249,9 +249,9 @@ A few things:
 
 ## Where it is now
 
-Backstage is live at `https://p510.tail833f7.ts.net/backstage`. It
-shows me + one System (`freundcloud-infra`) + one Component
-(`nixos_config`) right now. The catalog-onboard cron fires tomorrow at
+Backstage is live behind Tailscale on the home lab tailnet. It shows
+me + one System (`freundcloud-infra`) + one Component (`nixos_config`)
+right now. The catalog-onboard cron fires tomorrow at
 06:17 UTC and over the next ~week the other 70 repos walk themselves
 in via PRs. Each PR is one merge button — and editable to add owner /
 domain / dependency richness as I figure out what I actually want.
