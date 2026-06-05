@@ -1,0 +1,11 @@
+# MkDocs config for Backstage TechDocs.
+# Edit at will — Backstage rebuilds on next view.
+# https://backstage.io/docs/features/techdocs/getting-started
+
+site_name: WWW-Freundcloud
+site_description: Personal site + cloud-engineering knowledge base — olafkfreund.github.io/WWW-Freundcloud
+
+docs_dir: docs
+
+plugins:
+  - techdocs-core
