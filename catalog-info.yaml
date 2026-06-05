@@ -4,7 +4,8 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: WWW-Freundcloud
+  name: www-freundcloud
+  title: WWW-Freundcloud
   description: "Personal site + cloud-engineering knowledge base — olafkfreund.github.io/WWW-Freundcloud"
   annotations:
     backstage.io/techdocs-ref: dir:.
