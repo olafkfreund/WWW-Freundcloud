@@ -418,4 +418,16 @@ a:hover { color: var(--fg); text-shadow: var(--glow-soft); }
 .post-back { display: inline-block; color: var(--fg-muted); font-size: 0.82rem; margin-bottom: 0.5rem; }
 .post-back:hover { color: var(--accent); }
 .post-rule { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0 1rem; }
+
+/* ===== GFM task lists =====
+   Kramdown renders `* [ ]` as <ul class="task-list"><li class="task-list-item">
+   <input type="checkbox">...</li></ul>. By default the <ul> still gets the
+   theme bullet AND the rendered checkbox, so every item shows both — visible
+   on KB checklist pages (Engineering Fundamentals etc). Strip the marker on
+   the task-list <ul>, pull each item left so the checkbox aligns with where
+   the bullet used to be, and give the checkbox a little breathing room from
+   the label. */
+ul.task-list { list-style: none; padding-left: 0; }
+ul.task-list li.task-list-item { margin-left: 0; padding-left: 0; }
+ul.task-list li.task-list-item > input.task-list-item-checkbox { margin-right: 0.5em; }
 .post-comments { margin-top: 2.5rem; }
