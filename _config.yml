@@ -64,6 +64,8 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
+  - CLAUDE.md
+  - .claude
   - scripts
   - vendor
   - .github
