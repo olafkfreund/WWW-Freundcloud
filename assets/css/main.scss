@@ -3,3 +3,13 @@
 ---
 
 @import "theme";
+
+.prose img, .post img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5rem auto;
+  border-radius: 6px;
+  border: 2px solid var(--border-color, #3c3836);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
