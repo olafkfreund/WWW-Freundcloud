@@ -108,6 +108,35 @@ description: Projects and platforms Olaf Krasicki-Freund has designed and built.
     </div>
 
     <div class="project">
+    <h2 id="bifrost">Bifrost — Azure DevOps → GitHub Actions, at portfolio scale</h2>
+    <p><span class="tag">Creator · open source</span></p>
+    <p>GitHub's own importer (<code>gh actions-importer</code>) gets you maybe 90% of
+    the way from an Azure DevOps pipeline to a GitHub Actions workflow. Bifrost is
+    the other 10% — the review workflow, the semantic validation, the portfolio-level
+    coordination and the audit trail that a syntactic converter leaves to you. It's
+    the tooling I wish I'd had walking into a migration with hundreds of pipelines
+    instead of one.</p>
+    <p>The design rule is <strong>review-first</strong>: nothing is silently rewritten.
+    The importer runs a dry pass, Bifrost parses the logs into typed <em>gaps</em>, and
+    each gap goes to an LLM <em>grounded</em> in the actual source, the importer's
+    output and the failure — so the model fills a specific hole rather than converting
+    from scratch. Risk scoring stays <strong>deterministic and explainable</strong>:
+    the numbers come from factors you can read, and the LLM explains them rather than
+    being trusted to invent them. Every decision is recorded as a signed, exportable
+    attestation.</p>
+    <p>It's built to run where regulated shops actually live: <strong>air-gap
+    capable</strong> against local models (Ollama / llama.cpp) so pipeline definitions
+    and secrets never leave the network, with the same provider trait swapping in
+    Anthropic, Gemini or Copilot when you're allowed to reach out. A React/TypeScript
+    portal — portfolio heatmap, three-pane diff, approvals — sits on a Rust/Axum
+    control plane (jobs, risk model, attestations), with Docker-based ingestion behind
+    a <code>SourceAdapter</code> trait: ADO first, Jenkins, GitLab and Bamboo next.
+    It's early — in active planning, MIT-licensed, and building in the open.
+    → <a href="https://olafkfreund.github.io/bifrost/" rel="noopener">olafkfreund.github.io/bifrost</a>
+    · <a href="https://github.com/olafkfreund/bifrost" rel="noopener">source</a></p>
+    </div>
+
+    <div class="project">
     <h2 id="skillpool">skill-pool — the team layer for Claude Code</h2>
     <p><span class="tag">Creator · open source</span></p>
     <p>Anthropic solved the single-developer story for Claude Code skills: drop a file

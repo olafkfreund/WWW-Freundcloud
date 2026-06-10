@@ -40,6 +40,13 @@ description: >-
       turns a GitHub issue into a pull request — and a sister project that
       autogenerates and runs the tests.</p>
     </a>
+    <a class="card" href="{{ '/work/#bifrost' | relative_url }}">
+      <span class="tag">Open source · Migration</span>
+      <h3>Bifrost</h3>
+      <p>Azure DevOps → GitHub Actions migration at portfolio scale. Wraps GitHub's
+      importer with a review-first workflow, explainable risk scoring and signed
+      attestations — air-gap capable on local models. Rust + React.</p>
+    </a>
     <a class="card" href="{{ '/work/#skillpool' | relative_url }}">
       <span class="tag">Open source · Claude Code</span>
       <h3>skill-pool</h3>
