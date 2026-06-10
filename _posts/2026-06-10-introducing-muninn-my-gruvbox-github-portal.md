@@ -17,6 +17,8 @@ As developers, we do something similar, but with less majesty and more browser t
 
 To fix this, I built **[Muninn](https://muninn.freundcloud.com)**—a fast, responsive, single-pane GitHub portal designed around a retro-premium **Gruvbox** aesthetic. But it's more than just a dashboard; it's also a secure browser-native playground for local AI agents using the experimental **WebMCP** protocol.
 
+![Muninn Dashboard Overview]({{ '/assets/img/posts/muninn-dashboard.png' | relative_url }})
+
 Here is why and how I made it, what it does, and why you should try it.
 
 ---
@@ -63,11 +65,32 @@ It looks like a terminal cockpit but acts with modern speed.
 
 The dashboard is structured into core panes:
 
-1. **Universal Global Search:** A fast, client-side search engine. Start typing, and it instantly filters across all your loaded repositories, active PRs, issues, and workflows in real time.
-2. **Workflow Runner:** A live view of GitHub Actions. You can check run statuses (success, failure, active), cancel running builds, or trigger a manual workflow dispatch directly from the UI.
-3. **Pull Request & Issue Manager:** Triage issues, manage reviewers, check status checks, and merge PRs on the fly.
-4. **Security Center:** A single view compiling Dependabot and CodeQL alerts across all repositories.
-5. **Real-time OS Notifications:** Muninn diffs state changes between polls. If a workflow fails, a PR is opened, or a security scan finishes, you get a native OS notification and an in-app toast—configured to skip startup noise so you aren't spammed when you first open the site.
+### 1. Universal Global Search
+A fast, client-side search engine. Start typing, and it instantly filters across all your loaded repositories, active PRs, issues, and workflows in real time.
+
+![Universal Global Search]({{ '/assets/img/posts/muninn-search.png' | relative_url }})
+
+### 2. Workflow Runner
+A live view of GitHub Actions. You can check run statuses (success, failure, active), cancel running builds, or trigger a manual workflow dispatch directly from the UI.
+
+![Workflow Actions Monitor]({{ '/assets/img/posts/muninn-workflows.png' | relative_url }})
+
+### 3. Pull Request & Issue Manager
+Triage issues, manage reviewers, check status checks, and merge PRs on the fly.
+
+![Pull Request Panel]({{ '/assets/img/posts/muninn-prs.png' | relative_url }})
+
+![Issues Triage Tracker]({{ '/assets/img/posts/muninn-issues.png' | relative_url }})
+
+### 4. Security Center & Stars Analytics
+A unified view compiling Dependabot and CodeQL alerts across all repositories, alongside visual statistics for your project star milestones.
+
+![Security Alerts Pane]({{ '/assets/img/posts/muninn-security.png' | relative_url }})
+
+![Project Stars Analytics]({{ '/assets/img/posts/muninn-stars.png' | relative_url }})
+
+### 5. Real-time OS Notifications
+Muninn diffs state changes between polls. If a workflow fails, a PR is opened, or a security scan finishes, you get a native OS notification and an in-app toast—configured to skip startup noise so you aren't spammed when you first open the site.
 
 ---
 
@@ -92,6 +115,10 @@ A floating chat drawer in the corner of Muninn acts as your dashboard co-pilot. 
 You can select between two providers:
 * **GitHub Models:** Query OpenAI's `gpt-4o` directly using your GitHub credentials (we've even added a dedicated PAT override input in the settings panel to handle custom models permissions).
 * **Ollama (Local LLM):** Run requests completely offline and locally against your own Llama or Mistral models.
+
+![Ollama Chat Automation Panel]({{ '/assets/img/posts/muninn-automations.png' | relative_url }})
+
+![Floating Copilot Assistant Chat]({{ '/assets/img/posts/muninn-copilot.png' | relative_url }})
 
 Ask the chatbot: *"Which workflow runs failed today?"* or *"Draft an issue description explaining why the build failed,"* and it will use the dashboard's live data to give you an accurate, context-aware answer.
 
