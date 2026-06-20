@@ -33,12 +33,12 @@ description: >-
       laptop k3d cluster from one switch — wiring ServiceNow, Kosli and three CI
       platforms into one auditable flow.</p>
     </a>
-    <a class="card" href="{{ '/work/#aifactory' | relative_url }}">
+    <a class="card" href="{{ '/work/#factory' | relative_url }}">
       <span class="tag">Open source · AI agents</span>
-      <h3>AIFactory &amp; TFactory</h3>
-      <p>Spec-driven development for AI agents: a planner → coder → QA pipeline that
-      turns a GitHub issue into a pull request — and a sister project that
-      autogenerates and runs the tests.</p>
+      <h3>The Factory suite</h3>
+      <p>A governed pipeline for AI software delivery — PFactory plans it, AIFactory
+      builds it, TFactory tests it, CFactory watches it. PARR, with a human gate at
+      every seam and model-agnostic via MCP.</p>
     </a>
     <a class="card" href="{{ '/work/#bifrost' | relative_url }}">
       <span class="tag">Open source · Migration</span>
@@ -46,6 +46,13 @@ description: >-
       <p>Azure DevOps → GitHub Actions migration at portfolio scale. Wraps GitHub's
       importer with a review-first workflow, explainable risk scoring and signed
       attestations — air-gap capable on local models. Rust + React.</p>
+    </a>
+    <a class="card" href="{{ '/work/#ravn' | relative_url }}">
+      <span class="tag">Open source · Rust</span>
+      <h3>ravn-agents</h3>
+      <p>Self-healing for Linux fleets that never decides on its own — deterministic
+      detection, Ed25519-signed remediation, AI that only explains. Runs on hosts,
+      Kubernetes and air-gapped networks.</p>
     </a>
     <a class="card" href="{{ '/work/#skillpool' | relative_url }}">
       <span class="tag">Open source · Claude Code</span>
@@ -73,6 +80,13 @@ description: >-
       <h3>nixos_config</h3>
       <p>My whole machine estate declared in Nix — multi-host flakes with a
       feature-flag system, Agenix secrets, Home Manager and a custom CLI.</p>
+    </a>
+    <a class="card" href="{{ '/work/#lxconnect' | relative_url }}">
+      <span class="tag">Open source · Linux desktop</span>
+      <h3>Desktop &amp; terminal tooling</h3>
+      <p>An Android phone as an MCP tool surface (lxconnect), Google Workspace in a TUI
+      (gog/gogmail), websites as native GNOME apps, and a pile of COSMIC and Hyprland
+      Rust.</p>
     </a>
     <a class="card" href="{{ '/kb/' | relative_url }}">
       <span class="tag">Writing</span>

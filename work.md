@@ -29,10 +29,14 @@ description: Projects and platforms Olaf Krasicki-Freund has designed and built.
     </figure>
 
     <p>Every change request gets a <strong>5-axis risk score</strong>, so a typo fix
-    and a database migration don't get treated the same way. Auditors get one-click
-    evidence export; the audit log is hash-chained so the trail is tamper-evident;
-    and there's a cost-vulnerability correlation view that puts a number on what a
-    given remediation is actually worth.</p>
+    and a database migration don't get treated the same way — low-risk changes clear
+    themselves and only the ones that matter land on a human's desk, which is what
+    actually shrinks the CAB queue. Auditors get one-click evidence export and
+    time-boxed, magic-link sessions into the <em>same</em> dashboard the change board
+    and the regulators use — no more assembling an "audit binder" by hand. The audit
+    log is hash-chained so the trail is tamper-evident, and a cost-vulnerability
+    correlation view puts a number on what a remediation is actually worth ("fix this,
+    save $X/month") by joining Snyk, Wiz and Trivy findings to spend.</p>
 
     <div class="shot-grid">
       <figure>
@@ -64,19 +68,35 @@ description: Projects and platforms Olaf Krasicki-Freund has designed and built.
     </div>
 
     <div class="project">
-    <h2 id="aifactory">AIFactory — spec-driven development for AI agents</h2>
+    <h2 id="factory">The Factory suite — a governed pipeline for AI software delivery</h2>
     <p><span class="tag">Creator · open source</span></p>
-    <p>AIFactory turns a GitHub issue into shipping code. It runs a
-    <strong>planner → coder → QA</strong> agent pipeline: a planner breaks the spec
-    down, a coder implements it, a QA agent reviews, and a pull request comes out the
-    other end — with a human approval gate at every step rather than a "trust me" big
-    bang. Models are selectable per agent role, and a web dashboard lets you watch
-    each run live and replay any step.</p>
+    <p>What started as AIFactory grew into a four-product suite around one idea: AI can
+    write the code, but someone still has to be accountable for it. 84% of developers
+    use AI coding tools; only 29% trust the output. The Factory suite is the trust and
+    governance layer for that gap, built around the <strong>PARR pipeline</strong> —
+    <strong>Prepare · Act · Reflect · Review</strong> — with a human gate at every seam
+    rather than one "trust me" big bang.</p>
+    <ul>
+      <li><strong>PFactory (Prepare)</strong> — plans work grounded in live cloud and
+      Backstage context, runs architecture, security, feasibility and best-practice
+      gates <em>with citations</em>, and only emits governed GitHub epics and issues
+      once a human has signed the plan.</li>
+      <li><strong>AIFactory (Act)</strong> — turns those specs into code and QA in
+      isolated git worktrees, model-agnostic across Claude, Gemini, OpenAI and local
+      Ollama, and can delegate sub-tasks to other coding agents.</li>
+      <li><strong>TFactory (Reflect)</strong> — autonomously generates and runs tests
+      in ephemeral sandboxes, grades each run on five signals (coverage delta,
+      stability, mutation testing, lint and semantic relevance) and reports back on the
+      pull request.</li>
+      <li><strong>CFactory (Review)</strong> — the control-tower cockpit: one pane of
+      glass with a live, animated dependency graph across plan → code → test, an
+      advise-and-confirm copilot, and per-task and per-worker cost and token tracking.</li>
+    </ul>
 
     <figure class="shot">
       <img src="{{ '/assets/img/work/aifactory-kanban.png' | relative_url }}"
            alt="AIFactory kanban board of tasks" loading="lazy">
-      <figcaption>The board — issues moving through plan, code and QA.</figcaption>
+      <figcaption>AIFactory — issues moving through plan, code and QA.</figcaption>
     </figure>
 
     <div class="shot-grid">
@@ -89,22 +109,15 @@ description: Projects and platforms Olaf Krasicki-Freund has designed and built.
         <figcaption>Live agent console</figcaption>
       </figure>
     </div>
-    <p>→ <a href="https://olafkfreund.github.io/AIFactory/" rel="noopener">olafkfreund.github.io/AIFactory</a>
-    · <a href="https://github.com/olafkfreund/AIFactory" rel="noopener">source</a></p>
-    </div>
 
-    <div class="project">
-    <h2 id="tfactory">TFactory — autonomous test generation</h2>
-    <p><span class="tag">Creator · open source</span></p>
-    <p>TFactory is AIFactory's sister project. Where AIFactory turns a spec into code,
-    TFactory turns it into <em>tests</em> — it ingests a spec (or any structured
-    feature description), generates a full feature, edge-case and security suite, runs
-    it sandboxed in ephemeral containers with no host access, and reports back on the
-    pull request, committing the passing tests. It drops into GitHub Actions as a
-    reusable workflow, with the same planner → generator → sandbox-runner → reporter
-    shape as AIFactory.</p>
-    <p>→ <a href="https://olafkfreund.github.io/TFactory/" rel="noopener">olafkfreund.github.io/TFactory</a>
-    · <a href="https://github.com/olafkfreund/TFactory" rel="noopener">source</a></p>
+    <p>The spine that makes it cohere is deliberately boring plumbing: a shared
+    correlation key, a normalized completion-event schema and a canonical port map, so
+    every product emits the same audit trail — HMAC-anchored logs and completion
+    records of exactly the kind the EU AI Act is about to ask for. It's model-agnostic
+    through MCP, and you can watch the whole thing run live.
+    → <a href="https://olafkfreund.github.io/AIFactory/" rel="noopener">AIFactory</a>
+    · <a href="https://olafkfreund.github.io/TFactory/" rel="noopener">TFactory</a>
+    · <a href="https://github.com/olafkfreund/Factory" rel="noopener">the meta-repo</a></p>
     </div>
 
     <div class="project">
@@ -134,6 +147,48 @@ description: Projects and platforms Olaf Krasicki-Freund has designed and built.
     It's early — in active planning, MIT-licensed, and building in the open.
     → <a href="https://olafkfreund.github.io/bifrost/" rel="noopener">olafkfreund.github.io/bifrost</a>
     · <a href="https://github.com/olafkfreund/bifrost" rel="noopener">source</a></p>
+    </div>
+
+    <div class="project">
+    <h2 id="ravn">ravn-agents — self-healing for Linux fleets that never decides on its own</h2>
+    <p><span class="tag">Creator · open source · MIT</span></p>
+    <p>Ravn detects and fixes problems across Linux infrastructure — standalone hosts,
+    Kubernetes, air-gapped networks — without phoning home to anyone's cloud. The whole
+    design is a reaction to "AIOps" that asks you to trust a black box: detection is
+    <strong>deterministic</strong> ("rules you can read, not a statistical model you
+    have to trust"), remediation runs from pre-authored, risk-tiered templates that
+    need human or signed-policy approval, and every command is <strong>Ed25519-signed,
+    verified and logged</strong> to an append-only Postgres trail. The local model only
+    ever <em>explains</em> — it suggests next steps in plain language; it never decides
+    what's wrong or what runs.</p>
+    <p>Three layers: edge agents (<code>ravnd</code>) detect and execute approved fixes,
+    a control plane (<code>ravn-server</code>) handles ingestion and policy, and a web
+    portal owns inventory, approvals and audit. Default-deny throughout — circuit
+    breakers, fleet kill switches, risk tiers — and because inference runs locally on
+    CPU it works fully offline. Rust backend, React front end, shipped as static
+    binaries, NixOS modules, OCI images and Kubernetes manifests.
+    → <a href="https://github.com/olafkfreund/ravn-agents" rel="noopener">source</a></p>
+    </div>
+
+    <div class="project">
+    <h2 id="lxconnect">lxconnect — your Android phone as an MCP tool surface</h2>
+    <p><span class="tag">Creator · open source</span></p>
+    <p>lxconnect bridges Android (Waydroid or a real device) to the Linux desktop, and
+    the interesting half is the <strong>MCP server it runs on the phone</strong>. The
+    Android app stands up a Ktor MCP server on port 8080 and hooks into
+    <code>NotificationListenerService</code> and <code>PackageManager</code> — so an LLM
+    or agent on your laptop can treat the phone as a set of tools: read notifications,
+    open native deep links (<code>mailto:</code>, <code>spotify:</code>), launch and
+    control apps, read system status, even drive the camera, all over a standard MCP
+    transport.</p>
+    <p>That turns "my phone" into something an agent can actually reach — triage
+    notifications onto the desktop, hand a 2FA push to the right app, let a Claude
+    session check or act on the device without you picking it up. A Python daemon reads
+    a Server-Sent-Events stream from the phone and surfaces it through
+    <code>libnotify</code>; a GTK4/PyGObject app gives you a native UI to test and
+    control it. The whole thing is a declarative Nix flake — <code>nix run
+    github:olafkfreund/lxconnect#gui</code> and you're live.
+    → <a href="https://github.com/olafkfreund/lxconnect" rel="noopener">source</a></p>
     </div>
 
     <div class="project">
@@ -168,9 +223,12 @@ description: Projects and platforms Olaf Krasicki-Freund has designed and built.
     <p><span class="tag">Author &amp; lead architect · GPL v3</span></p>
     <p>SkillAi is a self-hosted recruiting platform built on Claude and Gemini that
     ranks, compares and archives candidates against a role — and keeps every CV,
-    score and note on infrastructure the team controls. I built it because the
-    incumbents solve the workflow problem and leave the actual hard part, ranking
-    people fairly, to a keyword match.</p>
+    score and note on infrastructure the team controls. A typical open role pulls
+    50–200 applications; the incumbents (Greenhouse, Workday) nail the workflow, charge
+    tens of thousands a year, store your candidates on someone else's servers, and
+    still leave the actual hard part — ranking people fairly — to a keyword match.
+    SkillAi answers one question in seconds instead: who are the best candidates, and
+    why.</p>
     <p>It parses CVs in every format people actually send (PDF, DOCX, ODT, TXT,
     RTF), scores candidates across four dimensions — technical skills, experience,
     cultural fit, communication — and uses vector-embedding search so an old
@@ -179,6 +237,42 @@ description: Projects and platforms Olaf Krasicki-Freund has designed and built.
     Google and Microsoft calendars. It's in production as the backbone of
     Synechron's recruitment for HSBC's Kraków technology hub.
     → <a href="https://github.com/olafkfreund/SkillAi" rel="noopener">github.com/olafkfreund/SkillAi</a></p>
+    </div>
+
+    <div class="project">
+    <h2 id="rolehunter">rolehunter — the candidate's side of the same table</h2>
+    <p><span class="tag">Creator · open source · GPL v3</span></p>
+    <p>If SkillAi is the recruiter's side, rolehunter is the candidate's. It's a
+    self-hosted, single-user job-hunt copilot: paste a job (or pull one from JSearch /
+    LinkedIn), score it 0–100 against your master CV <em>with reasoning</em>, then
+    auto-tailor an ATS-friendly CV and a one-click cover-letter PDF for that specific
+    role. Applications and interviews live in a searchable table or Kanban board, with
+    LLM-generated behavioural flashcards and a rejection taxonomy so patterns surface
+    after a couple of entries.</p>
+    <p>The part I like best is <strong>skill-gap aggregation</strong>: it clusters the
+    gap strings from every match into canonical skills and pulls curated learning
+    resources from whitelisted docs — so the job hunt quietly turns into a study plan.
+    Next.js 15 / React 19 / TypeScript on Postgres 16 + pgvector, Drizzle for queries
+    and Playwright for the PDFs, running as two localhost-bound Docker containers on
+    randomised ports. Single-user by design — your CV never leaves your box.
+    → <a href="https://github.com/olafkfreund/rolehunter" rel="noopener">source</a></p>
+    </div>
+
+    <div class="project">
+    <h2 id="gog">gog &amp; gogmail — Google Workspace without leaving the terminal</h2>
+    <p><span class="tag">Creator · open source</span></p>
+    <p>gog is a CLI that authenticates to Google Workspace; gogmail is the
+    keyboard-driven TUI on top of it. Between them they put Gmail, Calendar, Drive,
+    Docs, Sheets, Slides, Tasks, Contacts, Chat and Meet (plus Zoom) into a single
+    Textual interface — read and write mail, RSVP to events, edit Sheets cells inline,
+    spin up meetings, all without a browser tab. A context-aware Gemini side panel can
+    actually <em>act</em> — fetch data, draft replies, star mail, change tasks from a
+    plain-language request — with optional voice in and spoken replies.</p>
+    <p>It's also the layer under a couple of my other experiments:
+    <strong>waycal</strong>, my Wayland/niri calendar, mail and task widgets, is just
+    Quickshell QML driven by the same <code>gog</code> CLI. Python 3.10+, packaged for
+    Nix, <code>.deb</code>, <code>.rpm</code> and zipapp.
+    → <a href="https://github.com/olafkfreund/gogmail" rel="noopener">gogmail</a></p>
     </div>
 
     <div class="project">
@@ -229,12 +323,26 @@ description: Projects and platforms Olaf Krasicki-Freund has designed and built.
     </div>
 
     <div class="project">
-    <h2 id="opensource">More open source &amp; Claude ecosystem</h2>
+    <h2 id="opensource">More open source &amp; the Linux desktop</h2>
     <ul>
-      <li><strong>MCP servers</strong> for Kosli and ServiceNow, shipped inside
-      SARC — real-world MCP in a CI/compliance context.</li>
-      <li><strong>COSMIC desktop applets in Rust</strong> — KDE Connect protocol
-      integration and a screen-mirroring plugin for the COSMIC ecosystem.</li>
+      <li><strong><a href="https://olafkfreund.github.io/gnome-quick-web-apps/" rel="noopener">gnome-quick-web-apps</a></strong>
+      — a GTK4/libadwaita manager that turns any site into a native GNOME app: paste a
+      URL and it pulls the name, icon and theme from the web manifest, then runs each
+      app CEF-isolated with its own profile and true URL-scope confinement.</li>
+      <li><strong>COSMIC &amp; the Linux desktop in Rust</strong> — a native
+      <a href="https://github.com/olafkfreund/cosmic-ext-connect-desktop-app" rel="noopener">KDE-Connect app for COSMIC</a>,
+      an <a href="https://github.com/olafkfreund/cosmic-ext-rdp-server" rel="noopener">RDP server</a>,
+      notification and RSS applets, and
+      <a href="https://github.com/olafkfreund/r-hyprconfig" rel="noopener">r-hyprconfig</a>,
+      a real-time Hyprland config TUI.</li>
+      <li><strong><a href="https://github.com/olafkfreund/nixos-template" rel="noopener">nixos-template</a></strong>
+      — a batteries-included starting point for a NixOS journey, and the most-used
+      thing I've published.</li>
+      <li><strong><a href="https://muninn.freundcloud.com" rel="noopener">Muninn</a></strong>
+      — a zero-backend, Gruvbox GitHub portal and WebMCP playground for local browser
+      agents.</li>
+      <li><strong>MCP servers</strong> for Kosli and ServiceNow, shipped inside SARC —
+      real-world MCP in a CI/compliance context.</li>
       <li><strong>This knowledge base</strong> — <em>DevOps Help for Cloud Platform
       Engineers</em>: multi-cloud architecture, FinOps, NixOS, AIOps and Service
       Mesh patterns. <a href="{{ '/kb/' | relative_url }}">Browse it →</a></li>
