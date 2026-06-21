@@ -27,20 +27,20 @@ description: Olaf Krasicki-Freund — DevOps and platform engineering leader, 30
     "move fast and break things" is not on the table and the audit trail has to be
     real.</p>
 
-    <h2>What I'm doing now</h2>
+    <h2>What I've been doing here</h2>
 
     <p>Two main engagements. At <strong>Jefferies</strong>, a US investment bank,
-    I'm leading the migration of six business units off Bitbucket and Bamboo onto
+    I led the migration of six business units off Bitbucket and Bamboo onto
     GitHub Enterprise and Actions — reusable workflow templates across Maven,
     Gradle, .NET, Python and Node, self-hosted runners on AKS, and the GitHub
-    Enterprise governance written as Terraform so it's reviewable instead of a
+    Enterprise governance written as Terraform so it was reviewable instead of a
     pile of console clicks. The bit I'm proudest of is the boring bit: production
     Bamboo pipelines cut over to Actions with nobody noticing.</p>
 
-    <p>At the <strong>National Energy System Operator</strong> I'm leading a team
+    <p>At the <strong>National Energy System Operator</strong> I led a team
     building Backstage as an internal developer platform — self-service
     scaffolding, golden-path templates, and one place to find who owns what. The
-    work is as much about defining the operating model as writing the code.</p>
+    work was as much about defining the operating model as writing the code.</p>
 
     <h2>How I work</h2>
 
