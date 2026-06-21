@@ -26,12 +26,12 @@ description: >-
   <h2>Selected work</h2>
   <p class="section-lede">A few things I've designed, written, and shipped.</p>
   <div class="card-grid">
-    <a class="card" href="{{ '/work/#sarc' | relative_url }}">
+    <a class="card" href="{{ '/sarc/' | relative_url }}">
       <span class="tag">Multi-cloud · Compliance</span>
       <h3>SARC</h3>
       <p>A compliance pipeline that ships the same code to AWS, Azure, GCP and a
       laptop k3d cluster from one switch — wiring ServiceNow, Kosli and three CI
-      platforms into one auditable flow.</p>
+      platforms into one auditable flow. <strong>See the full showcase →</strong></p>
     </a>
     <a class="card" href="{{ '/work/#factory' | relative_url }}">
       <span class="tag">Open source · AI agents</span>

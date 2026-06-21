@@ -64,7 +64,8 @@ description: Projects and platforms Olaf Krasicki-Freund has designed and built.
     runs to 37 screens, with real-time timeline updates over server-sent events and
     a pair of Claude MCP servers (Kosli + ServiceNow) so you can ask the compliance
     state of a commit in plain English.
-    → <a href="https://sarc-6f4a6f.gitlab.io/" rel="noopener">see the SARC walkthrough</a></p>
+    → <a href="{{ '/sarc/' | relative_url }}">the full SARC showcase</a>
+    · <a href="https://sarc-6f4a6f.gitlab.io/" rel="noopener">the live walkthrough</a></p>
     </div>
 
     <div class="project">
