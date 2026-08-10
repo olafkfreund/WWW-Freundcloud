@@ -1,7 +1,7 @@
 # GitBook -> Jekyll conversion report
 
 wiki:   /mnt/data/Source/wiki
-output: /home/olafkfreund/Source/GitHub/www-freundcloud/kb
+output: /mnt/data/Source-home/GitHub/www-freundcloud/kb
 
 ## Counts
   pages: 720
@@ -11,7 +11,7 @@ output: /home/olafkfreund/Source/GitHub/www-freundcloud/kb
   images_rewritten: 40
   readme_collisions: 0
 
-## Audit findings (52)
+## Audit findings (51)
 BROKEN LINK in pages/testing/e2e-testing/e2e-testing-methods.md: -> pages/testing/e2e-testing/e2e-testing-methods.md
 BROKEN LINK in pages/testing/e2e-testing/README.md: -> pages/testing/e2e-testing/README.md
 BROKEN LINK in pages/containers/kubernetes/README.md: -> ../../should-learn/kubernetes/troubleshooting/README.md
@@ -32,7 +32,6 @@ BROKEN LINK in pages/llm/copilot/README.md: -> infrastructure-deployment.md
 BROKEN LINK in pages/llm/copilot/README.md: -> editor-integration.md
 BROKEN LINK in pages/llm/copilot/README.md: -> custom-instructions.md
 BROKEN LINK in pages/llm/copilot/README.md: -> project-roles.md
-BROKEN LINK in pages/showcase/README.md: -> ../about-me.md#recent-projects
 BROKEN LINK in pages/reference/tool-decision-guides.md: -> pages/reference/tool-comparison.md
 BROKEN LINK in pages/terraform/README.md: -> ../iac/README.md
 BROKEN LINK in pages/terraform/README.md: -> ../../group-1/bicep/README.md

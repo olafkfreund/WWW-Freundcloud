@@ -7,9 +7,9 @@ description: ">-"
 
 > **The compliance pipeline platform that runs the same way on AWS, Azure, GCP, and a laptop.**
 
-Synechron ARC (internally **SARC**) is a customer demo and reference platform that wires **ServiceNow + Kosli + GitLab / GitHub / Azure DevOps** into a single, auditable delivery pipeline — deployable to **AWS EKS, Azure AKS, GCP GKE, or local k3d** from one repository with a single `TARGET_CLOUD` environment variable. OpenShift (ROSA HCP) is a fifth, read-only observable target inside the portal.
+Synechron ARC (internally **SARC**) is a customer demo and reference platform that wires **ServiceNow + Fides + GitLab / GitHub / Azure DevOps** into a single, auditable delivery pipeline — deployable to **AWS EKS, Azure AKS, GCP GKE, or local k3d** from one repository with a single `TARGET_CLOUD` environment variable. OpenShift (ROSA HCP) is a fifth, read-only observable target inside the portal.
 
-The deployable workload is the CNCF [podtato-head](https://github.com/cncf/podtato-head) microservice mesh; the value is the compliance pipeline around it — and the **ARC-portal**, a Next.js DevSecOps control plane that stitches every signal (CI status, scans, change requests, SBOMs, Kosli attestations, CMDB CIs, costs, AI guardrails) into one screen.
+The deployable workload is the CNCF [podtato-head](https://github.com/cncf/podtato-head) microservice mesh; the value is the compliance pipeline around it — and the **ARC-portal**, a Next.js DevSecOps control plane that stitches every signal (CI status, scans, change requests, SBOMs, Fides attestations, CMDB CIs, costs, AI guardrails) into one screen.
 
 ## At a glance
 
@@ -51,7 +51,7 @@ ARC answers all four with a single pipeline that produces the same evidence on e
             |                                       |          |
             |                                       v          |
             |                                  +---------+     |
-            |                                  |  Kosli  |     |
+            |                                  |  Fides  |     |
             |                                  +----+----+     |
             |                                       |          |
             |                  +----------+         |          |
@@ -86,7 +86,7 @@ ARC answers all four with a single pipeline that produces the same evidence on e
                    +-----------------+
 ```
 
-Every box on the path emits a **Kosli attestation**, every promotion creates a **ServiceNow change request**, and the **ARC-portal** subscribes to all of it and renders the unified picture.
+Every box on the path emits a **Fides attestation**, every promotion creates a **ServiceNow change request**, and the **ARC-portal** subscribes to all of it and renders the unified picture.
 
 ## The one knob — `TARGET_CLOUD`
 
@@ -101,7 +101,7 @@ export TARGET_CLOUD=aws       # or azure | gcp | k3d
 | `terraform -chdir=infra/${TARGET_CLOUD}`                         | Which cluster + identity stack runs                                                                                     |
 | `configure-kubectl` CI step                                      | Which cloud CLI authenticates kubectl                                                                                   |
 | `helm upgrade --values apps/<chart>/values-${TARGET_CLOUD}.yaml` | Which cloud-specific overlay applies — ingress class, TLS issuer, external-secrets backend, managed-identity annotation |
-| Kosli environment name                                           | `${TARGET_CLOUD}-arc-${env}` — 12 environments across 4 clouds, all feeding one flow `arc-pipeline`                     |
+| Fides environment name                                           | `${TARGET_CLOUD}-karc-${env}` — 12 environments across 4 clouds, all feeding one flow `karc-pipeline`                     |
 
 What stays identical across clouds: `ingress-nginx`, `cert-manager`, `external-secrets`, the same Helm charts, the same `just` recipes, the same `kubectl` commands during a demo. What diverges, by necessity: identity federation (IRSA / Workload Identity / WI Federation), secret-store backend, managed Postgres + Redis, network primitives.
 
@@ -195,7 +195,7 @@ Complete component inventory per deployed service, CycloneDX + SPDX, SHA-256 ver
 <div class="tab-panel" markdown="1">
 ![Vulnerabilities](../../img/assets/images/showcase/synechron-arc/31-vulnerabilities.png)
 
-7-column tracked view with SLA folded into one cell (Critical 15d / High 30d / Medium 60d / Low 90d), priority KPI tiles, URL-persisted filters, and a row drawer with CVE/NVD/OSV advisory links, SBOM component, Kosli attestation, AskAi popover, agent-fix dispatch, and impacted compliance controls.
+7-column tracked view with SLA folded into one cell (Critical 15d / High 30d / Medium 60d / Low 90d), priority KPI tiles, URL-persisted filters, and a row drawer with CVE/NVD/OSV advisory links, SBOM component, Fides attestation, AskAi popover, agent-fix dispatch, and impacted compliance controls.
 </div>
 <div class="tab-panel" markdown="1">
 ![Vulnerability burndown](../../img/assets/images/showcase/synechron-arc/32-vuln-burndown.png)
@@ -209,10 +209,10 @@ SAST, dependency, container, secret, IaC, and DAST findings aggregated from GitL
 </div>
 </div>
 
-### Compliance, risk, control mapping, policies, Kosli, evidence export
+### Compliance, risk, control mapping, policies, Fides, evidence export
 
 <div class="tabs">
-<div class="tab-buttons"><button class="active">Compliance</button><button class="">Risk</button><button class="">Control mapping</button><button class="">Policies</button><button class="">Kosli</button><button class="">Evidence export</button></div>
+<div class="tab-buttons"><button class="active">Compliance</button><button class="">Risk</button><button class="">Control mapping</button><button class="">Policies</button><button class="">Fides</button><button class="">Evidence export</button></div>
 <div class="tab-panel active" markdown="1">
 ![Compliance](../../img/assets/images/showcase/synechron-arc/40-compliance.png)
 
@@ -231,17 +231,17 @@ Per-deployment risk score 0–100 from the attestation graph; drives auto-approv
 <div class="tab-panel" markdown="1">
 ![Policies](../../img/assets/images/showcase/synechron-arc/43-policies.png)
 
-Kosli + OPA policies with enforcement scope, last-evaluation result, and version history.
+Fides + OPA policies with enforcement scope, last-evaluation result, and version history.
 </div>
 <div class="tab-panel" markdown="1">
-![Kosli](../../img/assets/images/showcase/synechron-arc/44-kosli.png)
+![Fides](../../img/assets/images/showcase/synechron-arc/44-fides.png)
 
-Live view of the `arc-pipeline` flow across 12 cloud × env environments — artifact attestations, deployment receipts, policy verdicts.
+Live view of the `karc-pipeline` flow across 12 cloud × env environments — artifact attestations, deployment receipts, policy verdicts.
 </div>
 <div class="tab-panel" markdown="1">
 ![Evidence export](../../img/assets/images/showcase/synechron-arc/45-evidence-export.png)
 
-One-button SOC 2 evidence package with date-range + framework selector. Packages every attestation, SBOM, audit log entry, Kosli trail, CR, and policy result into a canonical-JSON envelope, per-tenant rate-limited.
+One-button SOC 2 evidence package with date-range + framework selector. Packages every attestation, SBOM, audit log entry, Fides trail, CR, and policy result into a canonical-JSON envelope, per-tenant rate-limited.
 </div>
 </div>
 
@@ -273,7 +273,7 @@ Live status across all configured clusters — node health, control-plane reacha
 <div class="tab-panel" markdown="1">
 ![ArgoCD](../../img/assets/images/showcase/synechron-arc/61-argocd.png)
 
-Multi-cluster GitOps with live SSE sync status, PreSync (Kosli assert + ServiceNow CR) and PostSync (Kosli report + DAST QA) hooks.
+Multi-cluster GitOps with live SSE sync status, PreSync (Fides assert + ServiceNow CR) and PostSync (Fides report + DAST QA) hooks.
 </div>
 <div class="tab-panel" markdown="1">
 ![Timeline](../../img/assets/images/showcase/synechron-arc/62-timeline.png)
@@ -370,14 +370,14 @@ End-to-end, an ARC delivery from issue to production:
 2. **Branch from main** — protected branch, signed commits, required CI status.
 3. **Pre-commit hooks** — yamllint, shellcheck, tfsec, checkov, gitleaks. The same checks the CI runs.
 4. **Push triggers validate** — terraform validate matrix × 3 clouds, helm lint + template matrix × 2 charts × 3 clouds.
-5. **Build + scan** — container image built, SAST + dependency + container + IaC + secret scans run, **Kosli artifact attestation** emitted with digest + scan results.
+5. **Build + scan** — container image built, SAST + dependency + container + IaC + secret scans run, **Fides artifact attestation** emitted with digest + scan results.
 6. **Deploy to dev** — Helm install into `arc-dev` on the chosen `TARGET_CLOUD`. Portal lights up with the new artefact.
-7. **Open MR/PR** — full evidence on the review surface: scans, SBOM, Kosli chain. CODEOWNERS gates merge; Kosli policy gate confirms attestations are present.
+7. **Open MR/PR** — full evidence on the review surface: scans, SBOM, Fides chain. CODEOWNERS gates merge; Fides policy gate confirms attestations are present.
 8. **Merge** — kicks off the parallel mirror jobs (GitLab → GitHub + ADO) and the QA promotion path.
-9. **Promote to QA** — `scripts/ci/promote.sh` generates release notes, computes Kosli risk score, creates ServiceNow CR with 13 custom fields, attaches SBOM + SARIF, **auto-approves if risk ≤ 5**, otherwise routes to a human.
+9. **Promote to QA** — `scripts/ci/promote.sh` generates release notes, computes Fides risk score, creates ServiceNow CR with 13 custom fields, attaches SBOM + SARIF, **auto-approves if risk ≤ 5**, otherwise routes to a human.
 10. **Verify in QA** — ArgoCD PostSync triggers a ZAP DAST scan; findings flow back to the portal.
 11. **Promote to prod** — **always manual approval** in ServiceNow, even for risk-zero. CR enriched with production evidence bundle (bulk attestation upload, control-mapping snapshot, SBOM hash chain).
-12. **Verify in prod** — Kosli environment receipts, **CMDB CI auto-updated via the IRE API**, DORA lead-time clock recorded.
+12. **Verify in prod** — Fides environment receipts, **CMDB CI auto-updated via the IRE API**, DORA lead-time clock recorded.
 
 End-to-end: one issue, one branch, one merge, three environments, six attestations, two change requests (auto-approved QA, human-approved prod), a refreshed CMDB record, and a cryptographic chain of evidence an auditor can verify in seconds.
 
@@ -425,13 +425,13 @@ The same `scripts/ci/*.sh` shell modules are called by all three platforms — d
 | System                                                                 | Purpose                                                                                                                     |
 | ---------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
 | **ServiceNow**                                                         | Change Requests with 13 custom fields, Problems, CMDB sync (including OpenShift), `pa_dashboards`, multi-env approval gates |
-| **Kosli**                                                              | Artifact + deployment attestations, policy enforcement, flow `arc-pipeline`, 12 envs across 4 clouds                        |
+| **Fides**                                                              | Artifact + deployment attestations, policy enforcement, flow `karc-pipeline`, 12 envs across 4 clouds                        |
 | **GitLab (source of truth)**                                           | Primary CI, Issues, MR flow                                                                                                 |
 | **GitHub Actions**                                                     | Full pipeline parity, OIDC to all clouds                                                                                    |
 | **Azure DevOps**                                                       | Parity in progress                                                                                                          |
 | **OpenShift (ROSA HCP)**                                               | Read-only CMDB + Builds + Routes + ImageStreams + ClusterOperators                                                          |
 | **Tekton**                                                             | Multi-cluster PipelineRuns dashboard + live SSE + step-log streaming                                                        |
-| **ArgoCD**                                                             | Multi-cluster GitOps with PreSync (Kosli assert + ServiceNow CR) and PostSync (Kosli report + DAST QA) hooks                |
+| **ArgoCD**                                                             | Multi-cluster GitOps with PreSync (Fides assert + ServiceNow CR) and PostSync (Fides report + DAST QA) hooks                |
 | **Wiz / Snyk / SonarQube / GitGuardian / Trivy**                       | CVE + scan intake for portal risk dashboards                                                                                |
 | **AWS Cost Explorer / Azure Cost Mgmt / GCP Cloud Billing / Kubecost** | Per-service cost + chargeback + cost-vuln correlation                                                                       |
 | **Anthropic / Azure OpenAI / Bedrock / Vertex / on-prem**              | LLM provider for AskAi and natural-language search                                                                          |
@@ -448,7 +448,7 @@ The same `scripts/ci/*.sh` shell modules are called by all three platforms — d
 | **Data**                 | Postgres 16.4 (cloud-managed in prod, bitnami subchart in dev/k3d), Redis                            |
 | **Infrastructure**       | Terraform + OpenTofu, Helm, Kustomize, ArgoCD, Tekton, ingress-nginx, cert-manager, external-secrets |
 | **CI**                   | GitLab CI templates, GitHub Actions reusable workflows, Azure Pipelines                              |
-| **Attestation + policy** | Kosli, OPA, cosign, Trivy, syft, grype                                                               |
+| **Attestation + policy** | Fides, OPA, cosign, Trivy, syft, grype                                                               |
 | **Compliance**           | ServiceNow CR + Problems + CMDB (IRE API), SOC 2 evidence export                                     |
 | **AI**                   | Multi-provider LLM, MCP server, Llama Guard 3, Microsoft Presidio, cross-encoder reranker            |
 | **Dev environment**      | Nix flake (`nix develop` or `direnv allow`), `just` recipes, k3d, pre-commit hooks                   |
