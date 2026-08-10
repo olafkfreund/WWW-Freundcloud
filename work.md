@@ -15,9 +15,9 @@ description: Projects and platforms Olaf Krasicki-Freund has designed and built.
     <div class="project">
     <h2 id="sarc">SARC — multi-cloud compliance pipeline</h2>
     <p><span class="tag">Product owner &amp; lead architect</span></p>
-    <p>SARC (Synechron ARC) is an orchestration layer that sits on top of Kosli and
-    ServiceNow and turns regulated software delivery into something you can actually
-    audit at a glance. Instead of spreadsheets and manual evidence-gathering, it
+    <p>SARC (Synechron ARC) is an orchestration layer that sits on top of ServiceNow
+    and its own Fides evidence ledger, and turns regulated software delivery into
+    something you can actually audit at a glance. Instead of spreadsheets and manual evidence-gathering, it
     manages every framework a regulated shop cares about — DORA, PSD2, ISO 27001,
     SOC 2, SOX, NIST 800-53, PCI-DSS — from one place. I own the architecture and
     most of the build.</p>
@@ -56,15 +56,15 @@ description: Projects and platforms Olaf Krasicki-Freund has designed and built.
     <p>The engineering trick that makes it demo well: the same repository deploys to
     AWS (EKS), Azure (AKS), GCP (GKE), OpenShift (ROSA) or a local k3d cluster off a
     single <code>TARGET_CLOUD</code> switch that drives the Terraform, the kubectl
-    auth, the Helm values and the Kosli environment naming — each cloud using its
+    auth, the Helm values and the environment naming — each cloud using its
     own native data services and identity federation rather than a
     lowest-common-denominator fudge. GitLab is the source of truth, mirrored to
     GitHub and Azure DevOps on every green pipeline; images are built in-house,
-    scanned with trivy, signed with cosign and attested through Kosli. The portal
+    scanned with trivy, signed with cosign and attested through Fides. The portal
     runs to 37 screens, with real-time timeline updates over server-sent events and
-    a pair of Claude MCP servers (Kosli + ServiceNow) so you can ask the compliance
-    state of a commit in plain English.
-    → <a href="{{ '/sarc/' | relative_url }}">the full SARC showcase</a>
+    Claude MCP servers so you can ask the compliance state of a commit in plain
+    English.
+    → <a href="{{ '/showcase/#sarc' | relative_url }}">the full SARC showcase</a>
     · <a href="https://sarc-6f4a6f.gitlab.io/" rel="noopener">the live walkthrough</a></p>
     </div>
 
@@ -342,7 +342,7 @@ description: Projects and platforms Olaf Krasicki-Freund has designed and built.
       <li><strong><a href="https://muninn.freundcloud.com" rel="noopener">Muninn</a></strong>
       — a zero-backend, Gruvbox GitHub portal and WebMCP playground for local browser
       agents.</li>
-      <li><strong>MCP servers</strong> for Kosli and ServiceNow, shipped inside SARC —
+      <li><strong>MCP servers</strong> for ServiceNow and the Fides evidence ledger, shipped inside SARC —
       real-world MCP in a CI/compliance context.</li>
       <li><strong>This knowledge base</strong> — <em>DevOps Help for Cloud Platform
       Engineers</em>: multi-cloud architecture, FinOps, NixOS, AIOps and Service

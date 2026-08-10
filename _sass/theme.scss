@@ -48,7 +48,8 @@
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+// scroll-padding keeps #anchor targets clear of the sticky topnav.
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; -webkit-text-size-adjust: 100%; }
 
 body {
   background: var(--bg);
