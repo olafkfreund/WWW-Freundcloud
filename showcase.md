@@ -25,36 +25,88 @@ description: >-
 </section>
 
 <section class="section">
-  <h2>The short version</h2>
-  <p class="section-lede">Three families, plus the things I built for myself.</p>
+  <h2>All twelve, at a glance</h2>
+  <p class="section-lede">One line each — click through to the full write-up and screenshots.</p>
   <div class="card-grid">
     <a class="card" href="#sarc">
-      <span class="tag">Compliance &amp; evidence</span>
-      <h3>SARC · Fides · DORA Dashboard</h3>
-      <p>Regulated delivery you can actually audit — a tamper-evident evidence
-      ledger, risk-scored change gates, and delivery metrics that never leave
-      your cloud.</p>
+      <span class="tag">Compliance · multi-cloud</span>
+      <h3>SARC</h3>
+      <p>Turns "are we compliant?" into a question the system answers with live
+      evidence. Risk-scored change gates, one-click audit evidence for eight
+      frameworks, identical on any cloud.</p>
+    </a>
+    <a class="card" href="#fides">
+      <span class="tag">Evidence ledger · Go</span>
+      <h3>Fides</h3>
+      <p>A tamper-evident record of every state change in the SDLC. Provenance
+      from commit to running runtime, four-eyes approval, WORM retention — the
+      ledger inside SARC, and standalone.</p>
     </a>
     <a class="card" href="#factory">
       <span class="tag">Governed AI delivery</span>
-      <h3>The Factory suite · Bifrost</h3>
-      <p>AI writes the code; someone still has to be accountable for it. A
-      four-stage pipeline with a human gate at every seam, and a review-first
-      migration engine.</p>
+      <h3>The Factory suite</h3>
+      <p>Four products, one idea: AI can write the code, but someone is still
+      accountable. Plan, build, test and watch — with a human gate at every
+      seam.</p>
+    </a>
+    <a class="card" href="#bifrost">
+      <span class="tag">Migration · Rust</span>
+      <h3>Bifrost</h3>
+      <p>The last 10% of an Azure DevOps → GitHub Actions migration that the
+      importer leaves to you. Review-first, explainable risk, signed
+      attestations, air-gap capable.</p>
     </a>
     <a class="card" href="#janus">
-      <span class="tag">Agents &amp; gateways</span>
-      <h3>Janus · Myrmex Hive · ravn-agents</h3>
-      <p>MCP where security teams will actually allow it — zero inbound ports,
-      signed commands, fail-closed auth, and AI that explains but never
-      decides.</p>
+      <span class="tag">MCP gateway · Go</span>
+      <h3>Janus</h3>
+      <p>Any REST API as MCP tools — built to survive the security review.
+      Fail-closed secrets, SSRF egress guard, tool-hash pinning, DLP redaction
+      before the LLM ever sees the data.</p>
+    </a>
+    <a class="card" href="#myrmex">
+      <span class="tag">Orchestration · Go</span>
+      <h3>Myrmex Hive</h3>
+      <p>Fleet management with <em>zero</em> inbound ports — agents dial out over
+      SSH, and there's no shell to inject into because commands never touch
+      one.</p>
+    </a>
+    <a class="card" href="#ravn">
+      <span class="tag">Self-healing · Rust</span>
+      <h3>ravn-agents</h3>
+      <p>Detects and fixes Linux fleet problems without phoning home.
+      Deterministic rules, Ed25519-signed remediation, and a local model that
+      explains but never decides.</p>
+    </a>
+    <a class="card" href="#dora">
+      <span class="tag">Delivery metrics · Next.js</span>
+      <h3>DORA Dashboard</h3>
+      <p>DORA-4 plus the metrics teams actually argue about, unified from GitHub
+      and Jira behind your own SSO. No third-party data egress, ever.</p>
     </a>
     <a class="card" href="#skillai">
-      <span class="tag">Products &amp; tools</span>
-      <h3>SkillAi · Odin · Muninn · lxconnect</h3>
-      <p>A recruiting platform in production, a homelab control room, a GitHub
-      portal for browser-native agents, and an Android phone turned into an MCP
-      tool surface.</p>
+      <span class="tag">AI recruiting · in production</span>
+      <h3>SkillAi</h3>
+      <p>Answers "who are the best candidates, and why?" in seconds instead of a
+      keyword match. Running as the backbone of hiring for HSBC's Kraków hub.</p>
+    </a>
+    <a class="card" href="#odin">
+      <span class="tag">Homelab · React + FastAPI</span>
+      <h3>Odin</h3>
+      <p>A control room for a NixOS fleet — host vitals, service health, k3d and
+      ArgoCD state, GPU and LLM cost analytics, all in one Nix-declared
+      dashboard.</p>
+    </a>
+    <a class="card" href="#muninn">
+      <span class="tag">WebMCP · zero backend</span>
+      <h3>Muninn</h3>
+      <p>A Gruvbox GitHub portal that AI agents can drive from inside your
+      browser tab — a real app that doubles as a WebMCP playground.</p>
+    </a>
+    <a class="card" href="#lxconnect">
+      <span class="tag">Android · MCP · Nix</span>
+      <h3>lxconnect</h3>
+      <p>Runs an MCP server <em>on your phone</em>, so an agent on your laptop can
+      read notifications, open deep links and drive apps as ordinary tools.</p>
     </a>
   </div>
 </section>
@@ -77,15 +129,17 @@ description: >-
 
   <figure class="shot">
     <img src="{{ '/assets/img/work/sarc-dashboard.png' | relative_url }}"
-         alt="SARC operator dashboard showing pipelines, change requests and compliance state" loading="lazy">
-    <figcaption>The operator dashboard — pipelines, change requests and compliance state in one view.</figcaption>
+         alt="SARC portal dashboard showing compliance, DORA metrics, vulnerabilities and environment state" loading="lazy">
+    <figcaption>The dashboard — compliance posture, DORA metrics, vulnerabilities, SBOM coverage and every environment, live.</figcaption>
   </figure>
 
-  <p>Every change gets a <strong>5-axis risk clearance score</strong> derived from
-  live attestations and written straight back onto the ServiceNow change request.
-  Low-risk changes clear themselves; only the ones that matter land on a human's
-  desk. That single number is what actually shrinks the CAB queue — and no other
-  system in the stack computes it.</p>
+  <p>Every change gets a <strong>5-axis risk clearance score</strong> — artifact,
+  scope, attestation, temporal and code — derived from live attestations and
+  written straight back onto the ServiceNow change request, each axis showing the
+  controls it maps to (NIST 800-30, PCI-DSS 4.0, ISO 27005, DORA). Low-risk
+  changes clear themselves; only the ones that matter land on a human's desk.
+  That single number is what actually shrinks the CAB queue — and no other system
+  in the stack computes it.</p>
   <p>Auditors don't get a binder. They get a time-boxed, magic-link session,
   read-only, into the <em>same</em> dashboard the change board uses, with one-click
   evidence export for <strong>SOC 2, ISO 27001, DORA, PSD2, NIST 800-53, PCI-DSS,
@@ -94,16 +148,16 @@ description: >-
 
   <div class="shot-grid">
     <figure>
-      <img src="{{ '/assets/img/work/sarc-risk.png' | relative_url }}" alt="SARC 5-axis risk clearance score for a change request" loading="lazy">
-      <figcaption>5-axis risk clearance per change</figcaption>
+      <img src="{{ '/assets/img/work/sarc-risk.png' | relative_url }}" alt="SARC deployment clearance with the five risk axes broken down" loading="lazy">
+      <figcaption>Deployment clearance, axis by axis</figcaption>
     </figure>
     <figure>
-      <img src="{{ '/assets/img/work/sarc-compliance.png' | relative_url }}" alt="SARC compliance dashboard with framework coverage" loading="lazy">
-      <figcaption>Multi-framework coverage</figcaption>
+      <img src="{{ '/assets/img/work/sarc-compliance.png' | relative_url }}" alt="SARC compliance status per framework" loading="lazy">
+      <figcaption>Per-framework control posture</figcaption>
     </figure>
     <figure>
-      <img src="{{ '/assets/img/work/sarc-clusters.png' | relative_url }}" alt="SARC multi-cluster overview across clouds" loading="lazy">
-      <figcaption>Multi-cluster, multi-cloud overview</figcaption>
+      <img src="{{ '/assets/img/work/sarc-clusters.png' | relative_url }}" alt="SARC live Kubernetes cluster topology" loading="lazy">
+      <figcaption>Live cluster topology, any cloud</figcaption>
     </figure>
   </div>
 
