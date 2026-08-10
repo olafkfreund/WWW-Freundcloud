@@ -96,18 +96,18 @@ description: Projects and platforms Olaf Krasicki-Freund has designed and built.
 
     <figure class="shot">
       <img src="{{ '/assets/img/work/aifactory-kanban.png' | relative_url }}"
-           alt="AIFactory kanban board of tasks" loading="lazy">
-      <figcaption>AIFactory — issues moving through plan, code and QA.</figcaption>
+           alt="AIFactory board with backlog, in progress, AI review, human review and done columns" loading="lazy">
+      <figcaption>AIFactory — work moving through backlog, coding, AI review, human review and done.</figcaption>
     </figure>
 
     <div class="shot-grid">
       <figure>
-        <img src="{{ '/assets/img/work/aifactory-plan.png' | relative_url }}" alt="AIFactory task plan detail" loading="lazy">
-        <figcaption>A planner's breakdown of a task</figcaption>
+        <img src="{{ '/assets/img/work/aifactory-plan.png' | relative_url }}" alt="AIFactory task overview with subtasks and progress" loading="lazy">
+        <figcaption>A task, broken into subtasks</figcaption>
       </figure>
       <figure>
-        <img src="{{ '/assets/img/work/aifactory-console.png' | relative_url }}" alt="AIFactory live agent console" loading="lazy">
-        <figcaption>Live agent console</figcaption>
+        <img src="{{ '/assets/img/work/aifactory-console.png' | relative_url }}" alt="AIFactory live agent console mirroring the agent terminal" loading="lazy">
+        <figcaption>Live console — a read-only mirror of the agent's terminal</figcaption>
       </figure>
     </div>
 

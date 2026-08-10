@@ -247,8 +247,8 @@ description: >-
 
   <figure class="shot">
     <img src="{{ '/assets/img/showcase/factory-cockpit.png' | relative_url }}"
-         alt="CFactory mission control cockpit across the PARR pipeline" loading="lazy">
-    <figcaption>CFactory — one pane of glass across plan, code and test.</figcaption>
+         alt="CFactory mission control showing work items, events, spend and a live event feed" loading="lazy">
+    <figcaption>CFactory mission control — the plan → code → test strip, anomalies, live agents and spend, in one pane.</figcaption>
   </figure>
 
   <ul>
@@ -270,16 +270,16 @@ description: >-
 
   <div class="shot-grid">
     <figure>
-      <img src="{{ '/assets/img/showcase/factory-plan.png' | relative_url }}" alt="PFactory planning portal with governed plan gates" loading="lazy">
-      <figcaption>PFactory — plan, gated and signed</figcaption>
+      <img src="{{ '/assets/img/showcase/factory-plan.png' | relative_url }}" alt="PFactory planning portal showing acceptance criteria and gate results" loading="lazy">
+      <figcaption>PFactory — acceptance criteria, gates passed</figcaption>
     </figure>
     <figure>
-      <img src="{{ '/assets/img/showcase/factory-build.png' | relative_url }}" alt="AIFactory build workspace with tasks in progress" loading="lazy">
-      <figcaption>AIFactory — the build workspace</figcaption>
+      <img src="{{ '/assets/img/showcase/factory-build.png' | relative_url }}" alt="AIFactory human review gate with merge, create PR and request changes" loading="lazy">
+      <figcaption>AIFactory — the human review gate</figcaption>
     </figure>
     <figure>
-      <img src="{{ '/assets/img/showcase/factory-test.png' | relative_url }}" alt="TFactory autonomous test generation and results" loading="lazy">
-      <figcaption>TFactory — tests it wrote itself</figcaption>
+      <img src="{{ '/assets/img/showcase/factory-test.png' | relative_url }}" alt="TFactory visual inspection reports with pass and attention verdicts" loading="lazy">
+      <figcaption>TFactory — graded verdicts per run</figcaption>
     </figure>
   </div>
 

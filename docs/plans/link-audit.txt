@@ -4,10 +4,10 @@ wiki:   /mnt/data/Source/wiki
 output: /mnt/data/Source-home/GitHub/www-freundcloud/kb
 
 ## Counts
-  pages: 720
+  pages: 727
   block_files: 63
   assets: 44
-  links_rewritten: 307
+  links_rewritten: 347
   images_rewritten: 40
   readme_collisions: 0
 
