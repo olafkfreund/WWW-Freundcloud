@@ -16,7 +16,8 @@ description: >-
     standing up a Backstage developer platform for the UK's energy system operator.
   </p>
   <div class="hero-cta">
-    <a class="btn btn-primary" href="{{ '/work/' | relative_url }}">See what I've built</a>
+    <a class="btn btn-primary" href="{{ '/showcase/' | relative_url }}">See what I've built</a>
+    <a class="btn btn-secondary" href="{{ '/work/' | relative_url }}">Client work</a>
     <a class="btn btn-secondary" href="{{ '/cv/' | relative_url }}">Read the CV</a>
     <a class="btn btn-secondary" href="{{ '/kb/' | relative_url }}">Knowledge base</a>
   </div>
@@ -26,12 +27,20 @@ description: >-
   <h2>Selected work</h2>
   <p class="section-lede">A few things I've designed, written, and shipped.</p>
   <div class="card-grid">
-    <a class="card" href="{{ '/sarc/' | relative_url }}">
+    <a class="card" href="{{ '/showcase/#sarc' | relative_url }}">
       <span class="tag">Multi-cloud · Compliance</span>
       <h3>SARC</h3>
       <p>A compliance pipeline that ships the same code to AWS, Azure, GCP and a
-      laptop k3d cluster from one switch — wiring ServiceNow, Kosli and three CI
-      platforms into one auditable flow. <strong>See the full showcase →</strong></p>
+      laptop k3d cluster from one switch — wiring ServiceNow, the Fides evidence
+      ledger and three CI platforms into one auditable flow.
+      <strong>See the full showcase →</strong></p>
+    </a>
+    <a class="card" href="{{ '/showcase/' | relative_url }}">
+      <span class="tag">Everything, with screenshots</span>
+      <h3>Project showcase</h3>
+      <p>Twelve systems in one place — SARC, Fides, the Factory suite, Bifrost,
+      Janus, Myrmex Hive, ravn-agents, DORA Dashboard, SkillAi, Odin, Muninn and
+      lxconnect. <strong>Browse the showcase →</strong></p>
     </a>
     <a class="card" href="{{ '/work/#factory' | relative_url }}">
       <span class="tag">Open source · AI agents</span>
