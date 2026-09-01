@@ -107,8 +107,8 @@ description: >-
       <h3>nixos_config</h3>
       <p>My whole machine estate declared in Nix — multi-host flakes with a
       feature-flag system, Agenix secrets, Home Manager and a custom CLI. Plus
-      <a href="{{ '/showcase/#nixarchy' | relative_url }}">nixarchy</a>, which vendors
-      the whole Omarchy desktop onto NixOS with its menus rewired to Nix.</p>
+      <strong>nixarchy</strong>, which vendors the whole Omarchy desktop onto NixOS
+      with its menus rewired to Nix.</p>
     </a>
     <a class="card" href="{{ '/work/#lxconnect' | relative_url }}">
       <span class="tag">Open source · Linux desktop</span>
