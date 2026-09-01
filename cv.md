@@ -19,12 +19,14 @@ description: Curriculum vitae — Olaf Krasicki-Freund, DevOps & Platform Engine
     <h2>Profile</h2>
     <p>DevOps and platform engineering leader with 30 years of hands-on experience
     delivering large-scale cloud, CI/CD and developer-experience programmes for
-    tier-1 financial services and regulated public-sector clients. Currently
-    leading a Bitbucket + Bamboo to GitHub Enterprise + GitHub Actions migration
-    across six business units at a US investment bank, and rolling out a
-    Backstage-based internal developer platform for the UK's National Energy System
-    Operator. Equally comfortable architecting the platform, writing the Terraform,
-    presenting the SOW to the CTO, and shipping the product.</p>
+    tier-1 financial services and regulated public-sector clients. Currently product
+    owner and lead architect on SARC — a self-hosted, tamper-evident compliance and
+    evidence platform for regulated delivery, spanning multi-cloud Kubernetes, three
+    CI platforms and ServiceNow. Previously led a Bitbucket + Bamboo to GitHub
+    Enterprise + GitHub Actions migration across six business units at a US investment
+    bank, and rolled out a Backstage-based internal developer platform for the UK's
+    National Energy System Operator. Equally comfortable architecting the platform,
+    writing the Terraform, presenting the SOW to the CTO, and shipping the product.</p>
 
     <h2>Core skills</h2>
     <ul>
@@ -54,20 +56,27 @@ description: Curriculum vitae — Olaf Krasicki-Freund, DevOps & Platform Engine
 
     <h3>Calitii (a Synechron company) · Senior DevOps &amp; Platform Architect (contract)</h3>
     <p class="text-muted">June 2025 – present · London</p>
+    <p><strong>Product owner &amp; lead architect — SARC. (current)</strong>
+    Orchestrated compliance for regulated delivery: a self-hosted, tamper-evident
+    Fides evidence ledger wired to ServiceNow and the delivery pipeline, with zero
+    SaaS egress. Control coverage across DORA, ISO 27001, SOC 2, SOX, NIST 800-53,
+    PSD2 and PCI-DSS; risk-scored change gates so a typo fix and a schema migration
+    stop getting the same 48-hour CAB review; hash-chained audit log in place of
+    quarterly evidence compilation. Single-switch deploys to AWS EKS, Azure AKS, GCP
+    GKE, ROSA OpenShift and local k3d off one Terraform and Helm shape; identical
+    pipeline on GitLab CI, GitHub Actions and Azure DevOps. A 37-screen portal with
+    an in-cluster AI assistant and MCP servers, so auditors can query evidence in
+    plain language without a cloud API key.</p>
     <p><strong>Lead DevOps &amp; migration architect — Jefferies Financial Group.</strong>
-    Leading the GitHub Enterprise migration off Bitbucket + Bamboo across six
+    Led the GitHub Enterprise migration off Bitbucket + Bamboo across six
     business units; Phase 1 reference architecture of reusable workflow templates
     and self-hosted runners on AKS; Terraform-based GitHub Enterprise governance;
     zero-downtime cutover of production Bamboo pipelines; executive SOW and C-suite
     materials.</p>
     <p><strong>Lead platform engineer — National Energy System Operator.</strong>
-    Designing and rolling out Backstage as NESO's internal developer platform;
-    defining the DevOps framework — tooling standards, environment promotion,
+    Designed and rolled out Backstage as NESO's internal developer platform;
+    defined the DevOps framework — tooling standards, environment promotion,
     branching, change control.</p>
-    <p><strong>Product owner &amp; lead architect — SARC.</strong> Synechron's
-    multi-cloud compliance demo platform; single-switch deploys across AWS, Azure,
-    GCP and k3d; the Fides evidence ledger + ServiceNow + multi-CI; Claude MCP
-    servers for natural-language compliance demos.</p>
     <p><strong>Open source — Fides, Hecate &amp; the Factory suite.</strong>
     Fides, a tamper-evident provenance and evidence ledger for the SDLC (Go);
     Hecate, the cross-environment promotion layer for FluxCD (Go); and the Factory

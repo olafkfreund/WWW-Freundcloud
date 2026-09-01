@@ -2,21 +2,24 @@
 layout: landing
 title: null
 description: >-
-  Olaf Krasicki-Freund — DevOps and Platform Engineering leader. GitHub
-  Enterprise migration, internal developer platforms, multi-cloud, and a
-  large cloud-engineering knowledge base.
+  Olaf Krasicki-Freund — DevOps and Platform Engineering leader. Self-hosted
+  compliance for regulated delivery, GitHub Enterprise migration, internal
+  developer platforms, multi-cloud, and a large cloud-engineering knowledge base.
 ---
 
 <section class="hero">
   <div class="hero-badge">▲ DevOps · Platform Engineering · 30 years in</div>
   <h1>I build the <span class="accent">platforms</span><br>other engineers build on.</h1>
   <p class="tagline">
-    I'm Olaf — a DevOps and platform engineering leader. Right now I'm moving a
-    tier-1 investment bank off Bitbucket and Bamboo onto GitHub Enterprise, and
-    standing up a Backstage developer platform for the UK's energy system operator.
+    I'm Olaf — a DevOps and platform engineering leader. Right now I'm product owner
+    and lead architect on <a href="{{ '/showcase/#sarc' | relative_url }}">SARC</a>:
+    self-hosted, tamper-evident compliance for regulated delivery — one install,
+    every framework, and nobody else holding your audit trail. Before that I moved a
+    tier-1 investment bank onto GitHub Enterprise and stood up a Backstage developer
+    platform for the UK's energy system operator.
   </p>
   <div class="hero-cta">
-    <a class="btn btn-primary" href="{{ '/showcase/' | relative_url }}">See what I've built</a>
+    <a class="btn btn-primary" href="{{ '/showcase/#sarc' | relative_url }}">See what I'm building</a>
     <a class="btn btn-secondary" href="{{ '/work/' | relative_url }}">Client work</a>
     <a class="btn btn-secondary" href="{{ '/cv/' | relative_url }}">Read the CV</a>
     <a class="btn btn-secondary" href="{{ '/kb/' | relative_url }}">Knowledge base</a>
@@ -95,9 +98,9 @@ description: >-
     <a class="card" href="{{ '/work/#jefferies' | relative_url }}">
       <span class="tag">CI/CD · Migration</span>
       <h3>GitHub Enterprise migration</h3>
-      <p>Leading six business units at a US investment bank off Bitbucket + Bamboo
-      onto GitHub Actions — reusable workflow templates, self-hosted runners on
-      AKS, and governance as Terraform instead of clicks.</p>
+      <p>Led six business units at a US investment bank off Bitbucket + Bamboo onto
+      GitHub Actions — reusable workflow templates, self-hosted runners on AKS, and
+      governance as Terraform instead of clicks. Delivered.</p>
     </a>
     <a class="card" href="{{ '/work/#nixos' | relative_url }}">
       <span class="tag">Open source · NixOS</span>

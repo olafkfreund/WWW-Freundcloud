@@ -27,9 +27,23 @@ description: Olaf Krasicki-Freund — DevOps and platform engineering leader, 30
     "move fast and break things" is not on the table and the audit trail has to be
     real.</p>
 
-    <h2>What I've been doing here</h2>
+    <h2>What I'm doing now</h2>
 
-    <p>Two main engagements. At <strong>Jefferies</strong>, a US investment bank,
+    <p>I'm product owner and lead architect on <strong>SARC</strong> — orchestrated
+    compliance for regulated delivery. The pitch is short: your evidence lives in a
+    self-hosted, tamper-evident ledger inside your own cloud, wired to ServiceNow and
+    your CI, so audit week stops being a fire drill and nobody outside your
+    infrastructure is holding your audit trail. One install covers DORA, ISO 27001,
+    SOC 2, SOX, NIST 800-53, PSD2 and PCI-DSS; the same repository deploys to AWS,
+    Azure, GCP, OpenShift or a laptop off a single switch; and it runs identically on
+    GitLab CI, GitHub Actions and Azure DevOps, so adopting it isn't a CI migration.
+    There's a <a href="https://sarc-6f4a6f.gitlab.io/" rel="noopener">public walkthrough
+    of the portal</a>, and the
+    <a href="{{ '/showcase/#sarc' | relative_url }}">full write-up here</a>.</p>
+
+    <h2>What I've been doing before that</h2>
+
+    <p>Two large engagements, both delivered. At <strong>Jefferies</strong>, a US investment bank,
     I led the migration of six business units off Bitbucket and Bamboo onto
     GitHub Enterprise and Actions — reusable workflow templates across Maven,
     Gradle, .NET, Python and Node, self-hosted runners on AKS, and the GitHub
