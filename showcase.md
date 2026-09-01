@@ -20,6 +20,7 @@ description: >-
   </p>
   <div class="hero-cta">
     <a class="btn btn-primary" href="#sarc">Start with SARC</a>
+    <a class="btn btn-secondary" href="{{ '/podcasts/' | relative_url }}">▶ Listen instead</a>
     <a class="btn btn-secondary" href="{{ '/work/' | relative_url }}">Client work &amp; roles</a>
     <a class="btn btn-secondary" href="https://github.com/olafkfreund" rel="noopener">GitHub</a>
   </div>
@@ -151,6 +152,7 @@ description: >-
   <div class="project">
   <h2 id="sarc">SARC — compliance automation for regulated delivery</h2>
   <p><span class="tag">Product owner &amp; lead architect</span> <span class="tag">Self-hosted</span></p>
+  {% include podcast.html key="sarc" %}
   <p><strong>SARC turns "are we compliant?" from a question your team answers with
   spreadsheets and screenshots into a question the system answers with live
   evidence — automatically, every time you ship.</strong></p>
@@ -219,6 +221,7 @@ description: >-
   <div class="project">
   <h2 id="fides">Fides — a tamper-evident evidence ledger for the SDLC</h2>
   <p><span class="tag">Creator · open source</span> <span class="tag">Go</span></p>
+  {% include podcast.html key="fides" %}
   <p>Named after the Roman goddess of trust and oaths, Fides records and evaluates
   <em>every</em> state change in the software delivery lifecycle as it happens, and
   turns the result into an audit-ready single source of truth. It's the evidence
@@ -273,6 +276,7 @@ description: >-
   <div class="project">
   <h2 id="hecate">Hecate — the promotion layer Flux never had</h2>
   <p><span class="tag">Creator · open source · Apache 2.0</span> <span class="tag">Go · pre-alpha</span></p>
+  {% include podcast.html key="hecate" %}
   <p>Flux makes a cluster match what is in git. It has no opinion about <strong>what
   should be in git next</strong> — so cross-environment promotion gets hand-rolled in
   CI, once per organisation, and quietly becomes the least-reviewed code in the
@@ -305,6 +309,8 @@ description: >-
   <div class="project">
   <h2 id="factory">The Factory suite — a governed pipeline for AI software delivery</h2>
   <p><span class="tag">Creator · open source</span> <span class="tag">PFactory · AIFactory · TFactory · CFactory</span></p>
+  {% include podcast.html key="factory" %}
+  {% include podcast.html key="pfactory" %}
   <p>84% of developers use AI coding tools; only 29% trust the output. The Factory
   suite is the trust layer for that gap. Four products around one idea — AI can
   write the code, but someone still has to be accountable for it — built on the
@@ -364,6 +370,7 @@ description: >-
   <div class="project">
   <h2 id="agentic-sdlc">Agentic SDLC — the playbook, as a repository that runs</h2>
   <p><span class="tag">Author · open source</span> <span class="tag">Reference implementation</span></p>
+  {% include podcast.html key="agentic-sdlc" %}
   <p>Every organisation writing an "AI in the SDLC" policy right now is writing a PDF.
   This is the same argument as a working build: seven stages, five planes, a portable
   artifact chain and an autonomy matrix — expressed as code that runs, gates that

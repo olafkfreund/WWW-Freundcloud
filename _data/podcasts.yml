@@ -1,0 +1,74 @@
+# Source of truth for the podcast episodes. The /podcasts/ page loops over this,
+# and _includes/podcast.html pulls a single entry by key for the inline players
+# on the showcase — so an episode's title and duration live in exactly one place.
+- key: sarc
+  title: "Ending the audit nightmare with SARC"
+  file: sarc.m4a
+  duration: "20:51"
+  size: "16 MB"
+  anchor: sarc
+  project: SARC
+  blurb: >-
+    Why compliance evidence belongs in a tamper-evident ledger inside your own
+    cloud rather than a SaaS token you have to trust — and what changes when the
+    CAB chair and the regulator are looking at the same dashboard.
+
+- key: fides
+  title: "Fides turns software compliance into code"
+  file: fides.m4a
+  duration: "13:39"
+  size: "10 MB"
+  anchor: fides
+  project: Fides
+  blurb: >-
+    The evidence ledger underneath SARC, on its own terms: provenance from commit
+    to running runtime, four-eyes approval, hash-chained audit log, and why
+    "we'll compile the evidence at quarter end" is the thing to kill.
+
+- key: hecate
+  title: "Hecate replaces vibes with cryptographic evidence"
+  file: hecate.m4a
+  duration: "18:58"
+  size: "14 MB"
+  anchor: hecate
+  project: Hecate
+  blurb: >-
+    Flux makes a cluster match git but has no opinion about what should be in git
+    next. What it takes to make cross-environment promotion a reviewed, evidenced
+    thing instead of hand-rolled CI nobody reads.
+
+- key: agentic-sdlc
+  title: "Governing AI agents in regulated industries"
+  file: agentic-sdlc.m4a
+  duration: "26:41"
+  size: "20 MB"
+  anchor: agentic-sdlc
+  project: Agentic SDLC
+  blurb: >-
+    The longest one, and the argument underneath all the rest: no model in the
+    gate, evidence as a by-product rather than a reconstruction, and why a gate
+    verified only by passing is indistinguishable from one that cannot fail.
+
+- key: pfactory
+  title: "Governing AI agents with PFactory blueprints"
+  file: pfactory.m4a
+  duration: "21:38"
+  size: "16 MB"
+  anchor: factory
+  project: The Factory suite
+  blurb: >-
+    The planning half of the Factory suite — taking a plan, enriching it with live
+    org and cloud context, running architecture, security and feasibility gates
+    over it, and emitting governed work an agent can actually execute.
+
+- key: factory
+  title: "Software development as an autonomous assembly line"
+  file: factory.m4a
+  duration: "21:35"
+  size: "16 MB"
+  anchor: factory
+  project: The Factory suite
+  blurb: >-
+    The whole pipeline end to end — PFactory plans it, AIFactory builds it,
+    TFactory tests it, CFactory watches it — and the human gate at every seam
+    that stops it being a machine that ships whatever it likes.

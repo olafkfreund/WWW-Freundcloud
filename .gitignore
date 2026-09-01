@@ -20,3 +20,8 @@ node_modules/
 
 # OS
 .DS_Store
+
+# NotebookLM source audio (257 kbps stereo originals).
+# The site ships re-encoded 96k mono copies in assets/audio/podcasts/;
+# these masters stay local so git history is not carrying 228 MB forever.
+/podcasts/
