@@ -314,7 +314,8 @@ a:hover { color: var(--fg); text-shadow: var(--glow-soft); }
   padding: 0.7rem 0.9rem; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
 .podcast-head .tag { margin: 0; }
 .podcast audio { display: block; width: 100%; }
-.podcast video { display: block; width: 100%; height: auto; background: #000; }
+.podcast video { display: block; width: 100%; max-width: 100%; height: auto;
+  aspect-ratio: 16 / 9; background: #000; }
 .podcast-foot { margin: 0; padding: 0.5rem 0.9rem; border-top: 1px solid var(--border);
   font-size: 0.76rem; color: var(--fg-muted); }
 .podcast-list .podcast { margin-bottom: 1.75rem; }
