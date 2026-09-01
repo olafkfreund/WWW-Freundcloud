@@ -1,3 +1,17 @@
+- key: fides-video
+  kind: video
+  title: "The journey of a commit"
+  file: fides-journey-of-a-commit.mp4
+  poster: fides-video-poster.webp
+  duration: "7:27"
+  size: "38 MB"
+  anchor: fides
+  project: Fides
+  blurb: >-
+    The short one, and the only one with pictures: a single commit followed all
+    the way to production — built, scanned, attested, checked against policy —
+    and what the "digital passport" it accumulates is actually for.
+
 # Source of truth for the podcast episodes. The /podcasts/ page loops over this,
 # and _includes/podcast.html pulls a single entry by key for the inline players
 # on the showcase — so an episode's title and duration live in exactly one place.
@@ -72,3 +86,27 @@
     The whole pipeline end to end — PFactory plans it, AIFactory builds it,
     TFactory tests it, CFactory watches it — and the human gate at every seam
     that stops it being a machine that ships whatever it likes.
+
+- key: janus
+  title: "Janus: a secure gateway for enterprise AI"
+  file: janus.m4a
+  duration: "20:27"
+  size: "16 MB"
+  anchor: janus
+  project: Janus
+  blurb: >-
+    What it takes to put an MCP gateway in front of internal APIs and have it
+    survive a security review — fail-closed on misconfiguration, secrets the
+    model never sees, an SSRF guard, and redaction before anything reaches the LLM.
+
+- key: bifrost
+  title: "Bifrost automates safe enterprise pipeline migrations"
+  file: bifrost.m4a
+  duration: "15:35"
+  size: "12 MB"
+  anchor: bifrost
+  project: Bifrost
+  blurb: >-
+    The last 10% of an Azure DevOps to GitHub Actions migration that the importer
+    leaves to you — why it stays review-first, never auto-commits, and can run
+    entirely on local models inside an air-gapped network.

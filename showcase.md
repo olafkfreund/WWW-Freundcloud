@@ -229,6 +229,7 @@ description: >-
   <div class="project">
   <h2 id="fides">Fides — a tamper-evident evidence ledger for the SDLC</h2>
   <p><span class="tag">Creator · open source</span> <span class="tag">Go</span></p>
+  {% include podcast.html key="fides-video" %}
   {% include podcast.html key="fides" %}
   <p>Named after the Roman goddess of trust and oaths, Fides records and evaluates
   <em>every</em> state change in the software delivery lifecycle as it happens, and
@@ -340,6 +341,14 @@ description: >-
   write the code, but someone still has to be accountable for it — built on the
   <strong>PARR pipeline</strong>: <strong>Prepare · Act · Reflect · Review</strong>,
   with a human gate at every seam rather than one "trust me" big bang.</p>
+  <figure class="shot infographic">
+    <a href="{{ '/assets/img/showcase/factory-infographic.webp' | relative_url }}">
+      <img src="{{ '/assets/img/showcase/factory-infographic.webp' | relative_url }}"
+           alt="The Factory pipeline: an idea entering PFactory, handed to AIFactory to build, TFactory to verify with coverage, stability, mutation and lint gates, and CFactory as the cockpit, with the PARR loop alongside" loading="lazy" width="2752" height="1536">
+    </a>
+    <figcaption>Idea in, shipped software out — through sixteen guards, with the PARR loop (prepare, act, reflect, review) turning underneath.</figcaption>
+  </figure>
+
 
   <figure class="shot">
     <img src="{{ '/assets/img/showcase/factory-cockpit.png' | relative_url }}"
@@ -427,11 +436,20 @@ description: >-
   <div class="project">
   <h2 id="bifrost">Bifrost — Azure DevOps → GitHub Actions, at portfolio scale</h2>
   <p><span class="tag">Creator · open source · MIT</span> <span class="tag">Rust + React</span></p>
+  {% include podcast.html key="bifrost" %}
   <p>GitHub's own importer gets you maybe 90% of the way from an Azure DevOps
   pipeline to a GitHub Actions workflow. Bifrost is the other 10% — the review
   workflow, the semantic validation, the portfolio-level coordination and the audit
   trail a syntactic converter leaves to you. It's the tooling I wish I'd had walking
   into a migration with hundreds of pipelines instead of one.</p>
+  <figure class="shot infographic">
+    <a href="{{ '/assets/img/showcase/bifrost-infographic.webp' | relative_url }}">
+      <img src="{{ '/assets/img/showcase/bifrost-infographic.webp' | relative_url }}"
+           alt="Bifrost overview: legacy CI platforms crossing a bridge to GitHub Actions in five steps — dry-run and gap detection, grounded LLM gap-filling, deterministic risk scoring, human review, and validation with attestation" loading="lazy" width="2752" height="1536">
+    </a>
+    <figcaption>The five steps across, and the four decisions that make it safe to run against a portfolio: review-first, air-gap capable, attestation-native, platform agnostic.</figcaption>
+  </figure>
+
 
   <figure class="shot">
     <img src="{{ '/assets/img/showcase/bifrost-heatmap.png' | relative_url }}"
@@ -471,6 +489,7 @@ description: >-
   <div class="project">
   <h2 id="janus">Janus — an MCP gateway for air-gapped enterprises</h2>
   <p><span class="tag">Creator · open source</span> <span class="tag">Go</span></p>
+  {% include podcast.html key="janus" %}
   <p>Every enterprise wants to give its LLMs access to internal APIs. Almost none of
   them can, because the security review kills it. Janus is the gateway that survives
   that review: it turns any REST/HTTP API into MCP tools dynamically — declare the

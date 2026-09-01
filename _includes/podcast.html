@@ -1,22 +1,45 @@
 {%- comment -%}
-  One podcast player. Usage: {% include podcast.html key="sarc" %}
-  Metadata comes from _data/podcasts.yml so it is never written twice.
-  preload="none" so a showcase page with two players costs nothing until played.
+  One episode player, audio or video. Metadata comes from _data/podcasts.yml so
+  it is never written twice.
+    {% include podcast.html key="sarc" %}            inline on a showcase page
+    {% include podcast.html key="sarc" full=true %}  on /podcasts/: adds the
+                                                     blurb and a link to the project
+  preload="none" so a page with several players costs nothing until one is played.
 {%- endcomment -%}
 {%- assign ep = site.data.podcasts | where: "key", include.key | first -%}
 {%- if ep -%}
+{%- if ep.kind == "video" -%}
+  {%- assign dir = '/assets/video/podcasts/' -%}
+{%- else -%}
+  {%- assign dir = '/assets/audio/podcasts/' -%}
+{%- endif -%}
+{%- assign src = dir | append: ep.file | relative_url -%}
 <figure class="podcast">
   <figcaption class="podcast-head">
-    <span class="tag">▶ Podcast · {{ ep.duration }}</span>
+    <span class="tag">{% if ep.kind == "video" %}▶ Video{% else %}▶ Podcast{% endif %} · {{ ep.duration }}</span>
     <strong>{{ ep.title }}</strong>
   </figcaption>
-  <audio controls preload="none" src="{{ '/assets/audio/podcasts/' | append: ep.file | relative_url }}">
-    Your browser can't play audio inline —
-    <a href="{{ '/assets/audio/podcasts/' | append: ep.file | relative_url }}">download the episode</a>.
+  {%- if include.full %}
+  <p class="podcast-blurb">{{ ep.blurb }}</p>
+  {%- endif %}
+  {%- if ep.kind == "video" %}
+  <video controls preload="none" playsinline
+         poster="{{ '/assets/img/showcase/' | append: ep.poster | relative_url }}"
+         src="{{ src }}">
+    Your browser can't play video inline — <a href="{{ src }}">download it</a>.
+  </video>
+  {%- else %}
+  <audio controls preload="none" src="{{ src }}">
+    Your browser can't play audio inline — <a href="{{ src }}">download the episode</a>.
   </audio>
+  {%- endif %}
   <p class="podcast-foot">
+    {%- if include.full %}
+    <a href="{{ '/showcase/#' | append: ep.anchor | relative_url }}">Read about {{ ep.project }} →</a> ·
+    {%- else %}
     Generated with Google NotebookLM ·
-    <a href="{{ '/assets/audio/podcasts/' | append: ep.file | relative_url }}" download>Download {{ ep.size }}</a>
+    {%- endif %}
+    <a href="{{ src }}" download>Download {{ ep.size }}</a>
   </p>
 </figure>
 {%- endif -%}
