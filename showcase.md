@@ -156,6 +156,14 @@ description: >-
   <p><strong>SARC turns "are we compliant?" from a question your team answers with
   spreadsheets and screenshots into a question the system answers with live
   evidence — automatically, every time you ship.</strong></p>
+  <figure class="shot infographic">
+    <a href="{{ '/assets/img/showcase/sarc-infographic.webp' | relative_url }}">
+      <img src="{{ '/assets/img/showcase/sarc-infographic.webp' | relative_url }}"
+           alt="SARC overview: CI tools feeding evidence into the Fides ledger, risk-gated change requests through ServiceNow, framework coverage and value by persona" loading="lazy" width="2752" height="1536">
+    </a>
+    <figcaption>SARC end to end — the pipeline reports evidence into the Fides ledger, the risk score gates the ServiceNow change request, and the hash-chained audit log replaces quarterly evidence compilation.</figcaption>
+  </figure>
+
   <p>Regulated software delivery breaks in three predictable places. Audit prep
   becomes a fire drill, because the evidence is scattered across five to ten tools
   and nobody owns the whole story. The change board becomes a bottleneck, because a
@@ -226,6 +234,14 @@ description: >-
   <em>every</em> state change in the software delivery lifecycle as it happens, and
   turns the result into an audit-ready single source of truth. It's the evidence
   layer inside SARC, and it stands alone.</p>
+  <figure class="shot infographic">
+    <a href="{{ '/assets/img/showcase/fides-infographic.webp' | relative_url }}">
+      <img src="{{ '/assets/img/showcase/fides-infographic.webp' | relative_url }}"
+           alt="Fides overview: recording provenance, the policy decision engine, ServiceNow and AI integration, and runtime drift control" loading="lazy" width="2752" height="1536">
+    </a>
+    <figcaption>Fides in four parts — provenance in, a deterministic decision engine, ServiceNow and MCP on the way out, and a watchdog for runtime drift.</figcaption>
+  </figure>
+
 
   <figure class="shot">
     <img src="{{ '/assets/img/showcase/fides-overview.jpg' | relative_url }}"
@@ -283,6 +299,14 @@ description: >-
   delivery path. Argo has Rollouts for within an environment and is well served
   across them; Flux has Flagger for within, and nothing for across. Hecate fills
   that slot.</p>
+  <figure class="shot infographic">
+    <a href="{{ '/assets/img/showcase/hecate-infographic.webp' | relative_url }}">
+      <img src="{{ '/assets/img/showcase/hecate-infographic.webp' | relative_url }}"
+           alt="Hecate overview: the promotion gap between Dev and Staging or Prod that Flux leaves open, the Beacon, Bundle, Gate and Passage resources, and a comparison against Flagger and Flux Operator" loading="lazy" width="2752" height="1536">
+    </a>
+    <figcaption>The gap Hecate fills — Flux syncs cluster to git, Hecate moves artifacts between environments, and it writes to git rather than talking to Flux directly.</figcaption>
+  </figure>
+
 
   <p>The whole API is four resources. A <strong>Beacon</strong> watches registries,
   charts and repos — or reuses Flux Operator's own <code>ResourceSetInputProvider</code>
@@ -452,6 +476,14 @@ description: >-
   that review: it turns any REST/HTTP API into MCP tools dynamically — declare the
   endpoint, map the request body to a JSON Schema template, and the gateway
   generates the MCP tool definition for you.</p>
+  <figure class="shot infographic">
+    <a href="{{ '/assets/img/showcase/janus-infographic.webp' | relative_url }}">
+      <img src="{{ '/assets/img/showcase/janus-infographic.webp' | relative_url }}"
+           alt="Janus overview: the five-step request path from LLM client through auth, secret resolution, secure execution and redaction, plus the enterprise hardening features" loading="lazy" width="2752" height="1536">
+    </a>
+    <figcaption>A request through Janus, in five steps — and the four hardening decisions that make it survive a security review.</figcaption>
+  </figure>
+
 
   <figure class="shot">
     <img src="{{ '/assets/img/showcase/janus-tools.png' | relative_url }}"
@@ -774,6 +806,23 @@ description: >-
   upstream the day after it lands. nixarchy packages the upstream tree <em>as a
   derivation</em> and replaces only the parts that assume Arch — so tracking a new
   release is a source bump, not a re-port.</p>
+  <figure class="shot infographic">
+    <a href="{{ '/assets/img/showcase/nixarchy-overview-infographic.webp' | relative_url }}">
+      <img src="{{ '/assets/img/showcase/nixarchy-overview-infographic.webp' | relative_url }}"
+           alt="nixarchy at a glance: not just dotfiles but an application, instant ownership via flakes, 137,599 searchable Nix entities, ten NixOS maintenance skills, and hardware-aware local AI"
+           loading="lazy" width="2752" height="1536">
+    </a>
+    <figcaption>Five things it changes, in order of how much they surprised me.</figcaption>
+  </figure>
+
+  <figure class="shot infographic">
+    <a href="{{ '/assets/img/showcase/nixarchy-infographic.webp' | relative_url }}">
+      <img src="{{ '/assets/img/showcase/nixarchy-infographic.webp' | relative_url }}"
+           alt="nixarchy overview: installation from the ISO, the 137,599-row search index, the ten NixOS-specific agent skills with Trigger and Ask, and manual coverage" loading="lazy" width="2752" height="1536">
+    </a>
+    <figcaption>nixarchy, corner to corner — install, search and declare, the agent skills, and how much of the Omarchy manual still applies unchanged.</figcaption>
+  </figure>
+
   <p>What that buys: the Install menu writes to your Nix config instead of running
   pacman, with 56 curated applications selectable that way and every other nixpkgs
   package and NixOS option one <code>Install ▸ Search</code> away — a single picker
