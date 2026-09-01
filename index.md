@@ -38,9 +38,10 @@ description: >-
     <a class="card" href="{{ '/showcase/' | relative_url }}">
       <span class="tag">Everything, with screenshots</span>
       <h3>Project showcase</h3>
-      <p>Twelve systems in one place — SARC, Fides, the Factory suite, Bifrost,
-      Janus, Myrmex Hive, ravn-agents, DORA Dashboard, SkillAi, Odin, Muninn and
-      lxconnect. <strong>Browse the showcase →</strong></p>
+      <p>Seventeen systems in one place — SARC, Fides, Hecate, the Factory suite,
+      the Agentic SDLC reference build, Bifrost, Janus, Myrmex Hive, ravn-agents,
+      DORA Dashboard, SkillAi, Odin, Muninn, Huginn, lxconnect and nixarchy.
+      <strong>Browse the showcase →</strong></p>
     </a>
     <a class="card" href="{{ '/work/#factory' | relative_url }}">
       <span class="tag">Open source · AI agents</span>
@@ -48,6 +49,20 @@ description: >-
       <p>A governed pipeline for AI software delivery — PFactory plans it, AIFactory
       builds it, TFactory tests it, CFactory watches it. PARR, with a human gate at
       every seam and model-agnostic via MCP.</p>
+    </a>
+    <a class="card" href="{{ '/showcase/#hecate' | relative_url }}">
+      <span class="tag">Open source · GitOps</span>
+      <h3>Hecate</h3>
+      <p>The promotion layer FluxCD never had. Four resources — Beacon, Bundle, Gate,
+      Passage — move an immutable set of artifact versions across environments, with
+      approvals, compliance evidence and OpenTelemetry tracing built in. Go.</p>
+    </a>
+    <a class="card" href="{{ '/showcase/#agentic-sdlc' | relative_url }}">
+      <span class="tag">Open source · Governance</span>
+      <h3>Agentic SDLC</h3>
+      <p>The operating model for agent-written software as a repository that runs —
+      seven stages, no model in the gate, and twelve deliberate violations proving
+      each gate refuses rather than merely passes.</p>
     </a>
     <a class="card" href="{{ '/work/#bifrost' | relative_url }}">
       <span class="tag">Open source · Migration</span>
@@ -88,7 +103,9 @@ description: >-
       <span class="tag">Open source · NixOS</span>
       <h3>nixos_config</h3>
       <p>My whole machine estate declared in Nix — multi-host flakes with a
-      feature-flag system, Agenix secrets, Home Manager and a custom CLI.</p>
+      feature-flag system, Agenix secrets, Home Manager and a custom CLI. Plus
+      <a href="{{ '/showcase/#nixarchy' | relative_url }}">nixarchy</a>, which vendors
+      the whole Omarchy desktop onto NixOS with its menus rewired to Nix.</p>
     </a>
     <a class="card" href="{{ '/work/#lxconnect' | relative_url }}">
       <span class="tag">Open source · Linux desktop</span>

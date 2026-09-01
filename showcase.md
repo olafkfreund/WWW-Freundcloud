@@ -4,13 +4,14 @@ title: Showcase
 permalink: /showcase/
 description: >-
   A showcase of the platforms Olaf Krasicki-Freund has designed and built —
-  SARC, Fides, the Factory suite, Bifrost, Janus, Myrmex Hive, ravn-agents,
-  DORA Dashboard, SkillAi, Odin, Muninn and lxconnect.
+  SARC, Fides, Hecate, the Factory suite, the Agentic SDLC reference build,
+  Bifrost, Janus, Myrmex Hive, ravn-agents, DORA Dashboard, SkillAi, Odin,
+  Muninn, Huginn, lxconnect and nixarchy.
 ---
 
 <section class="hero">
   <div class="hero-badge">Showcase · platforms, not prototypes</div>
-  <h1>Twelve systems, one <span class="accent">throughline</span>.</h1>
+  <h1>Seventeen systems, one <span class="accent">throughline</span>.</h1>
   <p class="tagline">
     Everything below is self-hosted, auditable and built for environments where
     "just trust the vendor" isn't an answer — regulated banks, air-gapped networks,
@@ -25,7 +26,7 @@ description: >-
 </section>
 
 <section class="section">
-  <h2>All twelve, at a glance</h2>
+  <h2>All seventeen, at a glance</h2>
   <p class="section-lede">One line each — click through to the full write-up and screenshots.</p>
   <div class="card-grid">
     <a class="card" href="#sarc">
@@ -42,12 +43,26 @@ description: >-
       from commit to running runtime, four-eyes approval, WORM retention — the
       ledger inside SARC, and standalone.</p>
     </a>
+    <a class="card" href="#hecate">
+      <span class="tag">GitOps promotion · Go</span>
+      <h3>Hecate</h3>
+      <p>Flux knows how to make a cluster match git. It has no opinion about what
+      should be in git next. Hecate is that missing layer — promotion as four
+      resources, with evidence and tracing built in.</p>
+    </a>
     <a class="card" href="#factory">
       <span class="tag">Governed AI delivery</span>
       <h3>The Factory suite</h3>
       <p>Four products, one idea: AI can write the code, but someone is still
       accountable. Plan, build, test and watch — with a human gate at every
       seam.</p>
+    </a>
+    <a class="card" href="#agentic-sdlc">
+      <span class="tag">Reference build · playbook</span>
+      <h3>Agentic SDLC</h3>
+      <p>The operating model for agent-written software, as a repository that runs.
+      Seven stages, gates proven to <em>refuse</em>, and a vendor swap you can
+      execute in four directions.</p>
     </a>
     <a class="card" href="#bifrost">
       <span class="tag">Migration · Rust</span>
@@ -102,11 +117,30 @@ description: >-
       <p>A Gruvbox GitHub portal that AI agents can drive from inside your
       browser tab — a real app that doubles as a WebMCP playground.</p>
     </a>
+    <a class="card" href="#huginn">
+      <span class="tag">WebMCP · GitLab</span>
+      <h3>Huginn</h3>
+      <p>Muninn's other raven — the same zero-backend Gruvbox portal aimed at
+      GitLab, with pipelines, MRs, vulnerabilities and a local Ollama terminal.</p>
+    </a>
+    <a class="card" href="#awsdash">
+      <span class="tag">WebMCP · AWS</span>
+      <h3>AWS Dashboard</h3>
+      <p>Running instances and console logins from your own AWS profile, published
+      to the browser's agent as tools — credentials never leave the machine.</p>
+    </a>
     <a class="card" href="#lxconnect">
       <span class="tag">Android · MCP · Nix</span>
       <h3>lxconnect</h3>
       <p>Runs an MCP server <em>on your phone</em>, so an agent on your laptop can
       read notifications, open deep links and drive apps as ordinary tools.</p>
+    </a>
+    <a class="card" href="#nixarchy">
+      <span class="tag">NixOS · desktop</span>
+      <h3>nixarchy</h3>
+      <p>A whole Arch-native desktop — 429 commands of it — vendored onto NixOS
+      with its menus rewired to Nix. Tracking upstream is a source bump, not a
+      re-port.</p>
     </a>
   </div>
 </section>
@@ -237,6 +271,38 @@ description: >-
   </div>
 
   <div class="project">
+  <h2 id="hecate">Hecate — the promotion layer Flux never had</h2>
+  <p><span class="tag">Creator · open source · Apache 2.0</span> <span class="tag">Go · pre-alpha</span></p>
+  <p>Flux makes a cluster match what is in git. It has no opinion about <strong>what
+  should be in git next</strong> — so cross-environment promotion gets hand-rolled in
+  CI, once per organisation, and quietly becomes the least-reviewed code in the
+  delivery path. Argo has Rollouts for within an environment and is well served
+  across them; Flux has Flagger for within, and nothing for across. Hecate fills
+  that slot.</p>
+
+  <p>The whole API is four resources. A <strong>Beacon</strong> watches registries,
+  charts and repos — or reuses Flux Operator's own <code>ResourceSetInputProvider</code>
+  rather than inventing a second opinion about what "newest" means — and emits a
+  <strong>Bundle</strong>: an immutable, content-addressed set of artifact versions,
+  the unit that moves. A <strong>Gate</strong> is an environment plus the threshold a
+  Bundle must cross to enter it. A <strong>Passage</strong> is one attempt to move one
+  Bundle through one Gate, as declarative steps — clone, set image, commit, push,
+  reconcile, and wait for the cluster to actually reach the revision rather than
+  assuming it did.</p>
+
+  <p>The details are the regulated-delivery ones. Gates take <code>after: [staging]</code>
+  so production can only admit what already cleared staging, and
+  <code>requireApproval</code> where a human belongs. CI can tell a Beacon to look now
+  instead of waiting for its interval, authenticated by its own OIDC workload token
+  reviewed by Kubernetes — no shared secret, no HMAC, and an identity that can poke a
+  Beacon still cannot read your Gates. Compliance evidence and OpenTelemetry tracing
+  are emitted by the promotion itself, not reconstructed afterwards. Go 1.26,
+  Apache 2.0, at <strong>v0.8.2</strong> and honest about being pre-alpha.</p>
+  <p>→ <a href="https://olafkfreund.github.io/Hecate/" rel="noopener">hecate docs</a>
+  · <a href="https://github.com/olafkfreund/Hecate" rel="noopener">source</a></p>
+  </div>
+
+  <div class="project">
   <h2 id="factory">The Factory suite — a governed pipeline for AI software delivery</h2>
   <p><span class="tag">Creator · open source</span> <span class="tag">PFactory · AIFactory · TFactory · CFactory</span></p>
   <p>84% of developers use AI coding tools; only 29% trust the output. The Factory
@@ -293,6 +359,38 @@ description: >-
   · <a href="https://github.com/olafkfreund/PFactory" rel="noopener">PFactory</a>
   · <a href="https://github.com/olafkfreund/CFactory" rel="noopener">CFactory</a>
   · <a href="https://github.com/olafkfreund/Factory" rel="noopener">the meta-repo</a></p>
+  </div>
+
+  <div class="project">
+  <h2 id="agentic-sdlc">Agentic SDLC — the playbook, as a repository that runs</h2>
+  <p><span class="tag">Author · open source</span> <span class="tag">Reference implementation</span></p>
+  <p>Every organisation writing an "AI in the SDLC" policy right now is writing a PDF.
+  This is the same argument as a working build: seven stages, five planes, a portable
+  artifact chain and an autonomy matrix — expressed as code that runs, gates that
+  refuse, and evidence produced as a by-product rather than reconstructed for an
+  auditor later.</p>
+
+  <p>Two things make it more than a demo. First, <code>make negative</code>: twelve
+  deliberate violations — a float on a monetary field, a personal field in an error
+  message, an unaudited <code>POST</code>, an edit to a frozen path, a change claiming
+  more autonomy than it earned — each one refused by code, with the control id and the
+  reason. <em>A gate verified only by passing is indistinguishable from a gate that
+  cannot fail.</em> Second, no model sits in the gate. Models diagnose, propose, draft
+  and review; the decision to allow or block is arithmetic over version-controlled
+  policy YAML — the same tables governance signed off.</p>
+
+  <p>The Substitution Test is the part that survives procurement. GitHub Copilot is the
+  agent runtime here, deliberately: the playbook's claim is that the operating model
+  must outlive a change of vendor, so the honest way to make it is to use a specific
+  vendor and keep every asset in an open format. Copilot is invoked in exactly one step
+  per stage; <code>make swap</code> switches vendor four ways and re-scores under each.
+  The context, skills, policy, gates and evidence do not move — 12/12 portable, 12/12
+  gates proven to refuse, 24/24 evals. And because a chain of commits <em>is</em> the
+  audit trail, <code>query_evidence.py --control SEC-API-01</code> answers "which
+  production changes touched this control, which were agent-authored, at what autonomy
+  tier, and who approved each" in seconds rather than a week.</p>
+  <p>→ <a href="https://olafkfreund.github.io/agentic-sdlc-showcase/" rel="noopener">the walkthrough</a>
+  · <a href="https://github.com/olafkfreund/agentic-sdlc-showcase" rel="noopener">source</a></p>
   </div>
 
   <div class="project">
@@ -597,6 +695,48 @@ description: >-
   </div>
 
   <div class="project">
+  <h2 id="huginn">Huginn — the other raven, pointed at GitLab</h2>
+  <p><span class="tag">Creator · open source</span> <span class="tag">Zero backend · WebMCP</span></p>
+  <p>Muninn and Huginn are Odin's two ravens, and they do the same job here for the two
+  forges. Huginn is the GitLab half — GitLab.com or self-hosted — in the same
+  Gruvbox light/dark treatment, with the same zero-backend architecture: the personal
+  access token lives in the browser and never reaches a server, because there isn't
+  one.</p>
+  <p>It runs pipelines and cancels them, reviews and merges MRs, triages and labels
+  issues, surfaces project vulnerabilities and star analytics, and does unified
+  client-side search across all of it. A notification engine combines desktop Web
+  Notifications with in-app toasts for new issues, MR events, finished CI runs and new
+  vulnerability alerts, with deduplication so a page load doesn't spam you. A local
+  <strong>Ollama</strong> terminal sits in the dashboard for drafting and code
+  analysis, and an optional background daemon watches edits, runs validation and
+  triages project status.</p>
+  <p>Like Muninn it registers browser-native <strong>WebMCP</strong> tools —
+  <code>list_loaded_projects</code>, <code>list_merge_requests</code>,
+  <code>list_issues</code>, <code>trigger_pipeline_run</code> — so an agent in the tab
+  can query and act without your token ever leaving the browser context. Jekyll and
+  vanilla JavaScript, reproducible via <code>devenv</code>.</p>
+  <p>→ <a href="https://github.com/olafkfreund/Huginn" rel="noopener">source</a></p>
+  </div>
+
+  <div class="project">
+  <h2 id="awsdash">AWS Dashboard — your own AWS account, as browser-agent tools</h2>
+  <p><span class="tag">Creator · open source</span> <span class="tag">WebMCP</span></p>
+  <p>The smallest of these, and the clearest illustration of why WebMCP is interesting.
+  A browser page cannot read <code>~/.aws/credentials</code>, and it shouldn't — so a
+  thin Node proxy holds the AWS SDK and the local profile, serves the static page, and
+  the page publishes what it fetched to the browser's agent through
+  <code>navigator.modelContext.registerTool</code>.</p>
+  <p>What it surfaces is deliberately the two things you actually check first: every
+  running EC2 instance, and who successfully logged into the console in the last 24
+  hours, from CloudTrail. The IAM permissions it needs are exactly
+  <code>ec2:DescribeInstances</code> and <code>cloudtrail:LookupEvents</code> — nothing
+  else. An agent in the tab can then answer "what's running and who's been in?" as
+  tool calls, while the credentials stay on the machine. Tailwind, glassmorphic dark
+  mode, one file of backend.</p>
+  <p>→ <a href="https://github.com/olafkfreund/AWS_dashboard" rel="noopener">source</a></p>
+  </div>
+
+  <div class="project">
   <h2 id="lxconnect">lxconnect — your Android phone as an MCP tool surface</h2>
   <p><span class="tag">Creator · open source</span> <span class="tag">Kotlin + Nix</span></p>
   <p>lxconnect bridges Android — Waydroid or a real device — to the Linux desktop,
@@ -615,6 +755,30 @@ description: >-
   control it. The whole thing is a declarative Nix flake — <code>nix run
   github:olafkfreund/lxconnect#gui</code> and you're live.</p>
   <p>→ <a href="https://github.com/olafkfreund/lxconnect" rel="noopener">source</a></p>
+  </div>
+
+  <div class="project">
+  <h2 id="nixarchy">nixarchy — a whole desktop, vendored onto NixOS</h2>
+  <p><span class="tag">Creator · open source</span> <span class="tag">Nix · v4.0.1</span></p>
+  <p><a href="https://omarchy.org" rel="noopener">Omarchy</a> 4.x is not a dotfiles
+  repo, it's an application: <strong>429 shell commands</strong>, a QuickShell desktop
+  shell, 22 themes and Hyprland driven through its Lua API. The usual Nix answer to
+  something like that is to reimplement it, which produces a port that diverges from
+  upstream the day after it lands. nixarchy packages the upstream tree <em>as a
+  derivation</em> and replaces only the parts that assume Arch — so tracking a new
+  release is a source bump, not a re-port.</p>
+  <p>What that buys: the Install menu writes to your Nix config instead of running
+  pacman, with 56 curated applications selectable that way and every other nixpkgs
+  package and NixOS option one <code>Install ▸ Search</code> away — a single picker
+  over 137k rows. Plugins and themes still install from a git URL at runtime the way
+  upstream intends. Every command that assumed <code>/usr</code> either points at what
+  NixOS actually uses or says plainly why it cannot. There's a bootable ISO that takes
+  seven questions and leaves you with a machine that is a flake you own, offline.</p>
+  <p>The naming is deliberate: upstream's 431 commands keep upstream's name, because a
+  bug in <code>omarchy theme set</code> is a bug to report there, and renaming it would
+  say otherwise. <code>nixarchy</code> owns what this port adds and <code>exec</code>s
+  through for everything else.</p>
+  <p>→ <a href="https://github.com/olafkfreund/nixarchy" rel="noopener">source</a></p>
   </div>
 
   </div>

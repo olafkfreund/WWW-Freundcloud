@@ -72,31 +72,57 @@ description: Olaf Krasicki-Freund — DevOps and platform engineering leader, 30
     putting it on GitHub. Most of these started as "I wonder if…" on a weekend
     and turned into things I actually use.</p>
 
-    <p><strong>AI &amp; LLM tooling.</strong>
-    <a href="https://github.com/olafkfreund/ollama-skill-cv-rag" rel="noopener">ollama-skill-cv-rag</a>
-    does CV and skill analysis with retrieval-augmented generation on top of
-    Ollama; <a href="https://github.com/olafkfreund/SOW-generator" rel="noopener">SOW-generator</a>
-    drafts statements of work for consulting engagements with an LLM; and
-    <a href="https://github.com/olafkfreund/nix-ai-help" rel="noopener">nix-ai-help</a>
-    is a NixOS environment for running and poking at open-source models.</p>
+    <p><strong>Delivery &amp; governance.</strong>
+    <a href="https://github.com/olafkfreund/fides" rel="noopener">Fides</a> is a
+    tamper-evident evidence ledger for the SDLC;
+    <a href="https://github.com/olafkfreund/Hecate" rel="noopener">Hecate</a> is the
+    cross-environment promotion layer FluxCD never had; and the
+    <a href="https://github.com/olafkfreund/agentic-sdlc-showcase" rel="noopener">Agentic SDLC</a>
+    reference build is the operating model for agent-written software as a repository
+    that runs, with gates proven to refuse rather than merely to pass. The
+    <a href="{{ '/showcase/#factory' | relative_url }}">Factory suite</a> — PFactory,
+    AIFactory, TFactory, CFactory — is the pipeline that uses them.</p>
 
-    <p><strong>NixOS &amp; cloud infrastructure.</strong> A cluster of experiments in
-    reproducible local cloud:
-    <a href="https://github.com/olaffreund/nix-local-cloud" rel="noopener">nix-local-cloud</a>,
-    <a href="https://github.com/olaffreund/k8s-local-clouds" rel="noopener">k8s-local-clouds</a>,
-    <a href="https://github.com/olaffreund/ks3-nixos-vms" rel="noopener">ks3-nixos-vms</a>
-    (lightweight k3s on NixOS VMs), and
-    <a href="https://github.com/olaffreund/nix-llm-vms" rel="noopener">nix-llm-vms</a>
-    for running models on throwaway machines.</p>
+    <p><strong>AI &amp; LLM tooling.</strong> Mostly MCP, in one form or another:
+    <a href="https://github.com/olafkfreund/janus" rel="noopener">Janus</a>, an MCP
+    gateway built to survive a security review;
+    <a href="https://github.com/olafkfreund/myrmex-hive" rel="noopener">Myrmex Hive</a>,
+    agent orchestration with zero inbound ports;
+    <a href="https://github.com/olafkfreund/lxconnect" rel="noopener">lxconnect</a>,
+    which runs an MCP server on an Android phone; and the WebMCP portals —
+    <a href="https://github.com/olafkfreund/Muninn" rel="noopener">Muninn</a> for GitHub,
+    <a href="https://github.com/olafkfreund/Huginn" rel="noopener">Huginn</a> for GitLab,
+    and an <a href="https://github.com/olafkfreund/AWS_dashboard" rel="noopener">AWS dashboard</a>
+    that hands your own account to the agent in the browser tab. Earlier on there was
+    <a href="https://github.com/olafkfreund/ollama-skill-cv-rag" rel="noopener">ollama-skill-cv-rag</a>
+    for RAG over CVs and skills, and
+    <a href="https://github.com/olafkfreund/SOW-generator" rel="noopener">SOW-generator</a>
+    for drafting statements of work.</p>
+
+    <p><strong>NixOS &amp; cloud infrastructure.</strong>
+    <a href="https://github.com/olafkfreund/nixarchy" rel="noopener">nixarchy</a> vendors
+    the whole Omarchy desktop onto NixOS instead of reimplementing it;
+    <a href="https://github.com/olafkfreund/cloud-nixos" rel="noopener">cloud-nixos</a>
+    builds and deploys hardened NixOS server images across AWS, GCP, Azure and European
+    clouds with sops-nix and OpenTofu; and
+    <a href="https://github.com/olafkfreund/nixos-k3d-lab" rel="noopener">nixos-k3d-lab</a>
+    turns a multi-node Kubernetes dev cluster into a NixOS service with no registry in
+    sight. <a href="https://github.com/olafkfreund/nixos-template" rel="noopener">nixos-template</a>
+    is the batteries-included starting point, and
+    <a href="https://github.com/olafkfreund/nixos_config" rel="noopener">nixos_config</a>
+    is my whole estate declared in Nix.</p>
 
     <p><strong>Developer tools.</strong>
-    <a href="https://github.com/olaffreund/Commit-tracking-mcp" rel="noopener">Commit-tracking-mcp</a>
-    is an MCP server for analysing git history, and
-    <a href="https://github.com/olaffreund/tinky-llm-buddy" rel="noopener">tinky-llm-buddy</a>
-    is a small AI dev assistant. There's also
-    <a href="https://github.com/olafkfreund/SkillAi" rel="noopener">SkillAi</a> and the
-    Kosli/ServiceNow MCP servers — those get the full write-up over on
-    <a href="{{ '/work/' | relative_url }}">Work</a>.</p>
+    <a href="https://github.com/olafkfreund/skill_pool" rel="noopener">skill-pool</a> is
+    the team layer for Claude Code's <code>.claude/</code> directory;
+    <a href="https://github.com/olafkfreund/herdr" rel="noopener">herdr</a> is a terminal
+    multiplexer for coding agents;
+    <a href="https://github.com/olafkfreund/dionysus" rel="noopener">dionysus</a> presents
+    Markdown from a terminal or a browser and ships its own MCP server; and
+    <a href="https://github.com/olafkfreund/gogmail" rel="noopener">gogmail</a> puts Google
+    Workspace in a TUI. <a href="https://github.com/olafkfreund/SkillAi" rel="noopener">SkillAi</a>
+    and the rest get the full write-up over on
+    <a href="{{ '/showcase/' | relative_url }}">the showcase</a>.</p>
 
     <h2>Away from the keyboard</h2>
 

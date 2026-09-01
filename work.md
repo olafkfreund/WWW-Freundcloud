@@ -122,6 +122,50 @@ description: Projects and platforms Olaf Krasicki-Freund has designed and built.
     </div>
 
     <div class="project">
+    <h2 id="hecate">Hecate — the promotion layer FluxCD never had</h2>
+    <p><span class="tag">Creator · open source · Apache 2.0</span></p>
+    <p>Flux makes a cluster match what is in git, but has no opinion about what should
+    be in git <em>next</em> — so cross-environment promotion gets hand-rolled in CI,
+    once per organisation, and becomes the least-reviewed code in the delivery path.
+    Hecate fills the slot Flagger fills within an environment, and that the Flux
+    ecosystem has no category for across them.</p>
+    <p>Four resources are the whole API. A <strong>Beacon</strong> watches registries,
+    charts and repos — or reuses Flux Operator's own <code>ResourceSetInputProvider</code>
+    rather than forming a second opinion about what "newest" means — and emits a
+    <strong>Bundle</strong>, an immutable content-addressed set of artifact versions.
+    A <strong>Gate</strong> is an environment plus the threshold a Bundle must cross to
+    enter it; a <strong>Passage</strong> is one attempt to move one through, as
+    declarative steps that end by waiting for the cluster to actually reach the
+    revision. Gates take <code>after: [staging]</code> and <code>requireApproval</code>,
+    CI triggers a Beacon with its own OIDC workload token instead of a shared secret,
+    and compliance evidence plus OpenTelemetry tracing come out of the promotion itself.
+    Go, Apache 2.0, v0.8.2.</p>
+    <p>→ <a href="{{ '/showcase/#hecate' | relative_url }}">full write-up</a>
+    · <a href="https://github.com/olafkfreund/Hecate" rel="noopener">source</a></p>
+    </div>
+
+    <div class="project">
+    <h2 id="agentic-sdlc">Agentic SDLC — the playbook as a repository that runs</h2>
+    <p><span class="tag">Author · open source</span></p>
+    <p>Most organisations are answering "how do we govern AI-written code?" with a PDF.
+    This is the same argument as a working build: seven stages, five planes, a portable
+    artifact chain and an autonomy matrix, expressed as code that runs and gates that
+    refuse. <code>make negative</code> commits twelve deliberate violations — a float on
+    a monetary field, a personal field in an error message, an unaudited
+    <code>POST</code>, an edit to a frozen path — and every one is refused with the
+    control id and the reason, because a gate verified only by passing is
+    indistinguishable from a gate that cannot fail.</p>
+    <p>No model sits in the gate: models diagnose, propose and review, but allow-or-block
+    is arithmetic over version-controlled policy. And because the chain of commits
+    <em>is</em> the audit trail, "which production changes touched this control, which
+    were agent-authored, at what autonomy tier, and who approved each" is a query that
+    returns in seconds. Copilot is the agent runtime, deliberately — <code>make swap</code>
+    switches vendor four ways and re-scores, and nothing but those per-stage steps moves.</p>
+    <p>→ <a href="{{ '/showcase/#agentic-sdlc' | relative_url }}">full write-up</a>
+    · <a href="https://github.com/olafkfreund/agentic-sdlc-showcase" rel="noopener">source</a></p>
+    </div>
+
+    <div class="project">
     <h2 id="bifrost">Bifrost — Azure DevOps → GitHub Actions, at portfolio scale</h2>
     <p><span class="tag">Creator · open source</span></p>
     <p>GitHub's own importer (<code>gh actions-importer</code>) gets you maybe 90% of
@@ -336,12 +380,22 @@ description: Projects and platforms Olaf Krasicki-Freund has designed and built.
       notification and RSS applets, and
       <a href="https://github.com/olafkfreund/r-hyprconfig" rel="noopener">r-hyprconfig</a>,
       a real-time Hyprland config TUI.</li>
+      <li><strong><a href="https://github.com/olafkfreund/nixarchy" rel="noopener">nixarchy</a></strong>
+      — the Omarchy 4.x desktop vendored onto NixOS: 429 upstream commands packaged as a
+      derivation rather than reimplemented, with the Install menu writing to your Nix
+      config instead of running pacman and every nixpkgs package one search away.
+      Tracking upstream is a source bump.
+      <a href="{{ '/showcase/#nixarchy' | relative_url }}">More →</a></li>
       <li><strong><a href="https://github.com/olafkfreund/nixos-template" rel="noopener">nixos-template</a></strong>
       — a batteries-included starting point for a NixOS journey, and the most-used
       thing I've published.</li>
-      <li><strong><a href="https://muninn.freundcloud.com" rel="noopener">Muninn</a></strong>
-      — a zero-backend, Gruvbox GitHub portal and WebMCP playground for local browser
-      agents.</li>
+      <li><strong>WebMCP portals</strong> — <a href="https://muninn.freundcloud.com" rel="noopener">Muninn</a>
+      for GitHub and <a href="https://github.com/olafkfreund/Huginn" rel="noopener">Huginn</a>
+      for GitLab: zero-backend Gruvbox dashboards whose tokens never leave the browser,
+      registering browser-native tools that local agents can drive. Plus an
+      <a href="https://github.com/olafkfreund/AWS_dashboard" rel="noopener">AWS dashboard</a>
+      that publishes running instances and console logins to the agent in the tab while
+      the credentials stay on the machine.</li>
       <li><strong>MCP servers</strong> for ServiceNow and the Fides evidence ledger, shipped inside SARC —
       real-world MCP in a CI/compliance context.</li>
       <li><strong>This knowledge base</strong> — <em>DevOps Help for Cloud Platform

@@ -33,7 +33,7 @@ description: Curriculum vitae — Olaf Krasicki-Freund, DevOps & Platform Engine
       GitHub and Bamboo → Actions migration, Azure DevOps, GitLab CI, Jenkins,
       ArgoCD, FluxCD, Tekton.</li>
       <li><strong>DevSecOps &amp; supply chain:</strong> Snyk, SonarQube, Wiz, JFrog
-      Artifactory (OIDC), HashiCorp Vault, Kosli, SARIF, SBOM, signed commits,
+      Artifactory (OIDC), HashiCorp Vault, Fides, Kosli, SARIF, SBOM, signed commits,
       branch protection at scale.</li>
       <li><strong>Cloud &amp; infrastructure:</strong> Azure (primary), AWS, GCP,
       Kubernetes (AKS, EKS, GKE), Azure Red Hat OpenShift, Docker, Helm, service
@@ -43,7 +43,7 @@ description: Curriculum vitae — Olaf Krasicki-Freund, DevOps & Platform Engine
       <li><strong>Platform engineering:</strong> Spotify Backstage, self-service
       templates, golden paths, FinOps, SRE, AIOps/LLMOps.</li>
       <li><strong>Governance &amp; compliance:</strong> ServiceNow (DevOps Change
-      Velocity, CMDB, ITSM), Kosli attestations, Azure Policy, AWS Organizations,
+      Velocity, CMDB, ITSM), tamper-evident attestation ledgers, Azure Policy, AWS Organizations,
       SOX change controls, ISO 27001 alignment.</li>
       <li><strong>Observability:</strong> Prometheus, Grafana, Datadog, ELK, Azure
       Monitor, CloudWatch, distributed tracing.</li>
@@ -66,8 +66,15 @@ description: Curriculum vitae — Olaf Krasicki-Freund, DevOps & Platform Engine
     branching, change control.</p>
     <p><strong>Product owner &amp; lead architect — SARC.</strong> Synechron's
     multi-cloud compliance demo platform; single-switch deploys across AWS, Azure,
-    GCP and k3d; Kosli + ServiceNow + multi-CI; Claude MCP servers for
-    natural-language compliance demos.</p>
+    GCP and k3d; the Fides evidence ledger + ServiceNow + multi-CI; Claude MCP
+    servers for natural-language compliance demos.</p>
+    <p><strong>Open source — Fides, Hecate &amp; the Factory suite.</strong>
+    Fides, a tamper-evident provenance and evidence ledger for the SDLC (Go);
+    Hecate, the cross-environment promotion layer for FluxCD (Go); and the Factory
+    suite — PFactory, AIFactory, TFactory and CFactory — a governed pipeline for AI
+    software delivery with a human gate at every seam. Plus the Agentic SDLC
+    reference implementation: the operating model for agent-written software as a
+    repository that runs, with deterministic gates proven to refuse.</p>
     <p><strong>Open source — SkillAi.</strong> Self-hosted AI recruiting platform on
     Claude and Gemini; multi-format CV parsing, four-dimensional scoring,
     vector-embedding search; in production for HSBC Kraków hiring.</p>
