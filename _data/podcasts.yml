@@ -15,6 +15,20 @@
 # Source of truth for the podcast episodes. The /podcasts/ page loops over this,
 # and _includes/podcast.html pulls a single entry by key for the inline players
 # on the showcase — so an episode's title and duration live in exactly one place.
+- key: factory-video
+  kind: video
+  title: "CFactory: the control tower"
+  file: factory-cfactory-control-tower.mp4
+  poster: factory-video-poster.webp
+  duration: "7:09"
+  size: "33 MB"
+  anchor: factory
+  project: The Factory suite
+  blurb: >-
+    The pipeline from the cockpit — the PARR loop running across PFactory,
+    AIFactory and TFactory, and the point it keeps coming back to: the human
+    always clicks.
+
 - key: sarc
   title: "Ending the audit nightmare with SARC"
   file: sarc.m4a

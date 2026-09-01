@@ -334,6 +334,7 @@ description: >-
   <div class="project">
   <h2 id="factory">The Factory suite — a governed pipeline for AI software delivery</h2>
   <p><span class="tag">Creator · open source</span> <span class="tag">PFactory · AIFactory · TFactory · CFactory</span></p>
+  {% include podcast.html key="factory-video" %}
   {% include podcast.html key="factory" %}
   {% include podcast.html key="pfactory" %}
   <p>84% of developers use AI coding tools; only 29% trust the output. The Factory
