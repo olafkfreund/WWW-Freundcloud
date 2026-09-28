@@ -6,12 +6,12 @@ description: >-
   A showcase of the platforms Olaf Krasicki-Freund has designed and built —
   SARC, Fides, Hecate, the Factory suite, the Agentic SDLC reference build,
   Bifrost, Janus, Myrmex Hive, ravn-agents, DORA Dashboard, SkillAi, Odin,
-  Muninn, Huginn, lxconnect and nixarchy.
+  Muninn, Huginn, lxconnect, nixarchy and nix-skills.
 ---
 
 <section class="hero">
   <div class="hero-badge">Showcase · platforms, not prototypes</div>
-  <h1>Seventeen systems, one <span class="accent">throughline</span>.</h1>
+  <h1>Eighteen systems, one <span class="accent">throughline</span>.</h1>
   <p class="tagline">
     Everything below is self-hosted, auditable and built for environments where
     "just trust the vendor" isn't an answer — regulated banks, air-gapped networks,
@@ -27,7 +27,7 @@ description: >-
 </section>
 
 <section class="section">
-  <h2>All seventeen, at a glance</h2>
+  <h2>All eighteen, at a glance</h2>
   <p class="section-lede">One line each — click through to the full write-up and screenshots.</p>
   <div class="card-grid">
     <a class="card" href="#sarc">
@@ -142,6 +142,13 @@ description: >-
       <p>A whole Arch-native desktop — 429 commands of it — vendored onto NixOS
       with its menus rewired to Nix. Tracking upstream is a source bump, not a
       re-port.</p>
+    </a>
+    <a class="card" href="#nix-skills">
+      <span class="tag">Nix · agent skills</span>
+      <h3>nix-skills</h3>
+      <p>Ten pinned, source-backed skills that stop coding agents giving stale or
+      imperative Nix advice. Claude Code, Codex, OpenCode and Antigravity propose
+      declarative, reversible changes instead.</p>
     </a>
   </div>
 </section>
@@ -411,6 +418,15 @@ description: >-
   refuse, and evidence produced as a by-product rather than reconstructed for an
   auditor later.</p>
 
+  <figure class="shot infographic">
+    <a href="{{ '/assets/img/showcase/agentic-sdlc-infographic.webp' | relative_url }}">
+      <img src="{{ '/assets/img/showcase/agentic-sdlc-infographic.webp' | relative_url }}"
+           alt="The Agentic SDLC, governing software in the age of AI: the shift from human review to system verification, the Substitution Test, the productivity J-curve, the intent-spec-plan-code artifact chain in git, the model-access, context and control planes, and the autonomy matrix"
+           loading="lazy" width="2752" height="1536">
+    </a>
+    <figcaption>The playbook on one page — the argument the repository then proves in code.</figcaption>
+  </figure>
+
   <p>Two things make it more than a demo. First, <code>make negative</code>: twelve
   deliberate violations — a float on a monetary field, a personal field in an error
   message, an unaudited <code>POST</code>, an edit to a frozen path, a change claiming
@@ -431,6 +447,7 @@ description: >-
   production changes touched this control, which were agent-authored, at what autonomy
   tier, and who approved each" in seconds rather than a week.</p>
   <p>→ <a href="https://olafkfreund.github.io/agentic-sdlc-showcase/" rel="noopener">the walkthrough</a>
+  · <a href="https://olafkfreund.github.io/agentic-sdlc-showcase/screencast/" rel="noopener">the screencast</a>
   · <a href="https://github.com/olafkfreund/agentic-sdlc-showcase" rel="noopener">source</a></p>
   </div>
 
@@ -826,6 +843,14 @@ description: >-
   upstream the day after it lands. nixarchy packages the upstream tree <em>as a
   derivation</em> and replaces only the parts that assume Arch — so tracking a new
   release is a source bump, not a re-port.</p>
+
+  <figure class="shot">
+    <img src="{{ '/assets/img/showcase/nixarchy-menu-ask.webp' | relative_url }}"
+         alt="nixarchy desktop with the Ask menu open: What's wrong, Make it faster, Am I exposed, Disk is full, GPU not working, What changed, Back up my config, Install something, Ask anything"
+         loading="lazy" width="1600" height="845">
+    <figcaption>The Ask menu — plain-language questions handed to an agent that knows it is on NixOS.</figcaption>
+  </figure>
+
   <figure class="shot infographic">
     <a href="{{ '/assets/img/showcase/nixarchy-overview-infographic.webp' | relative_url }}">
       <img src="{{ '/assets/img/showcase/nixarchy-overview-infographic.webp' | relative_url }}"
@@ -850,11 +875,56 @@ description: >-
   upstream intends. Every command that assumed <code>/usr</code> either points at what
   NixOS actually uses or says plainly why it cannot. There's a bootable ISO that takes
   seven questions and leaves you with a machine that is a flake you own, offline.</p>
+
+  <div class="shot-grid">
+    <figure>
+      <img src="{{ '/assets/img/showcase/nixarchy-desktop.jpg' | relative_url }}" alt="A fresh nixarchy desktop with the update and keybindings notifications" loading="lazy">
+      <figcaption>First boot — Omarchy, unchanged, on NixOS</figcaption>
+    </figure>
+    <figure>
+      <img src="{{ '/assets/img/showcase/nixarchy-search.jpg' | relative_url }}" alt="nixarchy Install search over 137,326 packages and options, previewing the Tailscale service" loading="lazy">
+      <figcaption>One picker over every package and option</figcaption>
+    </figure>
+    <figure>
+      <img src="{{ '/assets/img/showcase/nixarchy-devenv.jpg' | relative_url }}" alt="nixarchy dev environments panel listing seven devenv projects, three allowed to auto-activate" loading="lazy">
+      <figcaption>Per-project devenv environments</figcaption>
+    </figure>
+  </div>
   <p>The naming is deliberate: upstream's 431 commands keep upstream's name, because a
   bug in <code>omarchy theme set</code> is a bug to report there, and renaming it would
   say otherwise. <code>nixarchy</code> owns what this port adds and <code>exec</code>s
   through for everything else.</p>
   <p>→ <a href="https://github.com/olafkfreund/nixarchy" rel="noopener">source</a></p>
+  </div>
+
+  <div class="project">
+  <h2 id="nix-skills">nix-skills — so your coding agent stops guessing at Nix</h2>
+  <p><span class="tag">Creator · open source</span> <span class="tag">Nix · agent skills</span></p>
+  <p>Ask a coding agent for help with Nix and you get advice that is out of date,
+  written for another distribution, or imperative — <code>nix-env -i</code>, an edit to
+  a generated file, <code>curl | sh</code>. nix-skills fixes that at the source: a
+  collection of portable skills that give Claude Code, Codex, OpenCode and Antigravity
+  current, source-backed knowledge of the ecosystem, so the agent proposes
+  declarative, reversible changes based on the versions you actually run.</p>
+
+  <figure class="shot">
+    <img src="{{ '/assets/img/showcase/nix-skills-docs.webp' | relative_url }}"
+         alt="The nix-skills documentation site: introduction, a where-to-start table, and tutorials, how-to guides, reference and explanation in the sidebar"
+         loading="lazy" width="1440" height="900">
+    <figcaption>The docs — the catalog, update schedule and module options are generated from the repository at build time.</figcaption>
+  </figure>
+
+  <p>Ten skills cover the Nix language, NixOS operations, Home Manager, nix-darwin,
+  devenv, microvm.nix, Nixpkgs development, the NixOS wiki and running coding agents
+  on NixOS. Most are generated from the upstream manuals at pinned revisions and
+  refreshed on a schedule, so they stay current without anyone rewriting them. It
+  installs <strong>skills, not agents</strong>.</p>
+  <p>Three ways in: a Home Manager module that installs only the skills, a flake
+  template that sets up your own machine for agentic coding, or — to try it without
+  touching your system — a disposable NixOS VM with agents and skills ready:</p>
+  <pre><code>nix run github:olafkfreund/nix-skills?dir=demo</code></pre>
+  <p>→ <a href="https://olafkfreund.github.io/nix-skills/" rel="noopener">docs</a>
+  · <a href="https://github.com/olafkfreund/nix-skills" rel="noopener">source</a></p>
   </div>
 
   </div>

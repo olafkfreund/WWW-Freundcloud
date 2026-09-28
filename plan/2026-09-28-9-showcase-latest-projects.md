@@ -80,3 +80,19 @@ Visual check: headless Chromium screenshots of `http://localhost:4000/showcase/#
 Revert the implementation commit (`git revert <sha>`). That removes the six images
 and the `showcase.md` edits, and Pages redeploys on the next push to `main`. The
 intent, spec and plan stay.
+
+## Deviations during implementation
+
+- **Step 6, nixarchy lead image:** `menu-ask.webp` (1600×845, the Ask menu) is the lead
+  `figure.shot` instead of `desktop.jpg`, which only shows the wallpaper at 760×475.
+  `desktop.jpg` moves into the shot-grid. It's the same four images in a different
+  order.
+- **Step 8, html-proofer on NixOS:** it needs `libcurl` on the library path, so run it
+  with `LD_LIBRARY_PATH=$(nix build --no-link --print-out-paths nixpkgs#curl.out)/lib`.
+  Result: 0 failures on `showcase/`. The 62 existing failures are all in `kb/` and old
+  blog posts.
+- **Step 8, visual check:** screenshots deep in the 26k-px page come out black, in
+  both headless and extension-driven Chrome, and the live site's existing sections
+  capture the same way. So the check was done in the DOM instead: all 8 images in
+  these sections load at their real size with no hidden ancestors, and the card grid
+  renders with 18 cards.
