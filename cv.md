@@ -79,8 +79,9 @@ description: Curriculum vitae — Olaf Krasicki-Freund, DevOps & Platform Engine
     branching, change control.</p>
     <p><strong>Open source — Fides, Hecate &amp; the Factory suite.</strong>
     Fides, a tamper-evident provenance and evidence ledger for the SDLC (Go);
-    Hecate, the cross-environment promotion layer for FluxCD (Go); and the Factory
-    suite — PFactory, AIFactory, TFactory and CFactory — a governed pipeline for AI
+    Hecate, the cross-environment promotion layer for FluxCD (Go); and the five-product
+    Factory suite — PFactory, AIFactory, TFactory, CFactory and RFactory — a governed
+    pipeline for AI
     software delivery with a human gate at every seam. Plus the Agentic SDLC
     reference implementation: the operating model for agent-written software as a
     repository that runs, with deterministic gates proven to refuse.</p>

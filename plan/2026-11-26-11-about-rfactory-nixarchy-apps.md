@@ -221,9 +221,24 @@ The repo name `nixarchy-hyprsettngs` is spelled that way on GitHub. It isn't a t
    - Watch the Pages deploy, then fetch `/`, `/about/` and `/showcase/` from
      <www.freundcloud.com> and grep each for "RFactory".
 
+## Deviations (during implementation)
+
+- **`_config.yml`.** Added `intent`, `spec` and `plan` to `exclude`. Jekyll was
+  rendering these folders as public pages, and this plan's literal
+  `{% include %}` text broke the build. The workflow files are internal, so they
+  shouldn't be on the site at all.
+- **`about.md`.** "Underneath is the PARR loop" became "The first four run
+  on the PARR loop", and "RFactory brings it into your team calls" became "RFactory
+  brings the whole suite into your team calls" (review: the "it" pointed at
+  CFactory).
+- **htmlproofer.** It reports 62 failures, all from before this change: broken
+  links in the generated `kb/` pages, and `/work/#aifactory` and
+  `/work/#backstage` in old blog posts. None are in the pages this plan edits.
+  CI treats htmlproofer as non-blocking.
+
 ## Tests
 
-- The Jekyll build exits 0, and htmlproofer reports zero failures.
+- The Jekyll build exits 0, and htmlproofer reports no new failures against `origin/main` (baseline: 62, all in `kb/` and old posts; this branch: 62).
 - This returns nothing:
 
   ```bash

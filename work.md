@@ -71,7 +71,7 @@ description: Projects and platforms Olaf Krasicki-Freund has designed and built.
     <div class="project">
     <h2 id="factory">The Factory suite — a governed pipeline for AI software delivery</h2>
     <p><span class="tag">Creator · open source</span></p>
-    <p>What started as AIFactory grew into a four-product suite around one idea: AI can
+    <p>What started as AIFactory grew into a five-product suite around one idea: AI can
     write the code, but someone still has to be accountable for it. 84% of developers
     use AI coding tools; only 29% trust the output. The Factory suite is the trust and
     governance layer for that gap, built around the <strong>PARR pipeline</strong> —
@@ -92,6 +92,10 @@ description: Projects and platforms Olaf Krasicki-Freund has designed and built.
       <li><strong>CFactory (Review)</strong> — the control-tower cockpit: one pane of
       glass with a live, animated dependency graph across plan → code → test, an
       advise-and-confirm copilot, and per-task and per-worker cost and token tracking.</li>
+      <li><strong>RFactory (the meeting room)</strong> — an AI bot that joins your Meet,
+        Zoom, Teams or Slack calls, runs the standup straight from the CFactory board, and
+        turns what the team agrees into changes through the other four, each one waiting
+        on a named approver.</li>
     </ul>
 
     <figure class="shot">
@@ -111,13 +115,15 @@ description: Projects and platforms Olaf Krasicki-Freund has designed and built.
       </figure>
     </div>
 
-    <p>The spine that makes it cohere is deliberately boring plumbing: a shared
-    correlation key, a normalized completion-event schema and a canonical port map, so
-    every product emits the same audit trail — HMAC-anchored logs and completion
+    <p>The spine that makes the four PARR products cohere is deliberately boring
+    plumbing: a shared correlation key, a normalized completion-event schema and a
+    canonical port map, so each of them emits the same audit trail — HMAC-anchored
+    logs and completion
     records of exactly the kind the EU AI Act is about to ask for. It's model-agnostic
     through MCP, and you can watch the whole thing run live.
     → <a href="https://olafkfreund.github.io/AIFactory/" rel="noopener">AIFactory</a>
     · <a href="https://olafkfreund.github.io/TFactory/" rel="noopener">TFactory</a>
+    · <a href="https://github.com/olafkfreund/RFactory" rel="noopener">RFactory</a>
     · <a href="https://github.com/olafkfreund/Factory" rel="noopener">the meta-repo</a></p>
     </div>
 

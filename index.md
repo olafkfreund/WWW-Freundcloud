@@ -41,17 +41,27 @@ description: >-
     <a class="card" href="{{ '/showcase/' | relative_url }}">
       <span class="tag">Everything, with screenshots</span>
       <h3>Project showcase</h3>
-      <p>Seventeen systems in one place — SARC, Fides, Hecate, the Factory suite,
+      <p>Eighteen systems in one place — SARC, Fides, Hecate, the Factory suite,
       the Agentic SDLC reference build, Bifrost, Janus, Myrmex Hive, ravn-agents,
-      DORA Dashboard, SkillAi, Odin, Muninn, Huginn, lxconnect and nixarchy.
+      DORA Dashboard, SkillAi, Odin, Muninn, Huginn, AWS Dashboard, lxconnect,
+      nixarchy and nix-skills.
       <strong>Browse the showcase →</strong></p>
     </a>
     <a class="card" href="{{ '/work/#factory' | relative_url }}">
       <span class="tag">Open source · AI agents</span>
       <h3>The Factory suite</h3>
-      <p>A governed pipeline for AI software delivery — PFactory plans it, AIFactory
-      builds it, TFactory tests it, CFactory watches it. PARR, with a human gate at
-      every seam and model-agnostic via MCP.</p>
+      <p>Five products, one governed pipeline for AI software delivery — PFactory
+      plans it, AIFactory builds it, TFactory tests it, CFactory watches it, and
+      RFactory brings it into your team calls. PARR, with a human gate at every seam
+      and model-agnostic via MCP.</p>
+    </a>
+    <a class="card" href="{{ '/showcase/#factory' | relative_url }}">
+      <span class="tag">Open source · AI agents</span>
+      <h3>RFactory</h3>
+      <p>The Factory suite's meeting room. An AI bot joins your Meet, Zoom,
+      Teams or Slack call, runs the standup straight from the CFactory board,
+      and turns what the team agrees into changes, each waiting on a named
+      approver.</p>
     </a>
     <a class="card" href="{{ '/showcase/#hecate' | relative_url }}">
       <span class="tag">Open source · GitOps</span>

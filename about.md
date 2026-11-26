@@ -29,7 +29,9 @@ description: Olaf Krasicki-Freund — DevOps and platform engineering leader, 30
 
     <h2>What I'm doing now</h2>
 
-    <p>I'm product owner and lead architect on <strong>SARC</strong> — orchestrated
+    <p>Right now I'm working with <strong>HSBC</strong>.</p>
+
+    <p>Alongside that, I'm product owner and lead architect on <strong>SARC</strong> — orchestrated
     compliance for regulated delivery. The pitch is short: your evidence lives in a
     self-hosted, tamper-evident ledger inside your own cloud, wired to ServiceNow and
     your CI, so audit week stops being a fire drill and nobody outside your
@@ -41,7 +43,19 @@ description: Olaf Krasicki-Freund — DevOps and platform engineering leader, 30
     of the portal</a>, and the
     <a href="{{ '/showcase/#sarc' | relative_url }}">full write-up here</a>.</p>
 
-    <h2>What I've been doing before that</h2>
+    <p>The other thing taking my evenings is the <strong>Factory suite</strong>, a
+    governed pipeline for AI software delivery. It rests on one idea: AI can write the
+    code, but someone still has to be accountable for it. PFactory plans the work and
+    won't emit a single issue until a human has signed the plan. AIFactory builds it
+    in isolated worktrees on whichever model you like. TFactory writes and grades the
+    tests. CFactory is the cockpit over the first three. RFactory brings the whole suite into
+    your team calls: an AI bot that runs the standup from the board
+    and turns what's agreed into approved changes. The first four run on the PARR loop
+    (prepare, act, reflect, review), with a human gate at every seam instead of one
+    big "trust me" at the end. The
+    <a href="{{ '/showcase/#factory' | relative_url }}">showcase has the details</a>.</p>
+
+    <h2>Before that</h2>
 
     <p>Two large engagements, both delivered. At <strong>Jefferies</strong>, a US investment bank,
     I led the migration of six business units off Bitbucket and Bamboo onto
@@ -94,8 +108,9 @@ description: Olaf Krasicki-Freund — DevOps and platform engineering leader, 30
     <a href="https://github.com/olafkfreund/agentic-sdlc-showcase" rel="noopener">Agentic SDLC</a>
     reference build is the operating model for agent-written software as a repository
     that runs, with gates proven to refuse rather than merely to pass. The
+    five-product
     <a href="{{ '/showcase/#factory' | relative_url }}">Factory suite</a> — PFactory,
-    AIFactory, TFactory, CFactory — is the pipeline that uses them.</p>
+    AIFactory, TFactory, CFactory and RFactory — is the pipeline that uses them.</p>
 
     <p><strong>AI &amp; LLM tooling.</strong> Mostly MCP, in one form or another:
     <a href="https://github.com/olafkfreund/janus" rel="noopener">Janus</a>, an MCP
@@ -140,8 +155,11 @@ description: Olaf Krasicki-Freund — DevOps and platform engineering leader, 30
 
     <h2>Away from the keyboard</h2>
 
-    <p>I tinker with NixOS and the COSMIC desktop more than is strictly
-    reasonable, and I've written a few Rust applets for it. I was a governor at the
+    <p>I tinker with NixOS more than is strictly reasonable. It started with a few
+    Rust applets for the COSMIC desktop and got out of hand: these days it's
+    <a href="{{ '/showcase/#nixarchy' | relative_url }}">nixarchy</a>, which puts the
+    whole Omarchy desktop on NixOS as a flake you own, so tracking a new release is a
+    source bump rather than a re-port. I was a governor at the
     Norwegian School in London for four years. I speak English, Norwegian and
     Polish. And I'll happily lose an afternoon to a music festival lineup.</p>
 
