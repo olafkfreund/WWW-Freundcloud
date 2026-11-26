@@ -1,5 +1,5 @@
 ---
-status: draft
+status: approved
 issue: 13
 spec: spec/2026-11-26-13-broken-links-kb-resync.md
 coders:
