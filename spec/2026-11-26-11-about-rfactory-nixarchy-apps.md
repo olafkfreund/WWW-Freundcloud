@@ -1,5 +1,5 @@
 ---
-status: draft
+status: approved
 issue: 11
 intent: intent/2026-11-26-11-about-rfactory-nixarchy-apps.md
 ---
