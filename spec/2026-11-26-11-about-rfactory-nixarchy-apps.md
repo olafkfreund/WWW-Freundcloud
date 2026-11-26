@@ -20,7 +20,8 @@ Every Factory description moves from four products to five:
 
 - `index.md:49-55`. The Factory card names RFactory. A new RFactory card goes
   right after it, linking to `/showcase/#factory`.
-- `showcase.md:54-60`. The at-a-glance card says "Five products".
+- `showcase.md:54-60`. The at-a-glance card says "Five products" and gives
+  RFactory's role next to plan, build, test and watch.
 - `showcase.md:342-408` (`#factory`):
   - the tag pill adds RFactory;
   - "Four products around one idea" becomes "Five products";
@@ -29,7 +30,8 @@ Every Factory description moves from four products to five:
   - the "spine" sentence says the four PARR products share the audit trail and
     RFactory reads the same board;
   - the link row adds RFactory.
-- `work.md:72-95` (`#factory`): "five-product suite" and the RFactory bullet.
+- `work.md:72-121` (`#factory`): "five-product suite", the RFactory bullet, the
+  "spine" paragraph scoped to the four PARR products, and an RFactory link.
 - `cv.md:80-83`: the product list adds RFactory.
 - `about.md`. The "What I'm doing now" paragraph adds RFactory. The open-source
   paragraph lists five.
@@ -46,7 +48,7 @@ Every Factory description moves from four products to five:
 Inside `showcase.md#nixarchy`, between the "naming is deliberate" paragraph
 (`:893`) and the source link (`:897`), add an "Apps and plugins" `<h3>`. Under it
 go three bold-led groups, each a plain `<ul>` with one line per repo linking to
-GitHub. No new CSS: `.project` already styles `h3`, `ul` and `li`.
+GitHub. No new CSS: `h3`, `ul` and `li` take the page's base styles, the same as the other `.project` lists.
 
 **Selection rule** (owner: "the ones I have done"): a public repo where Olaf wrote
 most of the commits, or a substantial share of them for a fork, and which isn't a
@@ -94,7 +96,8 @@ COSMIC → nixarchy line), plus the five-product wording above.
 ## Risks
 
 - Factory copy claims RFactory can't back up. Mitigation: its description uses
-  README facts only.
+  README facts only (joins calls, standup from the board, changes wait for a named
+  approver). It doesn't claim the audit trail or that it writes cards.
 - Broken internal links or anchors. Mitigation: htmlproofer on the built site.
 - Fork credits that name the wrong upstream. Mitigation: each one is taken from
   `gh api repos/olafkfreund/<repo> -q .parent.full_name`.
