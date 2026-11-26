@@ -241,8 +241,8 @@ sudo gitlab-ctl reconfigure
 
 ## Related Topics
 
-- [Git Workflows](../git-workflows.md)
-- [CI/CD Pipelines](../../ci-cd/README.md)
-- [Container Registry](../../containers/README.md)
+- [Git Workflows](../git-branching-strategies.html)
+- [CI/CD Pipelines](../../ci-cd-platforms/index.html)
+- Container Registry
 - [Security Scanning](../../security/index.html)
-- [Infrastructure as Code](../../iac/README.md)
+- Infrastructure as Code

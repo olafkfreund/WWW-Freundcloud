@@ -76,6 +76,48 @@ class TestPaths(unittest.TestCase):
     def test_rel_path(self):
         self.assertEqual(c.rel_path("pages/a/b.md", "kb/img/x.png"), "../../kb/img/x.png")
 
+    def test_pages_root_link_fallback(self):
+        body = "[x](pages/c/d.md)"
+        self.assertEqual(
+            c.rewrite_links(body, "pages/a/b.md", "pages/a/b.md", {"pages/c/d.md"}),
+            "[x](../c/d.html)",
+        )
+
+    def test_relative_link_takes_precedence(self):
+        body = "[x](pages/c/d.md)"
+        self.assertEqual(
+            c.rewrite_links(body, "pages/a/b.md", "pages/a/b.md",
+                            {"pages/a/pages/c/d.md", "pages/c/d.md"}),
+            "[x](pages/c/d.html)",
+        )
+
+    def test_fenced_links_are_unchanged_and_not_audited(self):
+        for marker in ("```", "~~~"):
+            with self.subTest(marker=marker):
+                body = f"{marker}md\n[x](./docs/runbook.md)\n{marker}\n[x](pages/c/d.md)"
+                before = len(c.audit)
+                self.assertEqual(
+                    c.rewrite_links(body, "pages/a/b.md", "pages/a/b.md", {"pages/c/d.md"}),
+                    f"{marker}md\n[x](./docs/runbook.md)\n{marker}\n[x](../c/d.html)",
+                )
+                self.assertEqual(len(c.audit), before)
+
+
+    def test_fence_edge_cases(self):
+        known = {"pages/c/d.md"}
+        cases = {
+            # unclosed fence renders as prose in kramdown, so its links are rewritten
+            "```\n[x](pages/c/d.md)": "```\n[x](../c/d.html)",
+            # backticks in the info string: not an opener
+            "```code``` [x](pages/c/d.md)": "```code``` [x](../c/d.html)",
+            # ~~~ inside a ``` block does not close it; a ```py line does not either
+            "```\n~~~\n```py\n[x](pages/c/d.md)\n```": "```\n~~~\n```py\n[x](pages/c/d.md)\n```",
+            # a longer closing fence closes a shorter opener
+            "```\n[x](pages/c/d.md)\n`````\n[y](pages/c/d.md)": "```\n[x](pages/c/d.md)\n`````\n[y](../c/d.html)",
+        }
+        for body, want in cases.items():
+            with self.subTest(body=body):
+                self.assertEqual(c.rewrite_links(body, "pages/a/b.md", "pages/a/b.md", known), want)
 
 class TestSummary(unittest.TestCase):
     def test_parse(self):

@@ -48,6 +48,7 @@ EXCLUDE_FILES = {
 EXCLUDE_RELPATHS = {
     "pages/about-me.md",
     "pages/cv.md",
+    "docs/index.md",  # Backstage TechDocs stub.
 }
 
 HINT_STYLE_MAP = {
@@ -286,6 +287,9 @@ def rewrite_images(body: str, src_rel: str, out_rel: str, wiki: Path,
     return body
 
 
+LINK_RE = r"\[(?P<text>[^\]]*)\]\((?P<ref>[^)]+)\)"
+
+
 def rewrite_links(body: str, src_rel: str, out_rel: str,
                   known: set[str]) -> str:
     """Rewrite intra-repo .md links to the mirrored .html output paths."""
@@ -303,6 +307,8 @@ def rewrite_links(body: str, src_rel: str, out_rel: str,
         if not raw.endswith(".md"):
             return m.group(0)
         target = os.path.normpath(os.path.join(src_dir, raw)).replace(os.sep, "/")
+        if target not in known and raw.startswith("pages/"):
+            target = os.path.normpath(raw).replace(os.sep, "/")  # GitBook root-relative.
         if target not in known:
             audit.append(f"BROKEN LINK in {src_rel}: -> {ref}")
             return m.group(0)
@@ -311,7 +317,26 @@ def rewrite_links(body: str, src_rel: str, out_rel: str,
         stats["links_rewritten"] += 1
         return f"[{text}]({new}{anchor})"
 
-    return re.sub(r"\[(?P<text>[^\]]*)\]\((?P<ref>[^)]+)\)", repl, body)
+    # Skip only fences kramdown renders as code: a backtick opener's info string
+    # has no backticks, and the block must close. An unclosed fence is prose.
+    lines = body.splitlines(keepends=True)
+    out, prose, i = [], [], 0
+    while i < len(lines):
+        m = re.match(r"[ ]{0,3}(`{3,}|~{3,})(.*)", lines[i].rstrip("\r\n"))
+        if m and not (m.group(1)[0] == "`" and "`" in m.group(2)):
+            marker = m.group(1)
+            close = next((j for j in range(i + 1, len(lines))
+                          if re.fullmatch(rf"[ ]{{0,3}}{re.escape(marker[0])}{{{len(marker)},}}[ \t]*",
+                                          lines[j].rstrip("\r\n"))), None)
+            if close is not None:
+                out.append(re.sub(LINK_RE, repl, "".join(prose)))
+                out.extend(lines[i:close + 1])
+                prose, i = [], close + 1
+                continue
+        prose.append(lines[i])
+        i += 1
+    out.append(re.sub(LINK_RE, repl, "".join(prose)))
+    return "".join(out)
 
 
 def yaml_escape(s: str) -> str:

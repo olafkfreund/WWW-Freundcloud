@@ -196,6 +196,39 @@ Repos:
    - Site: commit, push, PR linking all three artifacts, merge after the wiki.
    - Watch the Pages deploy, then spot-check two fixed KB pages live.
 
+## Deviations (during implementation)
+
+- **Wiki, 15 pages.** Each ended with a GitBook authoring leftover: a
+  ```` ```markdown ```` block holding the page's own SUMMARY entry, a
+  `pages/…` self-link. Eleven were closed, so readers saw a stray code box. Four
+  were unclosed, and kramdown rendered them as broken links. The converter's
+  fence skip treated those four as code, so the audit missed them while
+  htmlproofer still failed. All 15 tails were deleted at the source (lead).
+- **Step 4** was done by the lead. The coder didn't pick it up.
+- **Step 3** ran in a clean scratch worktree. herdr-team and agent-run both
+  refuse a checkout with the untracked `infographics/` folder. The patch was
+  applied back unchanged.
+- **After the three reviews (Opus, Codex, agy):**
+  - **Converter fences:** fence detection now matches kramdown. A fence counts
+    only when it closes, and a backtick opener's info string can't contain
+    backticks. An unclosed fence is prose, so its links are rewritten and
+    audited. That exposed no new broken links. Added 4 edge-case tests.
+  - **Wiki tails:** the 15 trimmed tails also lose the empty
+    `## Add to SUMMARY.md` heading and the `---` rule before it. One of the 15
+    pointed to a sibling page, not to itself.
+  - **`dashboard.md` label:** "Kubernetes Monitoring" is now "Kubernetes
+    Troubleshooting", to match its target.
+  - **Directory links htmlproofer flagged** (the converter doesn't audit links
+    without `.md`):
+    - `terraform/README.md` `cicd/` → `cicd/github-actions.md`
+    - `quick-starts/README.md` `../platform-engineering/` →
+      `../platform-engineering/implementation-guide.md`
+    - `../cloud-architecture/` and `../infrastructure/`: unlinked, because they
+      don't exist.
+  - **Kept as is:** the AWS "Cloud Compliance" link goes to a section index
+    with four child pages. The Backstage blog post links to `/work/#neso`, the
+    closest Backstage write-up on the site.
+
 ## Tests
 
 - `python3 -m unittest discover -s scripts` passes.

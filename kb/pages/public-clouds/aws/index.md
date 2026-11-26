@@ -126,9 +126,9 @@ AWS is particularly well-suited for:
 
 - [AWS Authentication](authentication.html) - Managing access to AWS resources
 - [AWS Best Practices](best-practices.html) - Implementation recommendations
-- [Terraform AWS Scenarios](../../../terraform/aws-scenarios.md) - Managing AWS with Terraform
-- [Cloud Compliance](../../../need-to-know/cloud-compliance/README.md) - Regulatory frameworks for AWS
-- [AWS VM Log Monitoring](../../../sre/senarios/aws-vm-monitoring-api.md) - SRE implementation for AWS
+- [Terraform AWS Scenarios](../../terraform/aws-scenarios.html) - Managing AWS with Terraform
+- [Cloud Compliance](../../need-to-know/cloud-compliance/index.html) - Regulatory frameworks for AWS
+- [AWS VM Log Monitoring](../../sre/senarios/aws-vm-monitoring-api.html) - SRE implementation for AWS
 
 ## References
 

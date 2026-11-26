@@ -12,4 +12,4 @@ render_with_liquid: false
 - [Gemini](gemini/index.html) - Google's multimodal AI model ecosystem
 - [DevOps Tools](../devops-tools/index.html) - Tools that can be enhanced with LLM integrations
 - [Documentation Best Practices](../devops/documentation/index.html) - Using LLMs to improve documentation
-- [AI-Assisted Testing](../devops/testing/index.html#ai-assisted-testing) - Advanced testing augmented by AI
+- AI-Assisted Testing - Advanced testing augmented by AI

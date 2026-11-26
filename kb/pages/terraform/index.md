@@ -406,12 +406,12 @@ module "integration_test" {
 
 ## Related Topics
 
-- [Infrastructure as Code Overview](../iac/README.md) - Core concepts powering Terraform-based automation
+- Infrastructure as Code Overview - Core concepts powering Terraform-based automation
 - [AWS Scenarios](aws-scenarios.html) - Practical implementation patterns for AWS resources
 - [Azure Scenarios](azure-scenarios.html) - Azure-specific deployment strategies with Terraform
 - [GCP Scenarios](gcp-scenarios.html) - Google Cloud automation with Terraform
 - [Testing and Validation](testing/) - Ensuring infrastructure reliability with automated tests
-- [CI/CD Integration](cicd/) - Automating Terraform deployments in pipelines
+- [CI/CD Integration](cicd/github-actions.html) - Automating Terraform deployments in pipelines
 - [Terraform Best Practices](best-practices/) - Production-ready implementation strategies
-- [Bicep](../../group-1/bicep/README.md) - Alternative IaC approach for Azure-specific workloads
+- [Bicep](../bicep/index.html) - Alternative IaC approach for Azure-specific workloads
 - [GitOps](../devops/gitops/index.html) - Git-based infrastructure delivery that works with Terraform
