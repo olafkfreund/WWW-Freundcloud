@@ -1,5 +1,5 @@
 ---
-status: draft
+status: approved
 issue: 11
 author: olafkfreund
 ---
@@ -91,3 +91,14 @@ The site lags what Olaf is doing now. Each point describes `main`.
    `nixarchy-googlebook-vm`)? What about the non-desktop ones (`nixarchy-bbs`,
    `mcp-nixarchy`, `nixarchy-pkg`)? And every eligible repo, or a curated set? A
    full list of 25–35 lines makes `#nixarchy` far longer than any other entry.
+
+## Decisions (owner, 2026-11-26)
+
+1. RFactory is the fifth Factory product, so every page says five.
+2. The RFactory card links to `/showcase/#factory`, which gets an RFactory part.
+   The showcase count stays at eighteen.
+3. List only Olaf's own nixarchy apps and plugins: no packagings of third-party
+   projects, and no forks.
+
+The owner's approval covers this intent and the spec and plan that follow
+("Approved make the changes and publish", confirmed as "cover all").
