@@ -28,15 +28,16 @@ exception: a new `docs/index.md`, a Backstage TechDocs stub that wiki #3 added.
 - **Links to pages that were never written:** keep the link text, drop the link.
   That covers the AWS services ec2/lambda/ebs/rds/dynamodb/vpc/cloudfront, the
   GCP services cloud-spanner/firestore, the copilot subpages, `open-telemetry`,
-  `kubernetes/monitoring`, `git-workflows`, `iac/README` and `docs/runbook`.
+  `kubernetes/monitoring`, `iac/README`, the GitLab "Container Registry" link and
+  "AI-Assisted Testing". `git-workflows` goes to `git-branching-strategies.md`.
 - **`http://` → `https://`** for agilemanifesto.org, the two docs.aws.amazon.com
   links, chef.io, sigs.k8s.io and forentrepreneurs.com. The traefik
   `127.0.0.1:9000` example is a local address, so it becomes inline code, not a
   link.
 - **The five `<a href="#xxxx" id="#xxxx"></a>` GitBook tags** in
   `k8s-troubleshooting-pod-in-container-creating-status.md` are removed.
-- **Missing section anchors:** drop `#installation-guide-2025` and
-  `#ai-assisted-testing`. Neither heading exists.
+- **Missing section anchors:** the Tekton link goes to the sibling
+  `README.md#installation-guide-2025`, where that heading exists.
 - **Leftover GitBook tags:**
   - Inline `_snippets/kubernetes-prerequisites.md` into
     `should-learn/kubernetes/README.md`.
@@ -47,9 +48,10 @@ exception: a new `docs/index.md`, a Backstage TechDocs stub that wiki #3 added.
 
 ### Converter (`scripts/convert.py`)
 
-- Resolve links that start with `pages/` as wiki-root-relative, instead of
-  relative to the current file. These are GitBook's self and cross links, about
-  14 audit findings. One line in `rewrite_links`, plus a unit test.
+- Resolve a link that starts with `pages/` as wiki-root-relative, but only as a
+  fallback when the file-relative path doesn't resolve. These are GitBook's self
+  and cross links, 16 audit findings. A few lines in `rewrite_links`, plus unit tests. `rewrite_links` also skips
+  fenced code blocks, so example links aren't rewritten or audited.
 - Add `docs/index.md` to `EXCLUDE_RELPATHS`. It's a TechDocs stub, not KB
   content.
 
@@ -79,9 +81,9 @@ exception: a new `docs/index.md`, a Backstage TechDocs stub that wiki #3 added.
   against today's and check that every change traces to a fix.
 - **A remapped link points at the wrong page.** Mitigation: every target in the
   mapping table exists, and htmlproofer confirms it.
-- **The `pages/` root rule changes links that resolved before.** Mitigation: it
-  only applies to links that are broken today, because a relative join of a
-  `pages/…` link never resolves from inside `pages/`. The unit test plus a diff
+- **The `pages/` root rule changes links that resolved before.** Mitigation: the
+  root fallback runs only when the file-relative path doesn't resolve, so no
+  link that resolves today changes. The unit test plus a diff
   check confirm this.
 
 ## Verification
