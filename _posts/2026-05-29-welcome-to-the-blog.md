@@ -25,7 +25,7 @@ The same things I do for a living, mostly:
   team" is usually "we never wrote the path down".
 - **AI agents that ship** — what actually works when you wire Claude into a real
   toolchain, from MCP servers to the planner/coder/QA pipeline in
-  [AIFactory]({{ '/work/#aifactory' | relative_url }}).
+  [AIFactory]({{ '/work/#factory' | relative_url }}).
 - **NixOS** — because I can't stop, and reproducibility is a hill I'll die on.
 
 ## How this blog works

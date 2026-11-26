@@ -12,7 +12,7 @@ excerpt: >-
   fun to look at
 ---
 
-The home lab has had a [Backstage]({{ '/work/#backstage' | relative_url }})
+The home lab has had a [Backstage]({{ '/work/#neso' | relative_url }})
 portal for a while. It signed in, the catalog populated, GitHub OAuth worked.
 But it also looked exactly like Spotify's scaffolded default and most of the
 plugins were dormant — installed in `package.json`, never wired up. This

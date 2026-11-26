@@ -337,5 +337,5 @@ In 2025, effective metric collection systems combine standardized instrumentatio
 - [Tracing](tracing.html) - Request flow monitoring across distributed systems
 - [Dashboards](dashboard.html) - Visualizing metrics effectively
 - [SLOs and SLAs](../../need-to-know/understanding-sli-slo-and-sla.html) - Using metrics for reliability targets
-- [OpenTelemetry](../../should-learn/open-telemetry.md) - Standard for metrics collection
-- [Kubernetes Monitoring](../../should-learn/kubernetes/monitoring.md) - Container platform metrics
+- OpenTelemetry - Standard for metrics collection
+- Kubernetes Monitoring - Container platform metrics

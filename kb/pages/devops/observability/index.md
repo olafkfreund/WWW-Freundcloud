@@ -159,7 +159,7 @@ System-wide performance profiling as the fourth pillar:
 * [Metrics](metrics.html) - Measuring system performance
 * [Tracing](tracing.html) - Following requests through distributed systems
 * [SLOs and SLAs](../../need-to-know/understanding-sli-slo-and-sla.html) - Setting performance targets
-* [Kubernetes Troubleshooting](../../should-learn/kubernetes/troubleshooting/README.md) - Debugging with observability data
+* [Kubernetes Troubleshooting](../../should-learn/kubernetes/troubleshooting/kubernetes-pod-troubleshooting-commands.html) - Debugging with observability data
 * [Pipeline Observability](observability-of-ci-cd-pipelines.html) - Monitoring your CI/CD workflows
 
 ## References

@@ -75,4 +75,4 @@ graph TD
 
 ## See Also
 
-- [DevOps Tool Comparison 2025](pages/reference/tool-comparison.md)
+- [DevOps Tool Comparison 2025](tool-comparison.html)

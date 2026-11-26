@@ -242,4 +242,4 @@ In 2025, effective observability dashboards serve as the nexus between technical
 - [Tracing](tracing.html) - Distributed transaction monitoring
 - [SLOs and SLAs](../../need-to-know/understanding-sli-slo-and-sla.html) - Setting performance targets
 - [Azure Monitor](../../public-clouds/azure/monitoring/index.html) - Azure monitoring capabilities
-- [Kubernetes Monitoring](../../should-learn/kubernetes/troubleshooting/README.md) - Kubernetes-specific observability
+- [Kubernetes Troubleshooting](../../should-learn/kubernetes/troubleshooting/kubernetes-pod-troubleshooting-commands.html) - Pod troubleshooting commands

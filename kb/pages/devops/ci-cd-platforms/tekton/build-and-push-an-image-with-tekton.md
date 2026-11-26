@@ -28,7 +28,7 @@ kubectl apply --filename https://storage.googleapis.com/tekton-releases/pipeline
 kubectl get pods --namespace tekton-pipelines
 ```
 
-See the [Pipelines installation documentation](../index.html#installation-guide-2025) for other installation options and vendor specific instructions.
+See the [Pipelines installation documentation](index.html#installation-guide-2025) for other installation options and vendor specific instructions.
 
 3. **Install Tekton CLI**: Install the [Tekton CLI, `tkn`](https://tekton.dev/docs/cli/), on your machine:
 

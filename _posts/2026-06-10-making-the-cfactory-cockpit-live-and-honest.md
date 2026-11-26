@@ -12,7 +12,7 @@ excerpt: >-
 ---
 
 CFactory is the cockpit over my agent pipeline — the single pane that watches
-[AIFactory]({{ '/work/#aifactory' | relative_url }}) and its planner/tester
+[AIFactory]({{ '/work/#factory' | relative_url }}) and its planner/tester
 siblings churn through GitHub issues (plan → code → test, correlated by issue
 number). It's the thing I leave open on a second monitor. Which means when it
 lies, or freezes, or 500s, I notice. Today I spent fixing all three. Three PRs,

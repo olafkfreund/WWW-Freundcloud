@@ -40,7 +40,7 @@ So the interesting unit of choice isn't "which model" — it's "which model, for
 
 ## What I actually do
 
-This is the whole reason [AIFactory]({{ '/work/#aifactory' | relative_url }})
+This is the whole reason [AIFactory]({{ '/work/#factory' | relative_url }})
 does per-phase model selection instead of a global setting. The pipeline —
 planner → coder → QA — stays the same; only the routing changes:
 
