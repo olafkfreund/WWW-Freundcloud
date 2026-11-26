@@ -6,7 +6,8 @@ description: >-
   A showcase of the platforms Olaf Krasicki-Freund has designed and built —
   SARC, Fides, Hecate, the Factory suite, the Agentic SDLC reference build,
   Bifrost, Janus, Myrmex Hive, ravn-agents, DORA Dashboard, SkillAi, Odin,
-  Muninn, Huginn, lxconnect, nixarchy and nix-skills.
+  Muninn, Huginn, AWS Dashboard, lxconnect, nixarchy and
+  nix-skills.
 ---
 
 <section class="hero">
@@ -54,9 +55,9 @@ description: >-
     <a class="card" href="#factory">
       <span class="tag">Governed AI delivery</span>
       <h3>The Factory suite</h3>
-      <p>Four products, one idea: AI can write the code, but someone is still
-      accountable. Plan, build, test and watch — with a human gate at every
-      seam.</p>
+      <p>Five products, one idea: AI can write the code, but someone is still
+      accountable. Plan, build, test, watch — and talk it through on a call — with a
+      human gate at every seam.</p>
     </a>
     <a class="card" href="#agentic-sdlc">
       <span class="tag">Reference build · playbook</span>
@@ -340,21 +341,22 @@ description: >-
 
   <div class="project">
   <h2 id="factory">The Factory suite — a governed pipeline for AI software delivery</h2>
-  <p><span class="tag">Creator · open source</span> <span class="tag">PFactory · AIFactory · TFactory · CFactory</span></p>
+  <p><span class="tag">Creator · open source</span> <span class="tag">PFactory · AIFactory · TFactory · CFactory · RFactory</span></p>
   {% include podcast.html key="factory-video" %}
   {% include podcast.html key="factory" %}
   {% include podcast.html key="pfactory" %}
   <p>84% of developers use AI coding tools; only 29% trust the output. The Factory
-  suite is the trust layer for that gap. Four products around one idea — AI can
-  write the code, but someone still has to be accountable for it — built on the
-  <strong>PARR pipeline</strong>: <strong>Prepare · Act · Reflect · Review</strong>,
-  with a human gate at every seam rather than one "trust me" big bang.</p>
+  suite is the trust layer for that gap. Five products around one idea — AI can
+  write the code, but someone still has to be accountable for it. Four of them are
+  the stages of the <strong>PARR pipeline</strong>: <strong>Prepare · Act · Reflect ·
+  Review</strong>, with a human gate at every seam rather than one "trust me" big
+  bang. The fifth, RFactory, brings that pipeline into the team's calls.</p>
   <figure class="shot infographic">
     <a href="{{ '/assets/img/showcase/factory-infographic.webp' | relative_url }}">
       <img src="{{ '/assets/img/showcase/factory-infographic.webp' | relative_url }}"
            alt="The Factory pipeline: an idea entering PFactory, handed to AIFactory to build, TFactory to verify with coverage, stability, mutation and lint gates, and CFactory as the cockpit, with the PARR loop alongside" loading="lazy" width="2752" height="1536">
     </a>
-    <figcaption>Idea in, shipped software out — through sixteen guards, with the PARR loop (prepare, act, reflect, review) turning underneath.</figcaption>
+    <figcaption>Idea in, shipped software out — through sixteen guards, with the PARR loop (prepare, act, reflect, review) turning underneath. The picture shows the four PARR stages; RFactory joins them in the meeting room.</figcaption>
   </figure>
 
 
@@ -379,6 +381,10 @@ description: >-
     <li><strong>CFactory (Review)</strong> — the control-tower cockpit: a live,
     animated dependency graph across plan → code → test, an advise-and-confirm
     copilot, and per-task and per-worker cost and token tracking.</li>
+    <li><strong>RFactory (the meeting room)</strong> — an AI bot that joins your Meet,
+      Zoom, Teams or Slack calls, runs the standup straight from the CFactory board, and
+      turns what the team agrees into changes through the other four, each one waiting
+      on a named approver.</li>
   </ul>
 
   <div class="shot-grid">
@@ -396,15 +402,16 @@ description: >-
     </figure>
   </div>
 
-  <p>The spine that makes four products cohere is deliberately boring plumbing: a
-  shared correlation key, a normalized completion-event schema and a canonical port
-  map, so every product emits the same audit trail — HMAC-anchored logs and
-  completion records of exactly the kind the EU AI Act is about to ask for. It's
+  <p>The spine that makes the four PARR products cohere is deliberately boring
+  plumbing: a shared correlation key, a normalized completion-event schema and a
+  canonical port map, so each of them emits the same audit trail — HMAC-anchored
+  logs and completion records of exactly the kind the EU AI Act is about to ask for. It's
   model-agnostic through MCP, and you can watch the whole thing run live.</p>
   <p>→ <a href="https://olafkfreund.github.io/AIFactory/" rel="noopener">AIFactory</a>
   · <a href="https://olafkfreund.github.io/TFactory/" rel="noopener">TFactory</a>
   · <a href="https://github.com/olafkfreund/PFactory" rel="noopener">PFactory</a>
   · <a href="https://github.com/olafkfreund/CFactory" rel="noopener">CFactory</a>
+  · <a href="https://github.com/olafkfreund/RFactory" rel="noopener">RFactory</a>
   · <a href="https://github.com/olafkfreund/Factory" rel="noopener">the meta-repo</a></p>
   </div>
 
@@ -894,6 +901,53 @@ description: >-
   bug in <code>omarchy theme set</code> is a bug to report there, and renaming it would
   say otherwise. <code>nixarchy</code> owns what this port adds and <code>exec</code>s
   through for everything else.</p>
+  <h3>Apps and plugins</h3>
+  <p>nixarchy is the base. Most of what I use day to day is built on top of it as
+  Omarchy plugins and small apps. Where one started as somebody else's Omarchy
+  plugin, the credit says so.</p>
+  <p><strong>Shell and menus.</strong></p>
+  <ul>
+    <li><a href="https://github.com/olafkfreund/nixarchy-menu" rel="noopener">nixarchy-menu</a> — native quick menu for nixarchy
+    (built on <a href="https://github.com/evindor/keystroke" rel="noopener">evindor/keystroke</a>).</li>
+    <li><a href="https://github.com/olafkfreund/nixarchy-pkg" rel="noopener">nixarchy-pkg</a> — search nixpkgs, turn apps and services on, set NixOS options and apply, from the shell, on the keyboard.</li>
+    <li><a href="https://github.com/olafkfreund/nixarchy-plugin-browser" rel="noopener">nixarchy-plugin-browser</a> — browse the Omarchy plugin marketplace and check each plugin can run on NixOS
+    (built on <a href="https://github.com/OmarchyFans/omarchy-fans-plugin-browser" rel="noopener">OmarchyFans/omarchy-fans-plugin-browser</a>).</li>
+    <li><a href="https://github.com/olafkfreund/nixarchy-flatsnap" rel="noopener">nixarchy-flatsnap</a> — install Flatpak and Snap apps from the menu, kept declarative.</li>
+    <li><a href="https://github.com/olafkfreund/nixarchy-hyprsettngs" rel="noopener">nixarchy-hyprsettngs</a> — a live-preview Hyprland studio for gaps, borders, palette colours, blur, animations with a curve editor, app rules and profiles
+    (built on <a href="https://github.com/AbdulazizAlwabel/omarchy-hyprforge" rel="noopener">AbdulazizAlwabel/omarchy-hyprforge</a>).</li>
+    <li><a href="https://github.com/olafkfreund/nixi-nixarchy" rel="noopener">nixi-nixarchy</a> — Nixi, a guided tour, offline manual search and an AI tutor grounded in your own machine
+    (built on <a href="https://github.com/respira-crece-lidera/archy-omarchy" rel="noopener">respira-crece-lidera/archy-omarchy</a>).</li>
+    <li><a href="https://github.com/olafkfreund/nixarchy-voice" rel="noopener">nixarchy-voice</a> — operate the desktop by talking to it, with a local policy gate approving every action
+    (built on <a href="https://github.com/wombatoperator/omarchy-voice" rel="noopener">wombatoperator/omarchy-voice</a>).</li>
+  </ul>
+  <p><strong>Development and infrastructure.</strong></p>
+  <ul>
+    <li><a href="https://github.com/olafkfreund/nixarchy-devenv" rel="noopener">nixarchy-devenv</a> — a bar widget and menu for devenv environments: create from templates, enter, edit, update, delete.</li>
+    <li><a href="https://github.com/olafkfreund/nixarchy-microvm" rel="noopener">nixarchy-microvm</a> — the same for NixOS MicroVMs.</li>
+    <li><a href="https://github.com/olafkfreund/nixarchy-distrobox" rel="noopener">nixarchy-distrobox</a> — the same for Distrobox boxes.</li>
+    <li><a href="https://github.com/olafkfreund/nixarchy-podman" rel="noopener">nixarchy-podman</a> — a Podman container manager in the bar
+    (built on <a href="https://github.com/i228808/omapodman" rel="noopener">i228808/omapodman</a>).</li>
+    <li><a href="https://github.com/olafkfreund/nixarchy-winvm" rel="noopener">nixarchy-winvm</a> — Windows VM control from the menu
+    (built on <a href="https://github.com/yanuarpmbd/omarchy-winvm-widget" rel="noopener">yanuarpmbd/omarchy-winvm-widget</a>).</li>
+    <li><a href="https://github.com/olafkfreund/nixarchy-ghtui" rel="noopener">nixarchy-ghtui</a> — a keyboard-driven GitHub Actions panel.</li>
+    <li><a href="https://github.com/olafkfreund/nixarchy-gltui" rel="noopener">nixarchy-gltui</a> — the same for GitLab pipelines.</li>
+    <li><a href="https://github.com/olafkfreund/nixarchy-herdr" rel="noopener">nixarchy-herdr</a> — herdr sessions and the agents in them, across tailnet hosts, on a keybind
+    (built on <a href="https://github.com/jankeesvw/omarchy-herdr" rel="noopener">jankeesvw/omarchy-herdr</a>).</li>
+    <li><a href="https://github.com/olafkfreund/nixarchy-llm-index" rel="noopener">nixarchy-llm-index</a> — a local, self-updating file and code index for LLM agents, over MCP.</li>
+  </ul>
+  <p><strong>Everyday.</strong></p>
+  <ul>
+    <li><a href="https://github.com/olafkfreund/nixarchy-flux" rel="noopener">nixarchy-flux</a> — connect the desktop to your phone: files, clipboard, notifications, media and camera
+    (built on <a href="https://github.com/bjarneo/flux" rel="noopener">bjarneo/flux</a>).</li>
+    <li><a href="https://github.com/olafkfreund/nixarchy-omapod" rel="noopener">nixarchy-omapod</a> — a podcast app with a bar widget
+    (built on <a href="https://github.com/arikisonfire/omapod" rel="noopener">arikisonfire/omapod</a>).</li>
+    <li><a href="https://github.com/olafkfreund/omateams" rel="noopener">omateams</a> — Microsoft Teams in an Omarchy-themed window with an unread badge
+    (built on <a href="https://github.com/Divanyx/omateams" rel="noopener">Divanyx/omateams</a>).</li>
+    <li><a href="https://github.com/olafkfreund/nixarchy-meeting-mode" rel="noopener">nixarchy-meeting-mode</a> — join a call and the desktop goes quiet by itself
+    (built on <a href="https://github.com/jburchel/omarchy-meeting-mode" rel="noopener">jburchel/omarchy-meeting-mode</a>).</li>
+    <li><a href="https://github.com/olafkfreund/nixarchy-meetingai" rel="noopener">nixarchy-meetingai</a> — an ambient real-time meeting copilot.</li>
+    <li><a href="https://github.com/olafkfreund/omagovee" rel="noopener">omagovee</a> — Govee light control with local MCP automation.</li>
+  </ul>
   <p>→ <a href="https://github.com/olafkfreund/nixarchy" rel="noopener">source</a></p>
   </div>
 
