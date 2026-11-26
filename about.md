@@ -10,8 +10,9 @@ description: Olaf Krasicki-Freund — DevOps and platform engineering leader, 30
     <h1 class="mt-0">About me</h1>
 
     <img class="about-portrait"
-         src="{{ '/assets/img/about/olaf.jpg' | relative_url }}"
+         src="{{ '/assets/img/about/olaf-cartoon.png' | relative_url }}"
          alt="Olaf Krasicki-Freund"
+         style="object-position: 50% 0"
          width="180" height="180">
 
     <p>I've been doing this for thirty years, which means I started before "DevOps"
